@@ -25,6 +25,8 @@
 
 <h1>test</h1>
 
+<h1> test 2</h1>
+
 
     <form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults" >
       <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search">
