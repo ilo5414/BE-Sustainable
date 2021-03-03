@@ -35,9 +35,11 @@
 
 
   </div>
-  <?php
-  // include ('barcodereader.php');
-  ?>
+
 
 
 </div>
+
+<?php
+include ('barcodereader.php');
+?>
