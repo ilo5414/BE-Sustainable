@@ -1,0 +1,61 @@
+/* This is the CSS page with all the custom css */
+
+.bg-darkblue {
+  background-color: #22211F;
+}
+
+
+
+body {
+
+  font-family: Courier;
+
+
+
+}
+
+
+
+
+
+.bg-darkblue {
+
+  background-color: #22211F;
+
+}
+
+
+
+
+
+.home_banner {
+
+  background: url('images/lode-lagrainge-44wjflU1ATc-unsplash.jpg');
+
+  background-size: cover;
+
+
+
+}
+
+
+
+.dropdown-menu {
+
+  background-color: transparent;
+
+  border: none;
+
+  margin-right: 10px;
+
+
+
+}
+
+
+
+.navbar {
+
+  padding-right: 100px;
+
+}
