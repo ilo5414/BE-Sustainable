@@ -39,7 +39,3 @@
 
 
 </div>
-
-<?php
-include ('barcodereader.php');
-?>
