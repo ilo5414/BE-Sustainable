@@ -23,7 +23,7 @@
 <div class="row">
 
 
-
+<h1>test</h1>
 
 
     <form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults" >
@@ -34,7 +34,7 @@
 
   </div>
   <?php
-  // include ('barcodereader.php'); 
+  // include ('barcodereader.php');
   ?>
 
 
