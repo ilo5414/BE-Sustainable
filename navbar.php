@@ -3,6 +3,7 @@
 <nav class="navbar navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand" href="index.php?page=home"><img src="images/Be_sustainable_logo1 copy.png" style="height:200px" alt=""></a>
+    <a class="navbar-brand" href="index.php?page=home" alt="">BE Sustainable</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -12,24 +13,24 @@
   <!-- Navbar links -->
   <div class="dropdown-menu dropdown-menu-right" id="collapsibleNavbar">
     <ul class="dropdown ">
-      <li class="nav-item">
+      <!-- <li class="nav-item"> -->
         <a class="nav-link" href="index.php?page=findproducts">Find products</a>
-      </li>
-      <li class="nav-item">
+      <!-- </li> -->
+      <!-- <li class="nav-item"> -->
         <a class="nav-link" href="index.php?page=aboutus">About us</a>
-      </li>
-      <li class="nav-item">
+      <!-- </li> -->
+      <!-- <li class="nav-item"> -->
         <a class="nav-link" href="index.php?page=certificates">product certificates</a>
-      </li>
-      <li class="nav-item">
+      <!-- </li> -->
+      <!-- <li class="nav-item"> -->
         <a class="nav-link" href="index.php?page=yourhelp">Your help</a>
-      </li>
-      <li class="nav-item">
+      <!-- </li> -->
+      <!-- <li class="nav-item"> -->
         <a class="nav-link" href="index.php?page=findus">Find us</a>
-      </li>
-      <li class="nav-item">
+      <!-- </li> -->
+      <!-- <li class="nav-item"> -->
         <a class="nav-link" href="index.php?page=enteritem">Enter item</a>
-      </li>
+      <!-- </li> -->
     </ul>
   </div>
 </nav>
