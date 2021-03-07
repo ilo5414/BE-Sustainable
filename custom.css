@@ -5,20 +5,37 @@
 }
 
 
-@font-face {
+/* @font-face {
     font-family: 'Hellix';
     src: local('Hellix Medium'), local('Hellix-Medium'),
-        url('Hellix-Medium.woff2') format('woff2'),
-        url('Hellix-Medium.woff') format('woff'),
-        url('Hellix-Medium.ttf') format('truetype');
+        url('Hellix-Medium/Hellix-Medium.woff2') format('woff2'),
+        url('Hellix-Medium/Hellix-Medium.woff') format('woff'),
+        url('Hellix-Medium/Hellix-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
+  } */
+
+  @font-face {
+      font-family: Hellix;
+      src: url('Hellix-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+
+
+
+@font-face {
+    font-family: a_ape_mountregular ;
+    src: url('webfontkit-20210304-234208/aapemount-webfont.woff2') format('woff2'),
+         url('webfontkit-20210304-234208/aapemount-webfont.woff') format('woff'); 
+
   }
 
 body {
 
   /* font-family: Courier; */
-  font-family: 'Hellix';
+  font-family: a_ape_mountregular ;
 
   color: white;
 
