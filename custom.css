@@ -28,7 +28,7 @@
 @font-face {
     font-family: a_ape_mountregular ;
     src: url('webfontkit-20210304-234208/aapemount-webfont.woff2') format('woff2'),
-         url('webfontkit-20210304-234208/aapemount-webfont.woff') format('woff'); 
+         url('webfontkit-20210304-234208/aapemount-webfont.woff') format('woff');
 
   }
 
@@ -42,9 +42,7 @@ body {
 }
 
 
-.navbar{
-  min-height: 400px;
-}
+
 
 
 .bg-darkblue {
@@ -89,6 +87,11 @@ body {
 
 }
 
+.nav-link {
+  color: white;
+}
+
+
 
 #interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
 	#interactive.viewport > canvas, #interactive.viewport > video {max-width: 100%;width: 100%;}
@@ -97,4 +100,3 @@ body {
 .nav-link {
   color: white;
 }
-
