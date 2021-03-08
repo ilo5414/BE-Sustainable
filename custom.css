@@ -5,10 +5,37 @@
 }
 
 
+/* @font-face {
+    font-family: 'Hellix';
+    src: local('Hellix Medium'), local('Hellix-Medium'),
+        url('Hellix-Medium/Hellix-Medium.woff2') format('woff2'),
+        url('Hellix-Medium/Hellix-Medium.woff') format('woff'),
+        url('Hellix-Medium/Hellix-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  } */
+
+  @font-face {
+      font-family: Hellix;
+      src: url('Hellix-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+
+
+
+@font-face {
+    font-family: a_ape_mountregular ;
+    src: url('webfontkit-20210304-234208/aapemount-webfont.woff2') format('woff2'),
+         url('webfontkit-20210304-234208/aapemount-webfont.woff') format('woff'); 
+
+  }
 
 body {
 
-  font-family: Courier;
+  /* font-family: Courier; */
+  font-family: a_ape_mountregular ;
 
   color: white;
 
@@ -52,16 +79,22 @@ body {
 
 
 
+
 }
 
 
 
 .navbar {
-
   padding-right: 100px;
 
 }
 
+
 #interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
 	#interactive.viewport > canvas, #interactive.viewport > video {max-width: 100%;width: 100%;}
 	canvas.drawing, canvas.drawingBuffer {position: absolute; left: 0; top: 0;}
+
+.nav-link {
+  color: white;
+}
+
