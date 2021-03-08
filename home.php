@@ -8,24 +8,13 @@
 <div class="container-fluid" >
   <div class="row">
 
-    <div class="col-4 text-white">
-      <p>hello</p>
-    </div>
-
-    <div class="col-4 text-white">
-      <p>kia ora </p>
+    <div class="col-4">
+      <h4>BE SUSTAINABLE</h4>
 
     </div>
-    <div class="col-4 text-white">
-      <p>sup</p>
-    </div>
-</div>
+
 <div class="row">
 
-
-<h1>test</h1>
-
-<h1> test 2</h1>
 
 
     <form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults" >
@@ -35,9 +24,11 @@
 
 
   </div>
+
   <?php
   // include ('barcodereader.php');
   ?>
 
 
 </div>
+<!-- end of container-fluid -->
