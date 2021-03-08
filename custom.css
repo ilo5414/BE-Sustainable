@@ -15,7 +15,9 @@ body {
 }
 
 
-
+.navbar{
+  min-height: 400px;
+}
 
 
 .bg-darkblue {
