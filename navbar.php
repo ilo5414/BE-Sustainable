@@ -13,7 +13,7 @@
   <div class="dropdown-menu dropdown-menu-right" id="collapsibleNavbar">
     <ul class="dropdown ">
       <li class="nav-item">
-        <a class="nav-link" href="dist/index.html">Find products</a>
+        <a class="nav-link" href="index.php?page=barcodereader">Find products</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="index.php?page=aboutus">About us</a>
