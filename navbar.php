@@ -3,7 +3,7 @@
 <nav class="navbar navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand" href="index.php?page=home"><img src="images/white_logo.png" style="height:200px" alt=""></a>
-    <a class="navbar-brand" href="index.php?page=home" alt="">BE Sustainable</a>
+    
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -13,7 +13,7 @@
   <!-- Navbar links -->
   <div class="dropdown-menu dropdown-menu-right" id="collapsibleNavbar">
     <ul class="dropdown ">
-      <!-- <li class="nav-item"> -->
+
         <a class="nav-link" href="index.php?page=barcodereader">Find products</a>
       <!-- </li> -->
       <!-- <li class="nav-item"> -->
