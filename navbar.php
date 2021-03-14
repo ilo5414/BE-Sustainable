@@ -3,7 +3,7 @@
 <nav class="navbar navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand" href="index.php?page=home"><img src="images/white_logo.png" style="height:200px" alt=""></a>
-    <a class="navbar-brand" href="index.php?page=home" alt="">BE Sustainable</a>
+    
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
