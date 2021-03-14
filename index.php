@@ -7,21 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-    #container {
-    	margin: 0px auto;
-    	width: 500px;
-    	height: 375px;
-    	border: 10px #333 solid;
-    }
-    #videoElement {
-    	width: 500px;
-    	height: 375px;
-    	background-color: #666;
-    }
-    </style>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
