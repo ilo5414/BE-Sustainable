@@ -15,7 +15,8 @@
     <ul class="dropdown ">
 
         <a class="nav-link" href="index.php?page=barcodereader">Find products</a>
-
+      <!-- </li> -->
+      <!-- <li class="nav-item"> -->
         <a class="nav-link" href="index.php?page=aboutus">About us</a>
       <!-- </li> -->
       <!-- <li class="nav-item"> -->
