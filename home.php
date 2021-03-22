@@ -5,7 +5,7 @@
 
 </div> -->
 
-<div class="container-fluid" >
+<div class="jumbotron"  >
 
 
 <div class="row">
