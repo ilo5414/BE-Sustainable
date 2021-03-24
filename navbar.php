@@ -1,6 +1,6 @@
 <!-- navbar -->
 
-<nav class="navbar navbar-light fixed-top ">
+<nav class="navbar navbar-light">
   <!-- Brand -->
   <a class="navbar-brand" href="index.php?page=home"><img src="images/white_logo.png" style="height:200px" alt=""></a>
 
