@@ -1,18 +1,11 @@
 /* This is the CSS page with all the custom css */
 
-.bg-darkblue {
-  background-color: #22211F;
-}
-
 @font-face {
     font-family: Hellix;
     src: url('Hellix-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
   }
-
-
-
 
 @font-face {
   font-family: 'a_ape_mountregular' ;
@@ -24,37 +17,29 @@
 body {
   /* font-family: Courier; */
   font-family: 'a_ape_mountregular' ;
-  color: black;
-}
-
-
-.container{
-  background-image: url('images/homepage_header.jpg');
-}
-
-
-.bg-darkblue {
+  color: white;
   background-color: #22211F;
 }
 
 
 
-.bg-image {
-  min-height: 100%;
-  min-width: 100%;
-  position: fixed;
+#certificates_himg {
+  background-image: url('images/certificates_header.jpg');
+  background-size: cover;
+}
+
+#homepage_himg {
+  background-image: url('images/homepage_header.jpg');
+  background-size: cover;
+}
+
+#aboutus_himg {
+  background-image: url('images/aboutus_header.jpg');
+  background-size: cover;
 }
 
 
-.dropdown-menu {
-
-  background-color: transparent;
-  border: none;
-  margin-right: 10px;
-}
-
-
-
+/* NAV BAR STYLES------------------- */
 .navbar {
   padding-right: 100px;
   min-height: 200px;
@@ -65,23 +50,33 @@ body {
   color: white;
 }
 
+.dropdown-menu {
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+}
 
+.jumbotron {
+  background-color: transparent;
+}
 
+.container-fluid {
+  text-align: center;
+}
+
+.fern_img {
+  background-image: url('images/fern_img.png');
+  background-size: cover;
+}
+
+/* section is a div card placed around sets of information which needs spacing */
+.section {
+  margin-bottom: 10%;
+}
+
+.mission_info {
+  text-align: center;
+}
 #interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
 	#interactive.viewport > canvas, #interactive.viewport > video {max-width: 100%;width: 100%;}
 	canvas.drawing, canvas.drawingBuffer {position: absolute; left: 0; top: 0;}
-
-
-.jumbotron {
- background: url('images/homepage_header.jpg') fixed center no-repeat;
- background-size: cover;
- margin-bottom: 0;
- padding-top: 20%;
-}
-
-.jumbotron aboutus_header{
- background: url('images/aboutus_header.jpg') fixed center no-repeat;
- background-size: cover;
- margin-bottom: 0;
- padding-top: 20%;
-}
