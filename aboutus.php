@@ -6,8 +6,8 @@
   <?php include("navbar.php"); ?>
 
 
-  <div class="section">
-      <h1 class="display-4">Product Certificates!</h1>
+  <div class=" txt_align_center section">
+      <h1 class="display-4">About Us!</h1>
       <div class="section">
         <h1 class='display-6'>OUR MISSION</h1>
         <h1 class='display-6'>WHO WE ARE</h1>
