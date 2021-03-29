@@ -1,99 +1,95 @@
 /* This is the CSS page with all the custom css */
 
-.bg-darkblue {
-  background-color: #22211F;
-}
-
-
-/* @font-face {
-    font-family: 'Hellix';
-    src: local('Hellix Medium'), local('Hellix-Medium'),
-        url('Hellix-Medium/Hellix-Medium.woff2') format('woff2'),
-        url('Hellix-Medium/Hellix-Medium.woff') format('woff'),
-        url('Hellix-Medium/Hellix-Medium.ttf') format('truetype');
+@font-face {
+    font-family: Hellix;
+    src: url('Hellix-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
-  } */
-
-  @font-face {
-      font-family: Hellix;
-      src: url('Hellix-Medium.woff') format('woff');
-      font-weight: 500;
-      font-style: normal;
-    }
-
-
-
+  }
 
 @font-face {
-    font-family: a_ape_mountregular ;
-    src: url('webfontkit-20210304-234208/aapemount-webfont.woff2') format('woff2'),
-         url('webfontkit-20210304-234208/aapemount-webfont.woff') format('woff');
+  font-family: 'a_ape_mountregular' ;
+  src: url('Fonts/webfontkit-20210304-234208/aapemount-webfont.woff2') format('woff2'),
+       url('Fonts/webfontkit-20210304-234208/aapemount-webfont.woff') format('woff');
 
   }
 
 body {
-
   /* font-family: Courier; */
-  font-family: a_ape_mountregular ;
-
+  font-family: 'a_ape_mountregular' ;
   color: white;
-
-}
-
-
-
-
-
-.bg-darkblue {
-
   background-color: #22211F;
-
 }
 
 
 
-
-
-.home_banner {
-
-  background: url('images/lode-lagrainge-44wjflU1ATc-unsplash.jpg');
-
+#certificates_himg {
+  background-image: url('images/certificates_header.jpg');
   background-size: cover;
+  height: 100%;
+}
 
+#homepage_himg {
+  background-image: url('images/homepage_header.jpg');
+  background-size: cover;
+  height: 100%;
+}
 
+#aboutus_himg {
+  background-image: url('images/aboutus_header.jpg');
+  background-size: cover;
+  height: 100%;
 }
 
 
-
-.dropdown-menu {
-
-  background-color: transparent;
-
-  border: none;
-
-  margin-right: 10px;
-
-
-}
-
-
-
+/* NAV BAR STYLES------------------- */
 .navbar {
   padding-right: 100px;
   min-height: 200px;
+  margin-bottom: 0;
 }
 
 .nav-link {
   color: white;
 }
 
+.dropdown-menu {
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+}
 
+.jumbotron {
+  background-color: transparent;
+}
 
+.container-fluid {
+  text-align: center;
+  width: 100%;
+  padding: 0;
+}
+
+.fern_img {
+  background-image: url('images/fern_img.png');
+  background-size: cover;
+
+}
+
+/* section is a div card placed around sets of information which needs spacing */
+.section {
+  margin-bottom: 10%;
+}
+
+.mission_info {
+  text-align: center;
+}
+
+.card{
+  background-color: white;
+  border-radius: 25px 25px 25px 0px;
+  color: black;
+  margin: 20px;
+}
 #interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
 	#interactive.viewport > canvas, #interactive.viewport > video {max-width: 100%;width: 100%;}
 	canvas.drawing, canvas.drawingBuffer {position: absolute; left: 0; top: 0;}
-
-.nav-link {
-  color: white;
-}

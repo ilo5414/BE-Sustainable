@@ -1,11 +1,9 @@
 
-<!-- background image -->
-<!-- <div class="jumbotron home_banner" style="height:1000px;">
 
+<div class="container-fluid" id="homepage_himg">
 
-</div> -->
-
-<div class="container-fluid" >
+<?php include("navbar.php"); ?>
+<div class="jumbotron"  >
 
 
 <div class="row">
@@ -24,6 +22,8 @@
 
 
 
+
+</div>
 
 </div>
 <!-- end of container-fluid -->
