@@ -1,4 +1,6 @@
 <!-- form to enter new item -->
+<h1 class="display-4">enter new item</h1>
+<br>
 
 <form action="index.php?page=insertitem" method="post" enctype="multipart/form-data">
   <!-- name -->
@@ -13,9 +15,6 @@
     <input class="form-control" required type="number" name="item_code" placeholder="item barcode">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect2">Item certificates</label>
-    <select multiple class="form-control" required name="item_cert" placeholder="item certification">
-      <option>1</option>
     <br>
   <!-- certifications -->
   <p>certifications</p>
@@ -26,8 +25,6 @@
   $certinput_aa = mysqli_fetch_assoc($certinput_qry);
   $n = 0;
 
-    </select>
-  </div>
   do {
     $cert = $certinput_aa['certname'];
     $n = $n+1;
@@ -40,12 +37,29 @@
 <br>
 <?php } while($certinput_aa = mysqli_fetch_assoc($certinput_qry));
 ?>
+</select>
+</div>
 
 <!-- upload logo as img -->
 <br>
   <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <label for="exampleFormControlFile1">upload logo</label>
+
+    <label for="exampleFormControlFile1">upload img</label>
     <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload">
   </div>
   <button type="submit" class="btn btn-primary mb-2" name="submit_button">Submit</button>
+
+</form>
+<!-- form errorcodes -->
+<?php
+if (isset($_GET['error'])) {
+$error = $_GET['error'];
+echo("<div class='alert alert-danger' role='alert'>
+    insert error= $error
+  </div> ");
+} elseif (isset($name)) {
+echo("$name, $barcode, $name.jpg");
+} else {
+echo "";
+}
+?>
