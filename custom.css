@@ -26,16 +26,19 @@ body {
 #certificates_himg {
   background-image: url('images/certificates_header.jpg');
   background-size: cover;
+  height: 100%;
 }
 
 #homepage_himg {
   background-image: url('images/homepage_header.jpg');
   background-size: cover;
+  height: 100%;
 }
 
 #aboutus_himg {
   background-image: url('images/aboutus_header.jpg');
   background-size: cover;
+  height: 100%;
 }
 
 
@@ -62,11 +65,14 @@ body {
 
 .container-fluid {
   text-align: center;
+  width: 100%;
+  padding: 0;
 }
 
 .fern_img {
   background-image: url('images/fern_img.png');
   background-size: cover;
+
 }
 
 /* section is a div card placed around sets of information which needs spacing */
@@ -76,6 +82,13 @@ body {
 
 .mission_info {
   text-align: center;
+}
+
+.card{
+  background-color: white;
+  border-radius: 25px 25px 25px 0px;
+  color: black;
+  margin: 20px;
 }
 #interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
 	#interactive.viewport > canvas, #interactive.viewport > video {max-width: 100%;width: 100%;}
