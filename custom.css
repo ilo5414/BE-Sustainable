@@ -65,7 +65,7 @@ body {
 }
 
 .container-fluid {
-  text-align: center;
+  /* text-align: center; */
   width: 100%;
   padding: 0;
 }
@@ -76,6 +76,9 @@ body {
 
 }
 
+.txt_align_center {
+  text-align: center;
+}
 /* section is a div card placed around sets of information which needs spacing */
 .section {
   margin-bottom: 10%;
@@ -91,6 +94,12 @@ body {
   color: black;
   margin: 20px;
 }
+
+.segment {
+  padding: 5%;
+  align-items: center;
+}
+
 #interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
 	#interactive.viewport > canvas, #interactive.viewport > video {max-width: 100%;width: 100%;}
 	canvas.drawing, canvas.drawingBuffer {position: absolute; left: 0; top: 0;}
