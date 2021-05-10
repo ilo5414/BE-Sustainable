@@ -66,48 +66,40 @@
 
 
        <div class="row sb_cards">
-         <div class="col-3" >
-           <div class="card">
-             <h1>Fair trade</h1>
-             <p>One of the three componets of sustainbility here we want to make
-               companies accountable for their actions but also endorse the companies
-               that go the extra mile</p>
-           </div>
-         </div>
-         <!-- end of col-3 -->
-
-         <div class="col-3">
-           <div class="card">
-             <h1>SPCA</h1>
-             <p>Our environmental footprint is huge and we want to encourage people to buy
-               products that helo emilminate that and force companies to make </p>
-             </div>
-         </div>
-         <!--end of col-3 -->
-
-         <div class="col-3">
-           <div class="card">
-             <h1>USDA organic</h1>
-             <p>Why buy a product that only benefits yourself when you can purchase a product that
-             not benefits you but also people in need. </p>
-           </div>
-         </div>
-         <!-- end of col-3 -->
-
-         <div class="col-3">
-           <div class="card">
-             <h1>green tick</h1>
-             <p>Why buy a product that only benefits yourself when you can purchase a product that
-             not benefits you but also people in need. </p>
-           </div>
-         </div>
-         <!-- end of col-3 -->
-
-       </div>
-       <!-- end of row sb_cards -->
-
-     </div>
-     <!-- fern_img  ends -->
+        <?php
+          // the sql stament that will be run in the data base to obtain the information wanted
+          $cert_sql = "SELECT * FROM cert";
+        // this takes the slq written above to the data base and runs it to obtain the information wanted
+          $cert_qry = mysqli_query($dbconnect, $cert_sql);
+        // this turns the inforamtion retrieved into an assosiative array
+          $cert_aa = mysqli_fetch_assoc($cert_qry);
 
 
- </div>
+        // do while loop taking the information from the array and turning it into variables
+        do {
+          $cert_name = $cert_aa['certname'];
+          $logo_image = $cert_aa['logo'];
+          $about_info = $cert_aa['about'];
+
+        // div surrounding the basic booking information as a link
+          ?><div class="col-3" ><?php
+            ?><div class="card">>
+            <img src="logos/<?php echo $logo_image; ?>">
+            <h1><?php $cert_name ?></h1>
+            <p><?php $about_info ?></p>
+
+            </div>
+          </div>
+          <!-- // booking link div ends -->
+
+
+
+
+
+      <?php
+        // the while statement for the loop
+      } while ($cert_aa = mysqli_fetch_assoc($cert_qry));
+
+         ?>
+        </div>
+        <!-- booking display div ends -->
