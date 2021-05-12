@@ -3,6 +3,8 @@ include("navbar.php");
 ?>
 <div class="container-fluid" id="homepage_himg">
 
+  <?php include("navbar.php"); ?>
+
 
 <div class="jumbotron"  >
 

@@ -16,10 +16,11 @@
 
 body {
   /* font-family: Courier; */
-  font-family: 'a_ape_mountregular' ;
+  /* font-family: 'a_ape_mountregular' ; */
+  font-family: Courier New;
   color: white;
-  background-color: #22211F;;
-  /* #22211F; */
+  background-color: #22211F;
+
 }
 
 
@@ -93,6 +94,11 @@ body {
   border-radius: 25px 25px 25px 0px;
   color: black;
   margin: 20px;
+  padding: 5%;
+}
+
+.card img {
+  max-height: 200px;
 }
 
 .segment {

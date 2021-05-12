@@ -15,20 +15,15 @@
     <ul class="dropdown ">
 
         <a class="nav-link" href="index.php?page=barcodereader">Find products</a>
-      <!-- </li> -->
-      <!-- <li class="nav-item"> -->
+
+        <a class="nav-link" href="index.php?page=certificates">Product certificates</a>
+
         <a class="nav-link" href="index.php?page=aboutus">About us</a>
-      <!-- </li> -->
-      <!-- <li class="nav-item"> -->
-        <a class="nav-link" href="index.php?page=certificates">product certificates</a>
-      <!-- </li> -->
-      <!-- <li class="nav-item"> -->
+
         <a class="nav-link" href="index.php?page=yourhelp">Your help</a>
-      <!-- </li> -->
-      <!-- <li class="nav-item"> -->
+
         <a class="nav-link" href="index.php?page=findus">Find us</a>
-      <!-- </li> -->
-      <!-- <li class="nav-item"> -->
+
         <a class="nav-link" href="index.php?page=enteritem">Enter item</a>
       <!-- </li> -->
     </ul>
