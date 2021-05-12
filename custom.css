@@ -94,6 +94,11 @@ body {
   border-radius: 25px 25px 25px 0px;
   color: black;
   margin: 20px;
+  padding: 5%;
+}
+
+.card img {
+  max-height: 200px;
 }
 
 .segment {
