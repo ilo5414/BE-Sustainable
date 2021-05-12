@@ -1,4 +1,6 @@
-
+<?php
+include("navbar.php");
+?>
 
   <div class="col-6">
     <!-- item div -->
