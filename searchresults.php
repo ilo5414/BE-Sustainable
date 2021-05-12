@@ -1,3 +1,8 @@
+
+<?php
+include("navbar.php");
+?>
+
 <?php
 
   $search = $_POST['search'];
@@ -24,7 +29,9 @@
         ?>
 
 <!-- student card -->
-        <div class="card col-2" style="color:black;">
+
+        <div class="card col-3" style="color:black;">
+          <a href="index.php?page=productpage&productID=<?php echo "$productID"; ?>">
           <!-- img -->
           <img class="card-img-top" src="uploads/<?php echo $name; ?>.jpg" alt="<?php echo $name; ?>.jpg">
           <div class="card-body">
@@ -47,7 +54,9 @@
 
       ?>
           </div>
+          </a>
         </div>
+
       <?php
         } while ($result_aa = mysqli_fetch_assoc($result_qry));
 ?></div><?php
