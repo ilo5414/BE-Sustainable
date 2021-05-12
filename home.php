@@ -19,7 +19,10 @@
     </form>
 
 
-  </div>
+    <?php include("display.php"); ?>
+
+
+
 
 
 

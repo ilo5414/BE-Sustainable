@@ -2,8 +2,9 @@
 // inserts new item into database
 $name = $_POST['item_name'];
 $code = $_POST['item_code'];
-$option = $_POST['option1'];
-echo "$option";
+$type = $_POST['item_type'];
+
+
 
 // check that the barcode or name is not already in database
 $result_sql = "SELECT * FROM products WHERE productbarcode LIKE '$code' OR productname LIKE '$name'";
@@ -115,8 +116,8 @@ if(mysqli_num_rows($result_qry)!=0) {
 
 // add product
 // add to table if no duplicates
-$sql = "INSERT INTO products (productname, productbarcode, image)
-VALUES ('$name', '$code', '$name.jpg')";
+$sql = "INSERT INTO products (productname, productbarcode, image, typeID)
+VALUES ('$name', '$code', '$name.jpg', '$type')";
 
   if ($dbconnect->query($sql) == TRUE && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file . $newfilename)) {
 //if insert succesful, go to homepage
@@ -127,3 +128,5 @@ VALUES ('$name', '$code', '$name.jpg')";
   }
 
 }
+echo "test";
+echo "$type";

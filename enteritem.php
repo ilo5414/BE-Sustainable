@@ -1,4 +1,9 @@
 <!-- form to enter new item -->
+
+<?php
+include("navbar.php");
+?>
+
 <h1 class="display-4">enter new item</h1>
 <br>
 
@@ -36,6 +41,31 @@
 </div>
 <br>
 <?php } while($certinput_aa = mysqli_fetch_assoc($certinput_qry));
+?>
+</select>
+</div>
+
+<!-- type -->
+<p>type</p>
+<?php
+// select all type
+$typeinput_sql="SELECT * FROM type";
+$typeinput_qry=mysqli_query($dbconnect, $typeinput_sql);
+$typeinput_aa = mysqli_fetch_assoc($typeinput_qry);
+
+do {
+  $type = $typeinput_aa['typeID'];
+  $typename = $typeinput_aa['typename'];
+
+?>
+<div class="form-group">
+  <span></span><label class="form-check-label" for="<?php echo "$type"?>">
+    <?php echo $typename;?>
+
+    <input class="form-check-input" type="radio" value="<?php echo "$type"?>" name="item_type" id="radio">
+  </label>
+</div>
+<?php } while($typeinput_aa = mysqli_fetch_assoc($typeinput_qry));
 ?>
 </select>
 </div>
