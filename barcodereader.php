@@ -1,3 +1,6 @@
+<?php
+include("navbar.php");
+?>
 <iframe src="https://codesandbox.io/embed/barcode-scanner-0ksx3?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="Barcode-Scanner"
