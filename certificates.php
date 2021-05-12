@@ -83,10 +83,10 @@
 
         // div surrounding the basic booking information as a link
           ?><div class="col-3" ><?php
-            ?><div class="card">>
+            ?><div class="card">
             <img src="logos/<?php echo $logo_image; ?>">
-            <h1><?php $cert_name ?></h1>
-            <p><?php $about_info ?></p>
+            <h1><?php echo $cert_name ?></h1>
+            <p><?php echo $about_info ?></p>
 
             </div>
           </div>
