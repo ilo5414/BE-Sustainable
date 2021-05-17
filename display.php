@@ -1,5 +1,10 @@
 <!-- page displays food tiems -->
-
+<form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults">
+  <div class="form-group">
+  <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</div>
+</form>
 <!-- dropdown -->
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,7 +26,7 @@
 <!-- display food items -->
 <div class="display">
   <?php
-
+// type name is in html request
   if (isset($_GET['type_name'])) {
     $type_name = $_GET['type_name'];
   } else {
