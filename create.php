@@ -1,8 +1,4 @@
-<!-- this is the login page -->
-<!-- here there is a form that allows users to input a username and password
-that will be taken to the verify page to see if the input is correct -->
-
-<div class="container-fluid" id="homepage_himg">
+<div class="container-fluid" id="">
 
   <?php include("navbar.php"); ?>
 
@@ -11,17 +7,15 @@ that will be taken to the verify page to see if the input is correct -->
 
 
 <!-- <div class="row"> -->
+<h1>CREATE AN ACCOUNT</h1>
 
-<h1>LOGIN</h1>
-
-
-  <form class="logform" action="index.php?page=verify" method="post">
+  <form class="logform" action="index.php?page=hash" method="post">
     <div class="form-group">
       <label>Username</label>
         <input type="text" name="username" class="form-control" value="">
     </div>
 
-    <div class="form-group">
+    <div class="form-group" action="index.php?=hash" menthod="post">
       <label>Password</label>
         <input type="text" name="password" class="form-control" value="">
     </div>
@@ -31,7 +25,7 @@ that will be taken to the verify page to see if the input is correct -->
 
 
 
-  <a href="index.php?page=create">Need to create an account?</a>
+
 <!-- </div> -->
 
 </div>
