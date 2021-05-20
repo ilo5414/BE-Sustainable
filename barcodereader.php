@@ -7,8 +7,9 @@ include("navbar.php");
 <button onclick="myFunction()">Click me</button>
 <script type="text/javascript">
 function myFunction() {
+  document.write("hi");
   var iframe = document.getElementByTagName("strong");
-  document.write(iframe);
+  exec(document.getElementByTagName("strong");)
 }
 </script>
 <?php include("display.php"); ?>
