@@ -61,6 +61,7 @@ body {
   margin-right: 10px;
 }
 
+
 .jumbotron {
   background-color: transparent;
 }
@@ -95,10 +96,16 @@ body {
   color: black;
   margin: 20px;
   padding: 5%;
+  text-align: center;
 }
 
 .card img {
   max-height: 200px;
+
+}
+
+.card h1 {
+  font-size: 30px;
 }
 
 .segment {

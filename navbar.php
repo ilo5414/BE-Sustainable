@@ -14,13 +14,13 @@
   <div class="dropdown-menu dropdown-menu-right" id="collapsibleNavbar">
     <ul class="dropdown ">
 
+        <a class="nav-link" href="index.php?page=login">Account</a>
+
         <a class="nav-link" href="index.php?page=barcodereader">Find products</a>
 
         <a class="nav-link" href="index.php?page=certificates">Product certificates</a>
 
         <a class="nav-link" href="index.php?page=aboutus">About us</a>
-
-        <a class="nav-link" href="index.php?page=yourhelp">Your help</a>
 
         <a class="nav-link" href="index.php?page=findus">Find us</a>
 
