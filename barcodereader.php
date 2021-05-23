@@ -16,13 +16,6 @@ function myFunction() {
 <!--
 }
 </script> -->
-<iframe id="frame" src="https://zxing-ngx-scanner-mbkcv7.stackblitz.io" style="border: none; height: 350px; width: 100%"></iframe>
-
-   <div style="padding: 1rem">
-       <h2>Window</h2>
-       <div id="message" style="border: 1px solid #cbd5e0; height: 12rem; margin: .5rem 0; overflow: auto; padding: .5rem"></div>
-   </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
    const messageEle = document.getElementById('message');
@@ -35,8 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
        messageEle.innerHTML = `Receive "${data.message}" at ${date}<br>` + messageEle.innerHTML;
    });
 
-   
+
 });
 </script>
+
+<!-- <iframe id="frame" src="https://zxing-ngx-scanner-mbkcv7.stackblitz.io" style="border: none; height: 350px; width: 100%"></iframe> -->
+
+<h1>I am the main page</h1>
+		<iframe id="iframe" src="https://angular-ivy-ukvmzn.stackblitz.io/" height="600" width="800">
+		</iframe>
+
+
+<script>
+	window.addEventListener('message', function() {
+		alert("Message received");
+		console.log("message received");
+	}, false);
+</script>
+
+   <div style="padding: 1rem">
+       <h2>Window</h2>
+       <div id="message" style="border: 1px solid #cbd5e0; height: 12rem; margin: .5rem 0; overflow: auto; padding: .5rem"></div>
+   </div>
+
+
 
 <?php include("display.php"); ?>
