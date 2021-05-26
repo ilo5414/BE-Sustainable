@@ -9,28 +9,13 @@ include("navbar.php");
 <!-- <iframe id="frame" src="https://zxing-ngx-scanner-mbkcv7.stackblitz.io" style="border: none; height: 350px; width: 100%"></iframe> -->
 
 <script type="text/javascript">
-window.addEventListener('message', receiveMessage, false);
-function receiveMessage(event) {
-          alert("got message: " + event.data);
-      }
-
-      $.receiveMessage(
-        function(e){
-          alert( e.data );
-        },
-        'https://angular-ivy-ukvmzn.stackblitz.io/'
-      );
-      $.receiveMessage(
-    function(event){
-        alert("event.data: "+event.data);
-                $("#testresults").append('<h1>'+event.data+'<h1>');
-
-    },
-    'https://angular-ivy-ukvmzn.stackblitz.io/ OR SOMETHING'
-
-);
+window.addEventListener('iframe_message', function(e) {
+var url = e.detail.url
+window.open(url, '_blank')
+}, false);
 </script>
 
+<hello data="{{event.data}}"></hello>
 
 
 <h1>I am the main page</h1>
