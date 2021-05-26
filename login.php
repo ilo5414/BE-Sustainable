@@ -29,6 +29,12 @@ that will be taken to the verify page to see if the input is correct -->
     <button type="submit" class="btn btn-primary" name="button">Submit</button>
   </form>
 
+<?php if (isset($_GET['error'])) {
+  ?><div class="alert alert-warning" role="alert">
+    You have entered the wrong username or password.
+  </div><?php
+} else {
+}?>
 
 
   <a href="index.php?page=create">Need to create an account?</a>
