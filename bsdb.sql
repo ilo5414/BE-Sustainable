@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 24, 2021 at 11:17 PM
+-- Generation Time: May 24, 2021 at 11:33 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -127,6 +127,25 @@ INSERT INTO `type` (`typeID`, `typename`) VALUES
 (3, 'pantry'),
 (4, 'frozen');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `userID` int(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userID`, `username`, `password`) VALUES
+(2, 'sophia', '$2y$10$L5UjXtQ0SbvPlR2Bo9cBU./ld0RWxptaMKS/LQ85L74Ij6ghZvmky');
+
 --
 -- Indexes for dumped tables
 --
@@ -156,6 +175,12 @@ ALTER TABLE `type`
   ADD PRIMARY KEY (`typeID`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`userID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -182,6 +207,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `type`
   MODIFY `typeID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `userID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
