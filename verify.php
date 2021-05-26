@@ -20,7 +20,7 @@
     header("location: index.php?page=admin");
 
   } else {
-    // header("location: index.php?page=login&error=error  ");
+    header("location: index.php?page=login&error=error  ");
 
 
 
