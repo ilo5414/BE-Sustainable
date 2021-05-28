@@ -11,15 +11,11 @@
 
 
 
-    
-
-
-    <?php include("display.php"); ?>
 
 
 
-
-
+    <?php include("display.php");
+?>
 
 
 </div>

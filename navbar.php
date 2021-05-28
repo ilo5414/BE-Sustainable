@@ -25,6 +25,8 @@
         <a class="nav-link" href="index.php?page=findus">Find us</a>
 
         <a class="nav-link" href="index.php?page=enteritem">Enter item</a>
+
+        <p><a href = "index.php?page=logout">logout</a></p>
       <!-- </li> -->
     </ul>
   </div>

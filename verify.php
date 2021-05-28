@@ -18,6 +18,10 @@
   if (password_verify($password, $hash)) {
     $_SESSION['admin'] = "$username";
     header("location: index.php?page=admin");
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $username; // $username coming from the form, such as $_POST['username']
+                                       // something like this is optional, of course
+
 
   } else {
     header("location: index.php?page=login&error=error  ");
