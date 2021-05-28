@@ -10,7 +10,8 @@
 
   <?php
   session_start();
-  unset($_SESSION['admin']);
+  // unset($_SESSION['admin']);
+  session_destroy();
   echo "you have logged out";
 
    ?>
