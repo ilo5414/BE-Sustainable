@@ -31,19 +31,29 @@
          <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
          <form id="starform" action="<?php echo $_SERVER['PHP_SELF'];?>" method="get">
          <input type='hidden' name='cert_name' value='<?php echo "$cert_name";?>'/>
-         <label for="id-of-input" class="custom-checkbox">
-           <input type="checkbox" id="star" name="star" onChange="this.form.submit()" />
-           <i class="glyphicon glyphicon-star-empty"></i>
-           <i class="glyphicon glyphicon-star"></i>
-           <span>Favorite</span>
-         </label>
 
-         <?php
+         <!-- only show star if logged in -->
+         <?php  session_start();
+         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+           ?>
+           <!-- star -->
+           <label for="id-of-input" class="custom-checkbox">
+             <input type="checkbox" id="star" name="star" onChange="this.form.submit()" />
+             <i class="glyphicon glyphicon-star-empty"></i>
+             <i class="glyphicon glyphicon-star"></i>
+          <!-- star ends  -->
+             <span>Favorite</span>
+           </label>
+
+           <?php
+         } else {
+         }
+
     if(isset($_GET['star'])){
 
         // assigns inputted rating, comment and bookID to variables
           $userID = $_POST['userID'];
-          
+
         // inserts into database
           $sql = "INSERT INTO favcert (userID, certID)
           VALUES ('$userID', '$certID')";
