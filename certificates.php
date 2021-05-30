@@ -1,4 +1,6 @@
+<?php session_start(); ?>
 
+<p>welcome user <?php echo $_SESSION['userID']; ?></p>
 
 <div class="container-fluid">
    <div class="section" id="certificates_himg">

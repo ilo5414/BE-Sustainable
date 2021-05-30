@@ -1,5 +1,9 @@
-
+<?php session_start();
+$userID = $_SESSION['userID']; ?>
 <!-- page calls cert info and puts into card  -->
+
+
+
 <div class="row sb_cards">
  <?php
    // the sql stament that will be run in the data base to obtain the information wanted
@@ -29,16 +33,17 @@
 
 <!-- star rating -->
          <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-         <form id="starform" action="<?php echo $_SERVER['PHP_SELF'];?>" method="get">
-         <input type='hidden' name='cert_name' value='<?php echo "$cert_name";?>'/>
+         <form id="starform" action="index.php?page=starinsertitem" method="post">
+         <input type="hidden" name='certID' value='<?php echo "$certID";?>'/>
+         <input type='hidden' name='userID' value='<?php echo "$userID";?>'/>
 
          <!-- only show star if logged in -->
-         <?php  session_start();
-         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+         <?php
+         if (isset($_SESSION['userID'])) {
            ?>
            <!-- star -->
            <label for="id-of-input" class="custom-checkbox">
-             <input type="checkbox" id="star" name="star" onChange="this.form.submit()" />
+             <input type="checkbox" id="star" name="star" onChange="this.form.submit();" />
              <i class="glyphicon glyphicon-star-empty"></i>
              <i class="glyphicon glyphicon-star"></i>
           <!-- star ends  -->
@@ -49,15 +54,7 @@
          } else {
          }
 
-    if(isset($_GET['star'])){
 
-        // assigns inputted rating, comment and bookID to variables
-          $userID = $_POST['userID'];
-
-        // inserts into database
-          $sql = "INSERT INTO favcert (userID, certID)
-          VALUES ('$userID', '$certID')";
-      }
     ?>
 
      </form>
@@ -65,10 +62,6 @@
      </div>
    </div>
    <!-- // booking link div ends -->
-
-
-
-
 
 <?php
  // the while statement for the loop
