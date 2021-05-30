@@ -1,5 +1,9 @@
-
+<?php session_start();
+$userID = $_SESSION['userID']; ?>
 <!-- page calls cert info and puts into card  -->
+
+
+
 <div class="row sb_cards">
  <?php
    // the sql stament that will be run in the data base to obtain the information wanted
@@ -15,6 +19,7 @@
    $cert_name = $cert_aa['certname'];
    $logo_image = $cert_aa['logo'];
    $about_info = $cert_aa['about'];
+   $certID = $cert_aa['certID'];
 
  // div surrounding the basic booking information as a link
    ?><div class="col-3" ><?php
@@ -26,13 +31,37 @@
      <h1><?php echo $cert_name ?></h1>
      <p><?php echo $about_info ?></p>
 
+<!-- star rating -->
+         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+         <form id="starform" action="index.php?page=starinsertitem" method="post">
+         <input type="hidden" name='certID' value='<?php echo "$certID";?>'/>
+         <input type='hidden' name='userID' value='<?php echo "$userID";?>'/>
+
+         <!-- only show star if logged in -->
+         <?php
+         if (isset($_SESSION['userID'])) {
+           ?>
+           <!-- star -->
+           <label for="id-of-input" class="custom-checkbox">
+             <input type="checkbox" id="star" name="star" onChange="this.form.submit();" />
+             <i class="glyphicon glyphicon-star-empty"></i>
+             <i class="glyphicon glyphicon-star"></i>
+          <!-- star ends  -->
+             <span>Favorite</span>
+           </label>
+
+           <?php
+         } else {
+         }
+
+
+    ?>
+
+     </form>
+
      </div>
    </div>
    <!-- // booking link div ends -->
-
-
-
-
 
 <?php
  // the while statement for the loop
