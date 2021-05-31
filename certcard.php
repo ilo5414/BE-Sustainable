@@ -32,7 +32,7 @@ $userID = $_SESSION['userID']; ?>
      <p><?php echo $about_info ?></p>
 
 <!-- star rating -->
-         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
 
          <form id="starform" action="index.php?page=starinsertitem" method="post">
          <input type="hidden" name='certID' value='<?php echo "$certID";?>'/>
@@ -45,8 +45,8 @@ $userID = $_SESSION['userID']; ?>
            <!-- star -->
            <label for="id-of-input" class="custom-checkbox">
              <input type="checkbox" id="star" name="star" onChange="this.form.submit();" />
-             <i class="glyphicon glyphicon-star-empty"></i>
-             <i class="glyphicon glyphicon-star"></i>
+            
+
           <!-- star ends  -->
              <span>Favorite</span>
            </label>
@@ -55,7 +55,7 @@ $userID = $_SESSION['userID']; ?>
          } else {
          }
 
-   
+
 
     ?>
 
