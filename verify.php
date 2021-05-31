@@ -22,7 +22,9 @@
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username; // $username coming from the form, such as $_POST['username']
                                        // something like this is optional, of course
+
     $_SESSION['userID'] = $userID; 
+
 
   } else {
     header("location: index.php?page=login&error=error  ");

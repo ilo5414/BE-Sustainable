@@ -33,6 +33,7 @@ $userID = $_SESSION['userID']; ?>
 
 <!-- star rating -->
          <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
          <form id="starform" action="index.php?page=starinsertitem" method="post">
          <input type="hidden" name='certID' value='<?php echo "$certID";?>'/>
          <input type='hidden' name='userID' value='<?php echo "$userID";?>'/>
@@ -54,6 +55,7 @@ $userID = $_SESSION['userID']; ?>
          } else {
          }
 
+   
 
     ?>
 
