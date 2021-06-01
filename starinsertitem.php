@@ -10,7 +10,7 @@ echo "$userID";
 echo "$certID";
 
 
-if ($checked='starunchecked') {
+if ($checked=='FALSE') {
 
 
     // inserts into database
@@ -19,18 +19,18 @@ if ($checked='starunchecked') {
 
       if ($dbconnect->query($sql) == TRUE) {
     //if insert succesful, go to homepage
-        header('Location: index.php?page=certificates');
+        header("Location: index.php?page=certificates&test='$checked'");
 
       } else {
         echo "Error: " . $sql . "<br>" . $dbconnect->error;
       }
-}else {
+}elseif ($checked=='TRUE'){
   // inserts into database
     $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
 
     if ($dbconnect->query($sql) == TRUE) {
   //if insert succesful, go to homepage
-      header('Location: index.php?page=certificates');
+      header("Location: index.php?page=certificates&test='$checked'");
 
     } else {
       echo "Error: " . $sql . "<br>" . $dbconnect->error;
