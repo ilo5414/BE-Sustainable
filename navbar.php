@@ -25,7 +25,7 @@ else {
   <div class="dropdown-menu dropdown-menu-right" id="collapsibleNavbar">
     <ul class="dropdown ">
 
-        <a class="nav-link" href="index.php?page=login">Account</a>
+        <a class="nav-link" href="index.php?page=admin">Account</a>
 
         <a class="nav-link" href="index.php?page=barcodereader">Find products</a>
 
