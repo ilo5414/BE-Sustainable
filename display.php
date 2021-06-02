@@ -66,6 +66,7 @@ echo "displaying $type_name";
             <div class="card-body">
               <!-- name -->
               <h5 class="card-title"><?php echo "$name $barcode"; ?></h5>
+              <!-- certificates -->
               <?php
 
               $cert_sql = "SELECT * FROM productcert JOIN products ON products.productID=productcert.productID JOIN cert ON cert.certID=productcert.certID WHERE products.productID LIKE '$productID';";
@@ -82,6 +83,9 @@ echo "displaying $type_name";
           }
 
         ?>
+        <!-- cert end -->
+
+        
             </div>
             </a>
           </div>

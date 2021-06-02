@@ -73,5 +73,7 @@
 
         </div>
         <!-- booking display div ends -->
-
-        <?php include ("certcard.php"); ?>
+        <?php
+        $call="";
+        $colno = 3;
+         include ("certcard.php"); ?>
