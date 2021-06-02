@@ -2,10 +2,6 @@
 
 <?php
 
-session_start();
-
-$userID = $_SESSION['userID'];
-
 if(!isset($_SESSION['admin'])) {
   header("location: index.php?page=login");
 
