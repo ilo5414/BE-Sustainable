@@ -9,7 +9,6 @@
 
 
   <?php
-  session_start();
   // unset($_SESSION['admin']);
   session_destroy();
   echo "you have logged out";

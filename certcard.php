@@ -1,9 +1,3 @@
-<?php session_start();
-$userID = $_SESSION['userID'];
-
-?>
-
-
 
 <!-- page calls cert info and puts into card  -->
 
