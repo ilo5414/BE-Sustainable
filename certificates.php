@@ -1,10 +1,16 @@
 
+
 <div class="container-fluid">
    <div class="section" id="certificates_himg">
 
 
 
-   <?php include("navbar.php"); ?>
+   <?php include("navbar.php");
+   if (isset($_SESSION['userID'])) {
+    ?> <p>welcome user <?php echo $_SESSION['userID']; ?></p><?php
+   }?>
+
+
 
    <div class="txt_align_center section">
        <h1 class="display-4">Product Certificates!</h1>
