@@ -52,13 +52,7 @@
           <!-- star ends  -->
            </label>
 
-           <?php
-         } else {
-         }
-
-
-
-    ?>
+    
 
      </form>
 
