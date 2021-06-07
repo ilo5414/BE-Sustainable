@@ -24,8 +24,10 @@ else {
   <!-- Navbar links -->
   <div class="dropdown-menu dropdown-menu-right" id="collapsibleNavbar">
     <ul class="dropdown ">
-
+      <!-- only show if logged in -->
+      <?php if (isset($_SESSION['userID'])) { ?>
         <a class="nav-link" href="index.php?page=admin">Account</a>
+      <?php } ?>
 
         <a class="nav-link" href="index.php?page=barcodereader">Find products</a>
 
@@ -36,6 +38,7 @@ else {
         <a class="nav-link" href="index.php?page=findus">Find us</a>
 
         <a class="nav-link" href="index.php?page=enteritem">Enter item</a>
+        <!-- only show if logged in -->
         <?php if (isset($_SESSION['userID'])) { ?>
         <p><a href = "index.php?page=logout">logout <?php echo $username; ?> ?</a></p>
       <?php }else { ?>

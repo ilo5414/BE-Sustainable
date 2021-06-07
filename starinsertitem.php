@@ -30,7 +30,7 @@ if ($checked=='FALSE') {
 
     if ($dbconnect->query($sql) == TRUE) {
   //if insert succesful, go to homepage
-      header("Location: index.php?page=certificates&test='$checked'");
+      header("Location: {$_SERVER['HTTP_REFERER']}");
 
     } else {
       echo "Error: " . $sql . "<br>" . $dbconnect->error;
