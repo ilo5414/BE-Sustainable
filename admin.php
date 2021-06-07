@@ -34,6 +34,11 @@
 <div class="row">
   <div class="col-6">
     <h1>Favourite products</h1>
+  <?php echo $userID; ?>
+<?php
+// $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
+$displaycondition = "JOIN productcert ON productcert.productID = products.productID WHERE fav=1 and userID=$userID";
+include ("display.php"); ?>
 
   </div>
 

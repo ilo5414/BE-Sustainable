@@ -76,12 +76,15 @@
 </svg><?php
              }?>
 
-          <!-- star ends  -->
+
            </label>
+
 
            <?php
          }
+
              ?>
+             <!-- star ends  -->
 
      </form>
 
