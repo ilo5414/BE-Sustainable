@@ -62,7 +62,7 @@ echo "displaying $type_name";
           <div class="card col-3" style="color:black;">
             <a href="index.php?page=productpage&productID=<?php echo "$productID"; ?>">
             <!-- img -->
-            <img class="card-img-top" src="uploads/<?php echo $name; ?>.jpg" alt="<?php echo $name; ?>.jpg">
+            <img class="card-img-top" src="product_images/<?php echo $name; ?>.png" alt="<?php echo $name; ?>.png">
             <div class="card-body">
               <!-- name -->
               <h5 class="card-title"><?php echo "$name $barcode"; ?></h5>
@@ -85,7 +85,7 @@ echo "displaying $type_name";
         ?>
         <!-- cert end -->
 
-        
+
             </div>
             </a>
           </div>

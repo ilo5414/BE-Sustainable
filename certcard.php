@@ -56,9 +56,9 @@
 
           ?>
           <!-- star -->
-          <label for="id-of-input" class="custom-checkbox" style="min-height: 40px;">
-            <input type="checkbox" id="star" name="star" onChange="this.form.submit();" />
 
+            <input type="checkbox" id="star" name="star" onChange="this.form.submit();" />
+            <label for="star" class="custom-checkbox" style="min-height: 40px;">
              <?php if (in_array("$certID",$favcertIDarray)) {
                // delete from favcert
                ?>
