@@ -28,7 +28,7 @@ body {
 #certificates_himg {
   background-image: url('images/certificates_header.jpg');
   background-size: cover;
-  height: 100%;
+  max-height: 100%;
 }
 
 #homepage_himg {
@@ -101,6 +101,7 @@ body {
 
 .card img {
   max-height: 200px;
+  width: 100%;
 
 }
 
@@ -118,7 +119,15 @@ body {
   width: 100%;
 }
 
+.hidden{
+  opacity: 0;
 
+
+}
+
+input[type=checkbox]{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/1200px-Five-pointed_star.svg.png);
+}
 
 #interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
 	#interactive.viewport > canvas, #interactive.viewport > video {max-width: 100%;width: 100%;}

@@ -1,7 +1,45 @@
 
 <!-- page calls cert info and puts into card  -->
 
+<?php
 
+if (isset($_POST['certID'])) {
+
+$certID = $_POST['certID'];
+$userID = $_POST['userID'];
+$checked = $_POST['starcheck'];
+
+
+
+
+
+if ($checked=='FALSE') {
+
+
+    // inserts into database
+      $sql = "INSERT INTO favcert (userID, certID)
+      VALUES ($userID, $certID)";
+
+      if ($dbconnect->query($sql) == TRUE) {
+    //if insert succesful, go to homepage
+        header("Location: index.php?page=$sendingpage");
+
+      } else {
+        echo "Error: " . $sql . "<br>" . $dbconnect->error;
+      }
+}elseif ($checked=='TRUE'){
+  // inserts into database
+    $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
+
+    if ($dbconnect->query($sql) == TRUE) {
+  //if insert succesful, go to homepage
+      header("Location: index.php?page=$sendingpage");
+
+    } else {
+      echo "Error: " . $sql . "<br>" . $dbconnect->error;
+    }
+}
+}?>
 
 
 
@@ -23,10 +61,10 @@
    $certID = $cert_aa['certID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-<?php echo $colno?>' ><?php
+   ?><div class='col-<?php echo $certcolno?>' ><?php
      ?><div class="card">
        <div class="section">
-         <img src="logos/<?php echo $logo_image; ?>">
+         <img src="logos/<?php echo $logo_image; ?>" style="width: 100%;">
        </div>
 
      <h1><?php echo $cert_name ?></h1>
@@ -34,7 +72,7 @@
 
 <!-- star rating -->
 
-<form id="starform" action="index.php?page=starinsertitem" method="post">
+<form id="starform" action="index.php?page=<?php echo $sendingpage; ?>" method="post">
         <input type="hidden" name='certID' value='<?php echo "$certID";?>'/>
         <input type='hidden' name='userID' value='<?php echo "$userID";?>'/>
 
@@ -56,19 +94,23 @@
 
           ?>
           <!-- star -->
-          <label for="id-of-input" class="custom-checkbox" style="min-height: 40px;">
-            <input type="checkbox" id="star" name="star" onChange="this.form.submit();" />
+
+          <input type="checkbox"  class="" id="star" name="star" onChange="this.form.submit();" />
 
              <?php if (in_array("$certID",$favcertIDarray)) {
-               // delete from favcert
+               // delete from favcert if already checked
                ?>
                <input type="hidden" name='starcheck' value='TRUE'/>
-               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg><?php
+              <div class="star">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+              </div>
 
+              <?php
+              // add to favcert if not checked
              } else{
-               // add to favcert
+
                ?>
                <input type="hidden" name='starcheck' value='FALSE'/>
                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
@@ -84,9 +126,9 @@
          }
 
              ?>
-             <!-- star ends  -->
-
      </form>
+<!-- star ends -->
+
 
      </div>
    </div>
