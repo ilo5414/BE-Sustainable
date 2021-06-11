@@ -1,4 +1,5 @@
 
+
 <div class="container-fluid" id="homepage_himg">
 
   <?php include("navbar.php"); ?>
@@ -23,7 +24,7 @@
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       produce type
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" value=>
       <?php
       $type_sql = "SELECT * FROM type";
       $type_qry = mysqli_query($dbconnect, $type_sql);
@@ -49,7 +50,8 @@
     }
   echo "displaying $type_name";
 $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
-
+$prodcolno = 3;
+$sendingpage = "home&type_name=$type_name";
      include("display.php");
 ?>
 

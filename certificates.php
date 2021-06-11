@@ -73,7 +73,10 @@
 
         </div>
         <!-- booking display div ends -->
+        <div id="product">
+
         <?php
         $call="";
-        $colno = 3;
+        $certcolno = 4;
+        $sendingpage="certificates#product";
          include ("certcard.php"); ?>
