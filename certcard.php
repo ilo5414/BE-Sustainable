@@ -95,8 +95,9 @@ if ($checked=='FALSE') {
           ?>
           <!-- star -->
 
-          <input type="checkbox"  class="" id="star" name="star" onChange="this.form.submit();" />
 
+            <input type="checkbox" id="star" name="star" onChange="this.form.submit();" />
+            <label for="star" class="custom-checkbox" style="min-height: 40px;">
              <?php if (in_array("$certID",$favcertIDarray)) {
                // delete from favcert if already checked
                ?>

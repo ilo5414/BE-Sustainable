@@ -119,6 +119,7 @@ body {
   width: 100%;
 }
 
+
 .hidden{
   opacity: 0;
 
@@ -127,6 +128,10 @@ body {
 
 input[type=checkbox]{
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/1200px-Five-pointed_star.svg.png);
+
+#star {
+  display: hidden;
+
 }
 
 #interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
