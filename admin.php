@@ -2,20 +2,25 @@
 
 
 
+
 <div class="container-fluid" id="homepage_himg">
 
+
   <?php include("navbar.php"); ?>
+
+
+
+  }
 
   <?php
 
   if(!isset($_SESSION['admin'])) {
     header("location: index.php?page=login");
-
   }
-
-
   else {
   ?>
+
+
 <div class="jumbotron"  >
 
 
