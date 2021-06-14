@@ -12,7 +12,6 @@ function starinsert(certID) {
     xmlhttp.send();
     }
 
-
 </script>
 
 <div class="container-fluid">
@@ -93,5 +92,4 @@ function starinsert(certID) {
         <?php
         $call="";
         $certcolno = 4;
-        $sendingpage="certificates#product";
          include ("certcard.php"); ?>
