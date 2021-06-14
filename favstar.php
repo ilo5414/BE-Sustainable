@@ -1,17 +1,30 @@
 
-
 <?php
+  include("dbconnect.php");
+  session_start();
+ ?>
 
-include("dbconnect.php");
-
-?>
-
-<div id="favstar">
 <div class="row sb_cards">
 
-<?php
-   // the sql stament that will be run in the data base to obtain the information wanted
-   $cert_sql = "SELECT * FROM cert $call";
+ <?php
+
+   $userID = $_SESSION['userID'];
+   $certID = $_GET['certID'];
+
+   $checkfav_sql = "SELECT * FROM favcert WHERE userID=$userID AND certID=$certID";
+   $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
+   if (mysqli_num_rows($checkfav_qry)>0) {
+       $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
+       $qry = mysqli_query($dbconnect, $sql);
+     } else {
+       $sql = "INSERT INTO favcert (userID, certID)
+       VALUES ($userID, $certID)";
+       $qry = mysqli_query($dbconnect, $sql);
+     }
+
+
+   // the sql stament that will be run in the data base to obtain the information wanted (removed $call)
+   $cert_sql = "SELECT * FROM cert";
  // this takes the slq written above to the data base and runs it to obtain the information wanted
    $cert_qry = mysqli_query($dbconnect, $cert_sql);
  // this turns the inforamtion retrieved into an assosiative array
@@ -26,16 +39,14 @@ include("dbconnect.php");
    $certID = $cert_aa['certID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-3'><?php
-     ?><div class="card text-center">
+   ?><div class='col-3' ><?php
+     ?><div class="card">
        <div class="section">
-         <img src="logos/<?php echo $logo_image; ?>" >
+         <img src="logos/<?php echo $logo_image; ?>" style="width: 100%;">
        </div>
 
      <h1><?php echo $cert_name ?></h1>
      <p><?php echo $about_info ?></p>
-
-
 
 
 
@@ -71,6 +82,4 @@ include("dbconnect.php");
  // the while statement for the loop
 } while ($cert_aa = mysqli_fetch_assoc($cert_qry));
 
-  ?>  </div>
- </div>
- <!-- booking display div ends -->
+  ?>

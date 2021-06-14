@@ -1,4 +1,18 @@
+<!-- page calls cert info and puts into card  -->
+<script type="text/javascript">
+function starinsert(certID) {
 
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("favstar").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET","favstar.php?certID="+certID,true);
+    xmlhttp.send();
+    }
+
+</script>
 
 <div class="container-fluid">
    <div class="section" id="certificates_himg">
@@ -78,5 +92,4 @@
         <?php
         $call="";
         $certcolno = 4;
-        $sendingpage="certificates#product";
          include ("certcard.php"); ?>
