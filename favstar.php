@@ -1,51 +1,30 @@
 
-
 <?php
+  include("dbconnect.php");
+  session_start();
+ ?>
 
-if (isset($_POST['certID'])) {
-
-$certID = $_POST['certID'];
-$userID = $_POST['userID'];
-$checked = $_POST['starcheck'];
-
-
-
-
-
-if ($checked=='FALSE') {
-
-
-    // inserts into database
-      $sql = "INSERT INTO favcert (userID, certID)
-      VALUES ($userID, $certID)";
-
-      if ($dbconnect->query($sql) == TRUE) {
-    //if insert succesful, go to homepage
-        header("Location: index.php?page=$sendingpage");
-
-      } else {
-        echo "Error: " . $sql . "<br>" . $dbconnect->error;
-      }
-}elseif ($checked=='TRUE'){
-  // inserts into database
-    $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
-
-    if ($dbconnect->query($sql) == TRUE) {
-  //if insert succesful, go to homepage
-      header("Location: index.php?page=$sendingpage");
-
-    } else {
-      echo "Error: " . $sql . "<br>" . $dbconnect->error;
-    }
-}
-}?>
-
-
-<div id="favstar">
 <div class="row sb_cards">
+
  <?php
-   // the sql stament that will be run in the data base to obtain the information wanted
-   $cert_sql = "SELECT * FROM cert $call";
+
+   $userID = $_SESSION['userID'];
+   $certID = $_GET['certID'];
+
+   $checkfav_sql = "SELECT * FROM favcert WHERE userID=$userID AND certID=$certID";
+   $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
+   if (mysqli_num_rows($checkfav_qry)>0) {
+       $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
+       $qry = mysqli_query($dbconnect, $sql);
+     } else {
+       $sql = "INSERT INTO favcert (userID, certID)
+       VALUES ($userID, $certID)";
+       $qry = mysqli_query($dbconnect, $sql);
+     }
+
+
+   // the sql stament that will be run in the data base to obtain the information wanted (removed $call)
+   $cert_sql = "SELECT * FROM cert";
  // this takes the slq written above to the data base and runs it to obtain the information wanted
    $cert_qry = mysqli_query($dbconnect, $cert_sql);
  // this turns the inforamtion retrieved into an assosiative array
@@ -61,7 +40,7 @@ if ($checked=='FALSE') {
 
  // div surrounding the basic booking information as a link
    ?><div class='col-<?php echo $certcolno?>' ><?php
-     ?><div class="card text-center">
+     ?><div class="card">
        <div class="section">
          <img src="logos/<?php echo $logo_image; ?>" style="width: 100%;">
        </div>
@@ -105,6 +84,4 @@ if ($checked=='FALSE') {
  // the while statement for the loop
 } while ($cert_aa = mysqli_fetch_assoc($cert_qry));
 
-  ?>  </div>
- </div>
- <!-- booking display div ends -->
+  ?>
