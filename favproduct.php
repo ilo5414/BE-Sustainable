@@ -11,42 +11,42 @@
    $userID = $_SESSION['userID'];
    $certID = $_GET['certID'];
 
-   $checkfav_sql = "SELECT * FROM favcert WHERE userID=$userID AND certID=$certID";
+   $checkfav_sql = "SELECT * FROM favprod WHERE userID=$userID AND productID=$productID";
    $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
    if (mysqli_num_rows($checkfav_qry)>0) {
-       $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
+       $sql = "DELETE FROM `favprod` WHERE `favprod`.`userID` = $userID AND `favprod`.`productID` = $productID";
        $qry = mysqli_query($dbconnect, $sql);
      } else {
-       $sql = "INSERT INTO favcert (userID, certID)
-       VALUES ($userID, $certID)";
+       $sql = "INSERT INTO favprod (userID, productID)
+       VALUES ($userID, $productID)";
        $qry = mysqli_query($dbconnect, $sql);
      }
 
 
    // the sql stament that will be run in the data base to obtain the information wanted (removed $call)
-   $cert_sql = "SELECT * FROM cert";
+   $product_sql = "SELECT * FROM products";
  // this takes the slq written above to the data base and runs it to obtain the information wanted
-   $cert_qry = mysqli_query($dbconnect, $cert_sql);
+   $product_qry = mysqli_query($dbconnect, $product_sql);
  // this turns the inforamtion retrieved into an assosiative array
-   $cert_aa = mysqli_fetch_assoc($cert_qry);
+   $product_aa = mysqli_fetch_assoc($product_qry);
 
 
  // do while loop taking the information from the array and turning it into variables
  do {
-   $cert_name = $cert_aa['certname'];
-   $logo_image = $cert_aa['logo'];
-   $about_info = $cert_aa['about'];
-   $certID = $cert_aa['certID'];
+   $product_name = $product_aa['productname'];
+   $product_image = $product_aa['image'];
+   $barcode = $product_aa['productbarcode'];
+   $productID = $product_aa['productID'];
 
  // div surrounding the basic booking information as a link
    ?><div class='col-<?php echo $certcolno; ?>' ><?php
      ?><div class="card">
        <div class="section">
-         <img src="logos/<?php echo $logo_image; ?>" style="width: 100%;">
+         <img src="logos/<?php echo $product_image; ?>">
        </div>
 
-     <h1><?php echo $cert_name ?></h1>
-     <p><?php echo $about_info ?></p>
+     <h1><?php echo $product_name ?></h1>
+     <p><?php echo $barcode ?></p>
 
 
 
@@ -56,7 +56,7 @@
          if (isset($_SESSION['userID'])) {
 
            // makes array of fav certs
-           $fav_sql = "SELECT * FROM favcert WHERE userID=$userID AND certID=$certID";
+           $fav_sql = "SELECT * FROM favprod WHERE userID=$userID AND productID=$productID";
            $fav_qry = mysqli_query($dbconnect, $fav_sql);
 
 

@@ -26,10 +26,10 @@ include("dbconnect.php");
    $certID = $cert_aa['certID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-3'><?php
+   ?><div class='col-<?php echo $certcolno; ?>'><?php
      ?><div class="card text-center">
        <div class="section">
-         <img src="logos/<?php echo $logo_image; ?>" style="width: 100%;">
+         <img src="logos/<?php echo $logo_image; ?>">
        </div>
 
      <h1><?php echo $cert_name ?></h1>
