@@ -100,9 +100,9 @@ body {
 }
 
 .card img {
-  max-height: 200px;
+  
   width: 100%;
-
+  overflow: hidden;
 }
 
 .card h1 {

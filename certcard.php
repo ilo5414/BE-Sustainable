@@ -63,7 +63,7 @@ if ($checked=='FALSE') {
    ?><div class='col-<?php echo $certcolno?>' ><?php
      ?><div class="card text-center">
        <div class="section">
-         <img src="logos/<?php echo $logo_image; ?>" style="width: 100%;">
+         <img src="logos/<?php echo $logo_image; ?>" >
        </div>
 
      <h1><?php echo $cert_name ?></h1>
