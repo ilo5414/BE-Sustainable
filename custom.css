@@ -122,17 +122,31 @@ body {
 
 .hidden{
   opacity: 0;
-
-
 }
 
+#favstar {
+
+}
+.star {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+}
+.star:before {
+   content: "\2606";
+
+   visibility: visible;
+}
+.star:checked:before {
+   content: "\2605";
+   
+}
+
+
+.border-color: #f58723;
 input[type=checkbox]{
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/1200px-Five-pointed_star.svg.png);
 
-#star {
-  display: hidden;
-
-}
 
 #interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
 	#interactive.viewport > canvas, #interactive.viewport > video {max-width: 100%;width: 100%;}
