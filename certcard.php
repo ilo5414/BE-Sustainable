@@ -2,48 +2,14 @@
 
 <?php
 
-if (isset($_POST['certID'])) {
+include("dbconnect.php");
 
-$certID = $_POST['certID'];
-$userID = $_POST['userID'];
-$checked = $_POST['starcheck'];
-
-
-
-
-
-if ($checked=='FALSE') {
-
-
-    // inserts into database
-      $sql = "INSERT INTO favcert (userID, certID)
-      VALUES ($userID, $certID)";
-
-      if ($dbconnect->query($sql) == TRUE) {
-    //if insert succesful, go to homepage
-        header("Location: index.php?page=$sendingpage");
-
-      } else {
-        echo "Error: " . $sql . "<br>" . $dbconnect->error;
-      }
-}elseif ($checked=='TRUE'){
-  // inserts into database
-    $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
-
-    if ($dbconnect->query($sql) == TRUE) {
-  //if insert succesful, go to homepage
-      header("Location: index.php?page=$sendingpage");
-
-    } else {
-      echo "Error: " . $sql . "<br>" . $dbconnect->error;
-    }
-}
-}?>
-
+?>
 
 <div id="favstar">
 <div class="row sb_cards">
- <?php
+
+<?php
    // the sql stament that will be run in the data base to obtain the information wanted
    $cert_sql = "SELECT * FROM cert $call";
  // this takes the slq written above to the data base and runs it to obtain the information wanted
@@ -60,7 +26,7 @@ if ($checked=='FALSE') {
    $certID = $cert_aa['certID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-<?php echo $certcolno?>' ><?php
+   ?><div class='col-3'><?php
      ?><div class="card text-center">
        <div class="section">
          <img src="logos/<?php echo $logo_image; ?>" >
