@@ -46,6 +46,8 @@ include("navbar.php");
 </div>
 
 <!-- type -->
+<br>
+<br>
 <p>type</p>
 <?php
 // select all type
@@ -59,11 +61,10 @@ do {
 
 ?>
 <div class="form-group">
-  <span></span><label class="form-check-label" for="<?php echo "$type"?>">
-    <?php echo $typename;?>
+  <span></span><label class="form-check-label" for="<?php echo "$type"?>"></label>
 
-    <input class="form-check-input" type="radio" value="<?php echo "$type"?>" name="item_type" id="radio">
-  </label>
+    <input type="radio" value="<?php echo "$type"?>" name="item_type" id="radio">
+    <p><?php echo $typename;?></p>
 </div>
 <?php } while($typeinput_aa = mysqli_fetch_assoc($typeinput_qry));
 ?>

@@ -91,5 +91,5 @@ function starinsert(certID) {
 
         <?php
         $call="";
-        $certcolno = 4;
+        $certcolno = 3;
          include ("certcard.php"); ?>

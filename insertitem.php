@@ -19,7 +19,7 @@ if(mysqli_num_rows($result_qry)!=0) {
 // if no duplicates
 // upload image to file
 
-   $target_dir = "uploads/";
+   $target_dir = "product_images/";
    $newfilename= "$name.jpg";
    $target_file = $target_dir . basename($_FILES["fileToUpload"]["tmp_name"]);
    $target_file = $target_dir . basename($_FILES["fileToUpload"]["tmp_name"]);

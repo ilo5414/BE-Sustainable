@@ -72,10 +72,10 @@ if ($checked=='FALSE') {
 
   <!-- student card -->
 
-          <div class="card col-<?php echo $prodcolno?>" style="color:black;">
+          <div class="card col-<?php echo $prodcolno; ?>" style="color:black;">
             <a href="index.php?page=productpage&productID=<?php echo "$productID"; ?>">
             <!-- img -->
-            <img class="card-img-top" src="product_images/<?php echo $name; ?>.png" alt="<?php echo $name; ?>.png">
+            <img class="card-img-top" style="width:100%; overflow:hidden;" src="uploads/<?php echo $name; ?>.jpg" alt="<?php echo $name; ?>.jpg">
             <div class="card-body">
               <!-- name -->
               <h5 class="card-title"><?php echo "$name $barcode"; ?></h5>
