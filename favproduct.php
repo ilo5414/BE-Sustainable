@@ -9,7 +9,7 @@
  <?php
 
    $userID = $_SESSION['userID'];
-   $certID = $_GET['certID'];
+   $productID = $_GET['productID'];
 
    $checkfav_sql = "SELECT * FROM favprod WHERE userID=$userID AND productID=$productID";
    $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
@@ -42,13 +42,29 @@
    ?><div class='col-<?php echo $certcolno; ?>' ><?php
      ?><div class="card">
        <div class="section">
-         <img src="logos/<?php echo $product_image; ?>">
+        <img src="product_images/<?php echo $product_name;?>.png">
        </div>
 
      <h1><?php echo $product_name ?></h1>
      <p><?php echo $barcode ?></p>
 
+     <?php
+     // there is an error in here, may need to find a non closed braket etc.
+          $cert_sql = "SELECT * FROM productcert JOIN products ON products.productID=productcert.productID JOIN cert ON cert.certID=productcert.certID WHERE products.productID LIKE '$productID';";
+          $cert_qry = mysqli_query($dbconnect, $cert_sql);
+          if(mysqli_num_rows($cert_qry)==0) {
+            // no results error message
+              echo "<p>No certificates found</p>";
+            } else {
+          $cert_aa = mysqli_fetch_assoc($cert_qry);
 
+          do {
+          $cert = $cert_aa['certname'];?>
+          <p class="card-title"><?php echo "$cert";?></p>
+         <?php } while($cert_aa = mysqli_fetch_assoc($cert_qry));
+
+          }
+             ?>
 
 
          <!-- only show star if logged in -->
@@ -61,7 +77,7 @@
 
 
              ?>
-             <input class="star" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value)"><br/><br/>
+             <input class="star" type="checkbox" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value)"><br/><br/>
              <?php
 
           }
@@ -80,6 +96,6 @@
 
 <?php
  // the while statement for the loop
-} while ($cert_aa = mysqli_fetch_assoc($cert_qry));
+} while ($product_aa = mysqli_fetch_assoc($product_qry));
 
   ?>

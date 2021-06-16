@@ -51,20 +51,21 @@ include("dbconnect.php");
      <p><?php echo $product_barcode ?></p>
 
      <?php
-// there is an error in here, may need to find a non closed braket etc.
-     $cert_sql = "SELECT * FROM productcert JOIN products ON products.productID=productcert.productID JOIN cert ON cert.certID=productcert.certID WHERE products.productID LIKE '$productID';";
-     $cert_qry = mysqli_query($dbconnect, $cert_sql);
-     if(mysqli_num_rows($cert_qry)==0) {
-       // no results error message
-         echo "<p>No certificates found</p>";
-       } else {
-     $cert_aa = mysqli_fetch_assoc($cert_qry);
-     do {
-     $cert = $cert_aa['certname'];?>
-     <p class="card-title"><?php echo "$cert";?></p>
-    <?php } while($cert_aa = mysqli_fetch_assoc($cert_qry));
+     // there is an error in here, may need to find a non closed braket etc.
+          $cert_sql = "SELECT * FROM productcert JOIN products ON products.productID=productcert.productID JOIN cert ON cert.certID=productcert.certID WHERE products.productID LIKE '$productID';";
+          $cert_qry = mysqli_query($dbconnect, $cert_sql);
+          if(mysqli_num_rows($cert_qry)==0) {
+            // no results error message
+              echo "<p>No certificates found</p>";
+            } else {
+          $cert_aa = mysqli_fetch_assoc($cert_qry);
 
+          do {
+          $cert = $cert_aa['certname'];?>
+          <p class="card-title"><?php echo "$cert";?></p>
+         <?php } while($cert_aa = mysqli_fetch_assoc($cert_qry));
 
+          }
              ?>
 
 
@@ -82,7 +83,7 @@ include("dbconnect.php");
 
 
              ?>
-             <input class="star" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value)"><br/><br/>
+             <input class="star" type="checkbox" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value)"><br/><br/>
              <?php
 
           }
