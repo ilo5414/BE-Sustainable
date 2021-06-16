@@ -2,6 +2,9 @@
 <?php
   include("dbconnect.php");
   session_start();
+
+  $certcolno = 3;
+
  ?>
 
 <div class="row sb_cards">
@@ -83,3 +86,8 @@
 } while ($cert_aa = mysqli_fetch_assoc($cert_qry));
 
   ?>
+
+  <?php
+  $callproducts="";
+  $certcolno = 3;
+   ?>

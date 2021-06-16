@@ -108,6 +108,6 @@ include("dbconnect.php");
  </div>
  <!-- booking display div ends -->
  <?php
- $call="";
+ $callproducts="";
  $certcolno = 3;
 ?>

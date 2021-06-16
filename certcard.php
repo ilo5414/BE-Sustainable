@@ -4,7 +4,8 @@
 
 include("dbconnect.php");
 
-?>
+// $certcolno = 3;
+ ?>
 
 <div id="favstar">
 <div class="row sb_cards">
