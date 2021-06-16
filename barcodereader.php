@@ -32,5 +32,6 @@ window.open(url, '_blank')
 	  </div>
 	  </form>
 
-
-<?php include("display.php"); ?>
+<?php
+$prodcolno=3;
+ include("display.php"); ?>

@@ -13,6 +13,7 @@
 
 
   <!-- page displays food tiems -->
+  <!-- searh items bar -->
   <form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults">
     <div class="form-group">
     <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search">
@@ -25,6 +26,7 @@
       produce type
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" value=>
+      <a class="dropdown-item" href='index.php?page=home&type_name=All'> All </a>
       <?php
       $type_sql = "SELECT * FROM type";
       $type_qry = mysqli_query($dbconnect, $type_sql);
