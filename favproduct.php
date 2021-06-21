@@ -1,31 +1,29 @@
-<!-- page calls cert info and puts into card  -->
-<script type="text/javascript">
-function starinsert(productID) {
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("favproduct").innerHTML = this.responseText;
-      }
-    };
-    xmlhttp.open("GET","favproduct.php?productID="+productID,true);
-    xmlhttp.send();
-    }
-
-</script>
-
 
 <?php
+  include("dbconnect.php");
+  session_start();
+ ?>
 
-include("dbconnect.php");
-
-?>
-
-<div id="favproduct">
 <div class="row sb_cards">
 
-<?php
-   // the sql stament that will be run in the data base to obtain the information wanted
+ <?php
+
+   $userID = $_SESSION['userID'];
+   $productID = $_GET['productID'];
+
+   $checkfav_sql = "SELECT * FROM favprod WHERE userID=$userID AND productID=$productID";
+   $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
+   if (mysqli_num_rows($checkfav_qry)>0) {
+       $sql = "DELETE FROM `favprod` WHERE `favprod`.`userID` = $userID AND `favprod`.`productID` = $productID";
+       $qry = mysqli_query($dbconnect, $sql);
+     } else {
+       $sql = "INSERT INTO favprod (userID, productID)
+       VALUES ($userID, $productID)";
+       $qry = mysqli_query($dbconnect, $sql);
+     }
+
+
+   // the sql stament that will be run in the data base to obtain the information wanted (removed $call)
    $product_sql = "SELECT * FROM products";
  // this takes the slq written above to the data base and runs it to obtain the information wanted
    $product_qry = mysqli_query($dbconnect, $product_sql);
@@ -37,18 +35,18 @@ include("dbconnect.php");
  do {
    $product_name = $product_aa['productname'];
    $product_image = $product_aa['image'];
-   $product_barcode = $product_aa['productbarcode'];
+   $barcode = $product_aa['productbarcode'];
    $productID = $product_aa['productID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-<?php echo $certcolno; ?>'><?php
-     ?><div class="card text-center">
+   ?><div class='col-<?php echo $certcolno; ?>' ><?php
+     ?><div class="card">
        <div class="section">
-         <img src="product_images/<?php echo $product_name;?>.png">
+        <img src="product_images/<?php echo $product_name;?>.png">
        </div>
 
      <h1><?php echo $product_name ?></h1>
-     <p><?php echo $product_barcode ?></p>
+     <p><?php echo $barcode ?></p>
 
      <?php
      // there is an error in here, may need to find a non closed braket etc.
@@ -69,10 +67,6 @@ include("dbconnect.php");
              ?>
 
 
-
-
-
-
          <!-- only show star if logged in -->
          <?php
          if (isset($_SESSION['userID'])) {
@@ -85,7 +79,6 @@ include("dbconnect.php");
              ?>
              <input class="star" type="checkbox" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value)"><br/><br/>
              <?php
-
 
           }
 
@@ -105,10 +98,4 @@ include("dbconnect.php");
  // the while statement for the loop
 } while ($product_aa = mysqli_fetch_assoc($product_qry));
 
-  ?>  </div>
- </div>
- <!-- booking display div ends -->
- <?php
- $callproducts="";
- $certcolno = 3;
-?>
+  ?>

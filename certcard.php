@@ -4,7 +4,8 @@
 
 include("dbconnect.php");
 
-?>
+// $certcolno = 3;
+ ?>
 
 <div id="favstar">
 <div class="row sb_cards">
@@ -29,7 +30,9 @@ include("dbconnect.php");
    ?><div class='col-<?php echo $certcolno; ?>'><?php
      ?><div class="card text-center">
        <div class="section">
+
          <img src="logos/<?php echo $logo_image; ?>" >
+
        </div>
 
      <h1><?php echo $cert_name ?></h1>

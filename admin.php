@@ -43,6 +43,7 @@
 $prodcolno = 5;
 // $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
 $displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
+   $callproducts = "JOIN favprod ON favprod.productID = product.productID WHERE userID=$userID";
 include ("display.php"); ?>
 
   </div>
