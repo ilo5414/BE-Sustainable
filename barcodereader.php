@@ -19,12 +19,19 @@ window.open(url, '_blank')
 
 
 <h1>I am the main page</h1>
-		<iframe id="iframe" src="https://angular-ivy-ukvmzn.stackblitz.io/" height="600" width="800">
+		<iframe id="iframe" src="https://zxing-ngx-scanner-mbkcv7.stackblitz.io/" height="600" width="800">
 		</iframe>
 
 
 
+		<!-- page displays food tiems -->
+	  <form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults">
+	    <div class="form-group">
+	    <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search">
+	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	  </div>
+	  </form>
 
-
-
-<?php include("display.php"); ?>
+<?php
+$prodcolno=3;
+ include("display.php"); ?>

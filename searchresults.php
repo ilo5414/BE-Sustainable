@@ -5,8 +5,22 @@ include("navbar.php");
 
 <?php
 
+
+
   $search = $_POST['search'];
-  ?> <h1> search results for "<?php echo "$search"; ?> " </h1> <?php
+  ?>
+
+
+  <!-- searh items bar -->
+  <form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults">
+    <div class="form-group">
+    <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </div>
+  </form>
+
+
+  <h1> search results for "<?php echo "$search"; ?> " </h1> <?php
 // selects search query from database
   $result_sql = "SELECT * FROM products WHERE products.productname LIKE '%$search%' OR products.productbarcode LIKE '%$search%';";
   $result_qry = mysqli_query($dbconnect, $result_sql);

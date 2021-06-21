@@ -86,6 +86,7 @@ include("dbconnect.php");
              <input class="star" type="checkbox" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value)"><br/><br/>
              <?php
 
+
           }
 
 

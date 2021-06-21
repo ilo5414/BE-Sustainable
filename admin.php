@@ -28,7 +28,7 @@
 
   <div class="col-12">
 
-  <h1>Welcome User xxxx</h1>
+  <h1>Welcome <?php echo $username; ?></h1>
   <p><a href = "index.php?page=logout">logout</a></p>
 
   </div>

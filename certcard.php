@@ -30,7 +30,9 @@ include("dbconnect.php");
    ?><div class='col-<?php echo $certcolno; ?>'><?php
      ?><div class="card text-center">
        <div class="section">
-         <img src="logos/<?php echo $logo_image; ?>">
+
+         <img src="logos/<?php echo $logo_image; ?>" >
+
        </div>
 
      <h1><?php echo $cert_name ?></h1>
