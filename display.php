@@ -41,7 +41,7 @@ include("dbconnect.php");
    $productID = $product_aa['productID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-<?php echo $certcolno; ?>'><?php
+   ?><div class='col-<?php echo $prodcolno; ?>'><?php
      ?><div class="card text-center">
        <div class="section">
          <img src="product_images/<?php echo $product_name;?>.png">
@@ -110,5 +110,5 @@ include("dbconnect.php");
  <!-- booking display div ends -->
  <?php
  $callproducts="";
- $certcolno = 3;
+ $prodcolno = 3;
 ?>
