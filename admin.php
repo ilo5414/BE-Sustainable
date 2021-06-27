@@ -7,7 +7,7 @@ function starinsert(certID) {
         document.getElementById("favstar").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","favstar.php?certID="+certID,true);
+    xmlhttp.open("GET","favstar.php?certcolno='<?php echo $certcolno ?>'&call='<?php echo $call ?>'&certID="+certID,true);
     xmlhttp.send();
     }
 
@@ -55,8 +55,7 @@ function starinsert(certID) {
 <?php
 $prodcolno = 6;
 // $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
-$displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
-   $callproducts = "JOIN favprod ON favprod.productID = product.productID WHERE userID=$userID";
+   $callproducts = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
 include ("display.php"); ?>
 
   </div>

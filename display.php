@@ -26,7 +26,7 @@ include("dbconnect.php");
 
 <?php
    // the sql stament that will be run in the data base to obtain the information wanted
-   $product_sql = "SELECT * FROM products";
+   $product_sql = "SELECT * FROM products $callproducts";
  // this takes the slq written above to the data base and runs it to obtain the information wanted
    $product_qry = mysqli_query($dbconnect, $product_sql);
  // this turns the inforamtion retrieved into an assosiative array
