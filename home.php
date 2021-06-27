@@ -48,9 +48,9 @@
     if (isset($_GET['type_name'])) {
       $type_name = $_GET['type_name'];
     } else {
-      $type_name = 'meat/seafood';
+      $type_name = '0';
     }
-  echo "displaying $type_name";
+  echo "Displaying $type_name";
 $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
 $prodcolno = 3;
 $sendingpage = "home&type_name=$type_name";

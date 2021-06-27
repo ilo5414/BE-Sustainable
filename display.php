@@ -75,7 +75,7 @@ if ($checked=='FALSE') {
           <div class="card col-<?php echo $prodcolno; ?>" style="color:black;">
             <a href="index.php?page=productpage&productID=<?php echo "$productID"; ?>">
             <!-- img -->
-            <img class="card-img-top" style="width:100%; overflow:hidden;" src="uploads/<?php echo $name; ?>.jpg" alt="<?php echo $name; ?>.jpg">
+            <img class="card-img-top" style="width:100%; overflow:hidden;" src="product_images/<?php echo $name; ?>.png" alt="<?php echo $name; ?>.png">
             <div class="card-body">
               <!-- name -->
               <h5 class="card-title"><?php echo "$name $barcode"; ?></h5>
