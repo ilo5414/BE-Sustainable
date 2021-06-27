@@ -8,7 +8,7 @@ function starinsert(productID) {
         document.getElementById("favproduct").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","favproduct.php?productID="+productID,true);
+    xmlhttp.open("GET","favproduct.php?prodcolno="<?php echo $prodcolno?>"&productID="+productID,true);
     xmlhttp.send();
     }
 
@@ -109,6 +109,6 @@ include("dbconnect.php");
  </div>
  <!-- booking display div ends -->
  <?php
- $callproducts="";
- $prodcolno = 3;
+
+
 ?>
