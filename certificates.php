@@ -37,7 +37,7 @@ function starinsert(certID) {
 
        <div class="section">
          <p class="lead">
-           <a class="btn btn-lg" href="#" role="button">arrow</a>
+           <a class="btn btn-lg" href="#" role="button">Learn More</a>
          </p>
        </div>
 
@@ -92,4 +92,5 @@ function starinsert(certID) {
         <?php
         $call="";
         $certcolno = 3;
-         include ("certcard.php"); ?>
+
+        include ("certcard.php"); ?>

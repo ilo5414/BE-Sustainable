@@ -2,6 +2,9 @@
 <?php
   include("dbconnect.php");
   session_start();
+
+  $certcolno = 3;
+
  ?>
 
 <div class="row sb_cards">
@@ -39,7 +42,7 @@
    $certID = $cert_aa['certID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-3' ><?php
+   ?><div class='col-<?php echo $certcolno; ?>' ><?php
      ?><div class="card">
        <div class="section">
          <img src="logos/<?php echo $logo_image; ?>" style="width: 100%;">
@@ -83,3 +86,8 @@
 } while ($cert_aa = mysqli_fetch_assoc($cert_qry));
 
   ?>
+
+  <?php
+  $callproducts="";
+  $certcolno = 3;
+   ?>
