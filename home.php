@@ -26,7 +26,7 @@
       produce type
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" value=>
-      <a class="dropdown-item" href='index.php?page=home&type_name=All'> All </a>
+      <a class="dropdown-item" href='index.php?page=home&type_name=all'> All </a>
       <?php
       $type_sql = "SELECT * FROM type";
       $type_qry = mysqli_query($dbconnect, $type_sql);
