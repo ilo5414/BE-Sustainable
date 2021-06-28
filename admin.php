@@ -55,7 +55,7 @@ function starinsert(certID) {
 <?php
 $prodcolno = 6;
 // $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
-   $callproducts = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
+   $displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
 include ("display.php"); ?>
 
   </div>
