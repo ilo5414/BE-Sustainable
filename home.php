@@ -48,10 +48,14 @@
     if (isset($_GET['type_name'])) {
       $type_name = $_GET['type_name'];
     } else {
-      $type_name = 'meat/seafood';
+      $type_name = 'all';
     }
   echo "displaying $type_name";
-$displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
+  if ($type_name=="all"){
+    $displaycondition = "";
+  }else{
+    $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
+  }
 $prodcolno = 3;
 $sendingpage = "home&type_name=$type_name";
      include("display.php");
