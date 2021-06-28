@@ -8,7 +8,7 @@ function starinsert(productID) {
         document.getElementById("favproduct").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","favproduct.php?productID="+productID,true);
+    xmlhttp.open("GET","favproduct.php?prodcolno="<?php echo $prodcolno?>"&productID="+productID,true);
     xmlhttp.send();
     }
 
@@ -26,7 +26,7 @@ include("dbconnect.php");
 
 <?php
    // the sql stament that will be run in the data base to obtain the information wanted
-   $product_sql = "SELECT * FROM products";
+   $product_sql = "SELECT * FROM products $displaycondition";
  // this takes the slq written above to the data base and runs it to obtain the information wanted
    $product_qry = mysqli_query($dbconnect, $product_sql);
  // this turns the inforamtion retrieved into an assosiative array
@@ -41,7 +41,7 @@ include("dbconnect.php");
    $productID = $product_aa['productID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-<?php echo $certcolno; ?>'><?php
+   ?><div class='col-<?php echo $prodcolno; ?>'><?php
      ?><div class="card text-center">
        <div class="section">
          <img src="product_images/<?php echo $product_name;?>.png">
@@ -109,6 +109,6 @@ include("dbconnect.php");
  </div>
  <!-- booking display div ends -->
  <?php
- $callproducts="";
- $certcolno = 3;
+
+
 ?>

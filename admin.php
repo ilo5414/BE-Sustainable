@@ -1,4 +1,17 @@
+<script type="text/javascript">
+function starinsert(certID) {
 
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("favstar").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET","favstar.php?certcolno='<?php echo $certcolno ?>'&call='<?php echo $call ?>'&certID="+certID,true);
+    xmlhttp.send();
+    }
+
+</script>
 
 
 
@@ -40,15 +53,14 @@
   <div class="column col-6">
     <h1>Favourite products</h1>
 <?php
-$prodcolno = 5;
+$prodcolno = 6;
 // $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
-$displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
-   $callproducts = "JOIN favprod ON favprod.productID = product.productID WHERE userID=$userID";
+   $displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
 include ("display.php"); ?>
 
   </div>
 
-  <div class="column col-6" >
+  <div class="column col-6" id="favstar" >
     <h1>Favourite certificates</h1>
 
      <?php
