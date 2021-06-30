@@ -3,7 +3,7 @@
 
 <html lang="en"
 >
-
+<?php session_start(); ?>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
