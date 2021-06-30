@@ -26,7 +26,7 @@
       produce type
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" value=>
-      <a class="dropdown-item" href='index.php?page=home&type_name=All'> All </a>
+      <a class="dropdown-item" href='index.php?page=home&type_name=all'> All </a>
       <?php
       $type_sql = "SELECT * FROM type";
       $type_qry = mysqli_query($dbconnect, $type_sql);
@@ -48,10 +48,14 @@
     if (isset($_GET['type_name'])) {
       $type_name = $_GET['type_name'];
     } else {
-      $type_name = 'meat/seafood';
+      $type_name = 'all';
     }
   echo "displaying $type_name";
-$displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
+  if ($type_name=="all"){
+    $displaycondition = "";
+  }else{
+    $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
+  }
 $prodcolno = 3;
 $sendingpage = "home&type_name=$type_name";
      include("display.php");
