@@ -1,17 +1,4 @@
-<script type="text/javascript">
-function starinsert(certID) {
 
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("favstar").innerHTML = this.responseText;
-      }
-    };
-    xmlhttp.open("GET","favstar.php?certcolno='<?php echo $certcolno ?>'&call='<?php echo $call ?>'&certID="+certID,true);
-    xmlhttp.send();
-    }
-
-</script>
 
 
 
