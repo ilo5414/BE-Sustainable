@@ -1,5 +1,5 @@
 <script type="text/javascript">
-function starinsert(certID) {
+function starinsert(certID, certcolno, call, userID) {
 
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
@@ -7,12 +7,11 @@ function starinsert(certID) {
         document.getElementById("favstar").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","favstar.php?certcolno='<?php echo $certcolno ?>'&call='<?php echo $call ?>'&certID="+certID,true);
+    xmlhttp.open("GET","certcard.php?removal=1&userID="+userID+"&certcolno="+certcolno+"&call="+call+"&certID="+certID,true);
     xmlhttp.send();
     }
 
 </script>
-
 
 
 
