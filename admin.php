@@ -1,3 +1,4 @@
+
 <script type="text/javascript">
 function starinsert(certID, certcolno, call, userID) {
 
@@ -11,7 +12,8 @@ function starinsert(certID, certcolno, call, userID) {
     xmlhttp.send();
     }
 
-</script>
+
+
 
 
 
