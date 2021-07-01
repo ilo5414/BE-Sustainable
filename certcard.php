@@ -3,7 +3,25 @@
 <?php
 
 include("dbconnect.php");
+session_start();
+// make changes if any made
+if(isset($_GET['certID'])) {
 
+
+$userID = $_SESSION['userID'];
+$certID = $_GET['certID'];
+
+$checkfav_sql = "SELECT * FROM favcert WHERE userID=$userID AND certID=$certID";
+$checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
+if (mysqli_num_rows($checkfav_qry)>0) {
+    $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
+    $qry = mysqli_query($dbconnect, $sql);
+  } else {
+    $sql = "INSERT INTO favcert (userID, certID)
+    VALUES ($userID, $certID)";
+    $qry = mysqli_query($dbconnect, $sql);
+  }
+}
 // $certcolno = 3;
  ?>
 
@@ -12,7 +30,7 @@ include("dbconnect.php");
 
 <?php
    // the sql stament that will be run in the data base to obtain the information wanted
-   $cert_sql = "SELECT * FROM cert $call";
+   $cert_sql = "SELECT * FROM cert";
  // this takes the slq written above to the data base and runs it to obtain the information wanted
    $cert_qry = mysqli_query($dbconnect, $cert_sql);
  // this turns the inforamtion retrieved into an assosiative array
