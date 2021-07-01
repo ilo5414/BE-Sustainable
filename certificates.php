@@ -8,9 +8,7 @@ function starinsert(certID) {
         document.getElementById("favstar").innerHTML = this.responseText;
       }
     };
-    // xmlhttp.open("GET","favstar.php?certID="+certID,true);
-    xmlhttp.open("GET","certcard.php?certID="+certID,true);
-
+    xmlhttp.open("GET","favstar.php?certID="+certID,true);
     xmlhttp.send();
     }
 

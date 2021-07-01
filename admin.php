@@ -1,17 +1,4 @@
-<script type="text/javascript">
-function starinsert(certID) {
 
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("favstar").innerHTML = this.responseText;
-      }
-    };
-    xmlhttp.open("GET","favstar.php?certID="+certID,true);
-    xmlhttp.send();
-    }
-
-</script>
 
 
 
@@ -65,9 +52,9 @@ include ("display.php"); ?>
 
      <?php
 
-      $certcolno = 6;
-       $call = "JOIN favcert ON favcert.certID = cert.certID WHERE userID=$userID";
-      include ("certcard.php"); ?>
+$certcolno = 6;
+     $call = "JOIN favcert ON favcert.certID = cert.certID WHERE userID=$userID";
+    include ("certcard.php"); ?>
 
   </div>
 </div>

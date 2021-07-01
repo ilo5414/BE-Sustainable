@@ -27,7 +27,7 @@
 
 
    // the sql stament that will be run in the data base to obtain the information wanted (removed $call)
-   $cert_sql = "SELECT * FROM cert ";
+   $cert_sql = "SELECT * FROM cert";
  // this takes the slq written above to the data base and runs it to obtain the information wanted
    $cert_qry = mysqli_query($dbconnect, $cert_sql);
  // this turns the inforamtion retrieved into an assosiative array
@@ -88,6 +88,6 @@
   ?>
 
   <?php
-  $call="";
+  $callproducts="";
   $certcolno = 3;
    ?>
