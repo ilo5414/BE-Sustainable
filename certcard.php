@@ -4,7 +4,35 @@
 
 include("dbconnect.php");
 
-// $certcolno = 3;
+if (isset($_GET['certcolno'])) {
+  $certcolno = $_GET['certcolno'];
+}
+if (isset($_GET['call'])) {
+  $call = $_GET['call'];
+}
+if (isset($_GET['userID'])) {
+  $userID = $_GET['userID'];
+}
+
+if (isset($_GET['removal']) && $_GET['removal']==1) {
+  session_start();
+  // $userID = $_SESSION['userID'];
+  $certID = $_GET['certID'];
+
+  $checkfav_sql = "SELECT * FROM favcert WHERE userID=$userID AND certID=$certID";
+  $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
+  if (mysqli_num_rows($checkfav_qry)>0) {
+      $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
+      $qry = mysqli_query($dbconnect, $sql);
+    } else {
+      $sql = "INSERT INTO favcert (userID, certID)
+      VALUES ($userID, $certID)";
+      $qry = mysqli_query($dbconnect, $sql);
+    }
+
+}
+
+
  ?>
 
 <div id="favstar">
@@ -53,9 +81,11 @@ include("dbconnect.php");
 
 
              ?>
-             <input class="star" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value)"><br/><br/>
+             <input class="star" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, <?php echo $certcolno; ?>, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
              <?php
 
+          }else {
+            echo "session problem";
           }
 
 
