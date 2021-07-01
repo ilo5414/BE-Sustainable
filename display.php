@@ -1,16 +1,30 @@
 <!-- page calls cert info and puts into card  -->
 <script type="text/javascript">
-function starinsert(productID) {
+// function starinsert(productID) {
+//
+//       var xmlhttp = new XMLHttpRequest();
+//       xmlhttp.onreadystatechange = function() {
+//       if (this.readyState == 4 && this.status == 200) {
+//         document.getElementById("favproduct").innerHTML = this.responseText;
+//       }
+//     };
+//     xmlhttp.open("GET","favproduct.php?prodcolno="<?php echo $prodcolno?>"&productID="+productID,true);
+//     xmlhttp.send();
+//     }
 
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("favproduct").innerHTML = this.responseText;
-      }
-    };
-    xmlhttp.open("GET","favproduct.php?prodcolno="<?php echo $prodcolno?>"&productID="+productID,true);
-    xmlhttp.send();
-    }
+</script>
+<script type="text/javascript">
+// function starinsert(productID, certcolno, call, userID) {
+//
+//       var xmlhttp = new XMLHttpRequest();
+//       xmlhttp.onreadystatechange = function() {
+//       if (this.readyState == 4 && this.status == 200) {
+//         document.getElementById("favproduct").innerHTML = this.responseText;
+//       }
+//     };
+//     xmlhttp.open("GET","display.php?removal=1&userID="+userID+"&certcolno="+certcolno+"&call="+call+"&productID="+productID,true);
+//     xmlhttp.send();
+//     }
 
 </script>
 
@@ -83,7 +97,8 @@ include("dbconnect.php");
 
 
              ?>
-             <input class="star" type="checkbox" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value)"><br/><br/>
+             <input class="star" type="checkbox" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, <?php echo $certcolno; ?>, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
+
              <?php
 
 
