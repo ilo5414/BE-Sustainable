@@ -1,37 +1,70 @@
 <!-- page calls cert info and puts into card  -->
-<script type="text/javascript">
-// function starinsert(productID) {
-//
-//       var xmlhttp = new XMLHttpRequest();
-//       xmlhttp.onreadystatechange = function() {
-//       if (this.readyState == 4 && this.status == 200) {
-//         document.getElementById("favproduct").innerHTML = this.responseText;
-//       }
-//     };
-//     xmlhttp.open("GET","favproduct.php?prodcolno="<?php echo $prodcolno?>"&productID="+productID,true);
-//     xmlhttp.send();
-//     }
 
-</script>
-<script type="text/javascript">
-// function starinsert(productID, certcolno, call, userID) {
-//
-//       var xmlhttp = new XMLHttpRequest();
-//       xmlhttp.onreadystatechange = function() {
-//       if (this.readyState == 4 && this.status == 200) {
-//         document.getElementById("favproduct").innerHTML = this.responseText;
-//       }
-//     };
-//     xmlhttp.open("GET","display.php?removal=1&userID="+userID+"&certcolno="+certcolno+"&call="+call+"&productID="+productID,true);
-//     xmlhttp.send();
-//     }
-
-</script>
 
 
 <?php
 
 include("dbconnect.php");
+
+
+
+if (isset($_GET['prodcolno'])) {
+  $prodcolno = $_GET['prodcolno'];
+}
+if (isset($_GET['displaycondition'])) {
+  $displaycondition = $_GET['displaycondition'];
+}
+if (isset($_GET['userID'])) {
+  $userID = $_GET['userID'];
+  echo $userID;
+}
+
+if (isset($_GET['productID'])) {
+  $productID = $_GET['productID'];
+}
+
+if (isset($_GET['removal']) && $_GET['removal']==2) {
+  session_start();
+//   // $userID = $_SESSION['userID'];
+//   $certID = $_GET['certID'];
+//
+//   $checkfav_sql = "SELECT * FROM favcert WHERE userID=$userID AND certID=$certID";
+//   $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
+//   if (mysqli_num_rows($checkfav_qry)>0) {
+//       $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
+//       $qry = mysqli_query($dbconnect, $sql);
+//     } else {
+//       $sql = "INSERT INTO favcert (userID, certID)
+//       VALUES ($userID, $certID)";
+//       $qry = mysqli_query($dbconnect, $sql);
+//     }
+//
+// }
+
+
+
+
+
+
+   $checkfav_sql = "SELECT * FROM favprod WHERE userID=$userID AND productID=$productID";
+
+   $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
+
+   if (mysqli_num_rows($checkfav_qry)>0) {
+
+       $sql = "DELETE FROM `favprod` WHERE `favprod`.`userID` = $userID AND `favprod`.`productID` = $productID";
+
+       $qry = mysqli_query($dbconnect, $sql);
+
+     } else {
+
+       $sql = "INSERT INTO favprod (userID, productID) VALUES ($userID, $productID)";
+
+       $qry = mysqli_query($dbconnect, $sql);
+
+     }
+   }
+
 
 ?>
 
@@ -97,9 +130,10 @@ include("dbconnect.php");
 
 
              ?>
-             <input class="star" type="checkbox" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, <?php echo $certcolno; ?>, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
+             <input class="star" type="checkbox" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsertprod(this.value, <?php echo $prodcolno; ?>, '<?php echo $displaycondition; ?>', <?php echo $userID; ?>)"><br/><br/>
 
              <?php
+
 
 
           }
