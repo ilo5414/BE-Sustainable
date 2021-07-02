@@ -56,9 +56,11 @@ body {
 }
 
 .dropdown-menu {
-  background-color: transparent;
+  background-color: #22211F;
+  opacity: 85%;
   border: none;
   margin-right: 10px;
+
 }
 
 

@@ -1,3 +1,4 @@
+
 <script type="text/javascript">
 function starinsert(certID, certcolno, call, userID) {
 
@@ -10,6 +11,7 @@ function starinsert(certID, certcolno, call, userID) {
     xmlhttp.open("GET","certcard.php?removal=1&userID="+userID+"&certcolno="+certcolno+"&call="+call+"&certID="+certID,true);
     xmlhttp.send();
     }
+
 
 function starinsertprod(productID, prodcolno, displaycondition, userID) {
 
@@ -43,8 +45,8 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
     header("location: index.php?page=login");
   }
   else {
-  ?>
 
+?>
 
 <div class="jumbotron"  >
 
