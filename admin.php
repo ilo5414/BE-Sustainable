@@ -14,7 +14,7 @@ function starinsert(certID, certcolno, call, userID) {
 
 
 
-
+ </script>
 
 
 <div class="container-fluid" id="homepage_himg">
@@ -32,8 +32,8 @@ function starinsert(certID, certcolno, call, userID) {
     header("location: index.php?page=login");
   }
   else {
-  ?>
 
+?>
 
 <div class="jumbotron"  >
 

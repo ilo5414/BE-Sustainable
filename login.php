@@ -26,6 +26,7 @@ that will be taken to the verify page to see if the input is correct -->
         <input type="text" name="password" class="form-control" value="">
     </div>
 
+
     <button type="submit" class="btn btn-primary" name="button">Submit</button>
   </form>
 
