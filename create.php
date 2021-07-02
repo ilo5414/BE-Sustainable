@@ -20,6 +20,12 @@
         <input type="text" name="password" class="form-control" value="">
     </div>
 
+    <div class="form-group" action="index.php?=hash" menthod="post">
+      <label>Email</label>
+        <input type="email" name="email" class="form-control" value="">
+    </div>
+
+
     <button type="submit" class="btn btn-primary" name="button">Submit</button>
   </form>
 
