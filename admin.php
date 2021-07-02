@@ -8,7 +8,7 @@ function starinsert(certID, certcolno, call, userID) {
         document.getElementById("favstar").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","certcard.php?removal=1&userID="+userID+"&certcolno="+certcolno+"&call="+call+"&certID="+certID,true);
+    xmlhttp.open("GET","logout.php?",true);
     xmlhttp.send();
     }
 
@@ -37,7 +37,7 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
 
 
 
-  }
+
 
   <?php
 
@@ -74,7 +74,7 @@ include ("display.php"); ?>
 
   </div>
 
-  <div class="column col-6" id="favstar" >
+  <div class="column col-6"  >
     <h1>Favourite certificates</h1>
 
      <?php
