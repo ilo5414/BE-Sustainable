@@ -18,7 +18,7 @@ else {
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
+    <i class="bi bi-list"></i>
   </button>
 
   <!-- Navbar links -->
