@@ -10,6 +10,8 @@ include("navbar.php");
   $search = $_POST['search'];
   ?>
 
+  <div class="row d-flex justify-content-center">
+
 
   <!-- searh items bar -->
   <form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults">
@@ -18,6 +20,27 @@ include("navbar.php");
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </div>
   </form>
+
+  <!-- dropdown -->
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      produce type
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" value=>
+      <a class="dropdown-item" href='index.php?page=home&type_name=all'> All </a>
+      <?php
+      $type_sql = "SELECT * FROM type";
+      $type_qry = mysqli_query($dbconnect, $type_sql);
+      $type_aa = mysqli_fetch_assoc($type_qry);
+      do {
+      $type_name = $type_aa['typename'];?>
+      <a class="dropdown-item" href='index.php?page=home&type_name=<?php echo ("$type_name");?>'> <?php echo "$type_name";?> </a>
+    <?php } while($type_aa = mysqli_fetch_assoc($type_qry));
+
+    ?>
+    </div>
+  </div>
+  </div>
 
 
   <h1> search results for "<?php echo "$search"; ?> " </h1> <?php
@@ -47,7 +70,7 @@ include("navbar.php");
         <div class="card col-3" style="color:black;">
           <a href="index.php?page=productpage&productID=<?php echo "$productID"; ?>">
           <!-- img -->
-          <img class="card-img-top" src="uploads/<?php echo $name; ?>.jpg" alt="<?php echo $name; ?>.jpg">
+          <img class="card-img-top" src="product_images/<?php echo $name; ?>.png" alt="<?php echo $name; ?>.png">
           <div class="card-body">
             <!-- name -->
             <h5 class="card-title"><?php echo "$name $barcode"; ?></h5>
