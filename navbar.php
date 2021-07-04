@@ -1,12 +1,4 @@
-<script>
 
-$(document).ready(function() {
-$('.activater').click(function() {
-  $('.alert').show()
-})
-});
-
-</script>
 
 <?php
 
