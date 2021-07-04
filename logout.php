@@ -8,13 +8,6 @@
 
 
 
-  <?php
-  // unset($_SESSION['admin']);
-  session_destroy();
-  echo "you have logged out";
-
-   ?>
-
 
 
 

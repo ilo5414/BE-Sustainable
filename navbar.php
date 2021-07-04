@@ -18,7 +18,7 @@ else {
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <i class="bi bi-list"></i>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
   <!-- Navbar links -->
@@ -40,9 +40,9 @@ else {
         <a class="nav-link" href="index.php?page=enteritem">Enter item</a>
         <!-- only show if logged in -->
         <?php if (isset($_SESSION['userID'])) { ?>
-        <p><a class="nav-link" href = "index.php?page=logout">logout <?php echo $username; ?> ?</a></p>
+        <p><a href = "index.php?page=logout">logout <?php echo $username; ?> ?</a></p>
       <?php }else { ?>
-        <p><a class="nav-link" href = "index.php?page=login">login </a></p>
+        <p><a href = "index.php?page=login">login </a></p>
     <?php  } ?>
       <!-- </li> -->
     </ul>
