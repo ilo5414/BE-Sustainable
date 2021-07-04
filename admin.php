@@ -8,7 +8,7 @@ function starinsert(certID, certcolno, call, userID) {
         document.getElementById("favstar").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","logout.php?",true);
+    xmlhttp.open("GET","certcard.php?removal=1&userID="+userID+"&certcolno="+certcolno+"&call="+call+"&certID="+certID,true);
     xmlhttp.send();
     }
 
