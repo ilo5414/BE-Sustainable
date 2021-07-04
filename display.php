@@ -24,21 +24,7 @@ if (isset($_GET['productID'])) {
 
 if (isset($_GET['removal']) && $_GET['removal']==2) {
   session_start();
-//   // $userID = $_SESSION['userID'];
-//   $certID = $_GET['certID'];
-//
-//   $checkfav_sql = "SELECT * FROM favcert WHERE userID=$userID AND certID=$certID";
-//   $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
-//   if (mysqli_num_rows($checkfav_qry)>0) {
-//       $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
-//       $qry = mysqli_query($dbconnect, $sql);
-//     } else {
-//       $sql = "INSERT INTO favcert (userID, certID)
-//       VALUES ($userID, $certID)";
-//       $qry = mysqli_query($dbconnect, $sql);
-//     }
-//
-// }
+
 
 
 
