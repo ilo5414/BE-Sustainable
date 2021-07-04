@@ -41,7 +41,7 @@ else {
         <!-- only show if logged in -->
         <?php if (isset($_SESSION['userID'])) { ?>
         <p><a href = "index.php?page=logout">logout <?php echo $username; ?> ?</a></p>
-      <?php }else { ?>
+      <?php } else { ?>
         <p><a href = "index.php?page=login">login </a></p>
     <?php  } ?>
       <!-- </li> -->

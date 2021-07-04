@@ -69,7 +69,7 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
  // do while loop taking the information from the array and turning it into variables
  do {
    $product_name = $product_aa['productname'];
-   $product_image = $product_aa['image'];
+  
    $product_barcode = $product_aa['productbarcode'];
    $productID = $product_aa['productID'];
 
@@ -84,7 +84,7 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
      <p><?php echo $product_barcode ?></p>
 
      <?php
-     // there is an error in here, may need to find a non closed braket etc.
+
           $cert_sql = "SELECT * FROM productcert JOIN products ON products.productID=productcert.productID JOIN cert ON cert.certID=productcert.certID WHERE products.productID LIKE '$productID';";
           $cert_qry = mysqli_query($dbconnect, $cert_sql);
           if(mysqli_num_rows($cert_qry)==0) {
