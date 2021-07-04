@@ -1,12 +1,4 @@
-<script>
 
-$(document).ready(function() {
-$('.activater').click(function() {
-  $('.alert').show()
-})
-});
-
-</script>
 
 <?php
 
@@ -52,7 +44,7 @@ else {
         <?php if (isset($_SESSION['userID'])) { ?>
 
         <a class="nav-link" href = "index.php?page=logout">logout <?php echo $username;?>?</a>
-        <a class="activater nav-link" href="" >SHOW MESSAGE</a>
+    
 
       <?php }else { ?>
         <p><a href = "index.php?page=login">login </a></p>
@@ -60,8 +52,5 @@ else {
       <!-- </li> -->
     </ul>
   </div>
-  <div class="alert alert-success alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    Success! message sent successfully.
-  </div>
+
 </nav>
