@@ -57,10 +57,20 @@ if (isset($_GET['removal']) && $_GET['removal']==1) {
            $about_info = $cert_aa['about'];
            $certID = $cert_aa['certID'];
 
+<<<<<<< HEAD
          // div surrounding the basic booking information as a link
            ?><div class='col-<?php echo $certcolno; ?>'><?php
              ?><div class="card text-center">
                <div class="section">
+=======
+ // do while loop taking the information from the array and turning it into variables
+if (mysqli_num_rows($cert_qry)>0){
+ do {
+   $cert_name = $cert_aa['certname'];
+   $logo_image = $cert_aa['logo'];
+   $about_info = $cert_aa['about'];
+   $certID = $cert_aa['certID'];
+>>>>>>> a0f2cbc99025ff48b478179a5ad96ce96836dcda
 
                  <img src="logos/<?php echo $logo_image; ?>" >
 
@@ -88,9 +98,18 @@ if (isset($_GET['removal']) && $_GET['removal']==1) {
                  <input class="star" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, <?php echo $certcolno; ?>, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
                  <?php
 
+<<<<<<< HEAD
               } else {
                 echo "session problem";
               }
+=======
+          }else {
+            ?>
+            <a href="index.php?page=login">
+            <input class="star" type="week"><br/><br/>
+            </a><?php
+          }
+>>>>>>> a0f2cbc99025ff48b478179a5ad96ce96836dcda
 
             }
 
@@ -108,7 +127,14 @@ if (isset($_GET['removal']) && $_GET['removal']==1) {
 <?php
 
  // the while statement for the loop
+<<<<<<< HEAD
 }while($cert_aa = mysqli_fetch_assoc($cert_qry));
+=======
+} while ($cert_aa = mysqli_fetch_assoc($cert_qry));
+}else {
+  echo "no fav certs";
+}
+>>>>>>> a0f2cbc99025ff48b478179a5ad96ce96836dcda
 
   ?>  </div>
  </div>

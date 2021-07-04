@@ -16,7 +16,6 @@ if (isset($_GET['displaycondition'])) {
 }
 if (isset($_GET['userID'])) {
   $userID = $_GET['userID'];
-  echo $userID;
 }
 
 if (isset($_GET['productID'])) {
@@ -67,6 +66,7 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
 
 
  // do while loop taking the information from the array and turning it into variables
+if (mysqli_num_rows($product_qry)>0) {
  do {
    $product_name = $product_aa['productname'];
   
@@ -139,6 +139,9 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
 <?php
  // the while statement for the loop
 } while ($product_aa = mysqli_fetch_assoc($product_qry));
+}else {
+  echo "No favourite Items";
+}
 
   ?>  </div>
  </div>
