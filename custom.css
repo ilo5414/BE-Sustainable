@@ -23,7 +23,9 @@ body {
 
 }
 
-
+.alert {
+  display: none;
+}
 
 #certificates_himg {
   background-image: url('images/certificates_header.jpg');

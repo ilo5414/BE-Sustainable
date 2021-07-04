@@ -48,6 +48,7 @@ if (isset($_GET['removal']) && $_GET['removal']==1) {
 
 
  // do while loop taking the information from the array and turning it into variables
+if (mysqli_num_rows($cert_qry)>0){
  do {
    $cert_name = $cert_aa['certname'];
    $logo_image = $cert_aa['logo'];
@@ -85,7 +86,10 @@ if (isset($_GET['removal']) && $_GET['removal']==1) {
              <?php
 
           }else {
-            echo "session problem";
+            ?>
+            <a href="index.php?page=login">
+            <input class="star" type="week"><br/><br/>
+            </a><?php
           }
 
 
@@ -103,6 +107,9 @@ if (isset($_GET['removal']) && $_GET['removal']==1) {
 <?php
  // the while statement for the loop
 } while ($cert_aa = mysqli_fetch_assoc($cert_qry));
+}else {
+  echo "no fav certs";
+}
 
   ?>  </div>
  </div>
