@@ -6,5 +6,11 @@
   ?>
   <div class="alert alert-primary" role="alert">
   You have logged out
+
+
+
+
 </div>
+
+
   

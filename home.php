@@ -25,8 +25,7 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
 <div class="jumbotron"  >
 
 
-<div class="row">
-
+<div class="row d-flex justify-content-center">
 
 
   <!-- page displays food tiems -->
@@ -57,6 +56,7 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
     </div>
   </div>
   </div>
+
 
   <!-- display food items -->
   <div class="display">

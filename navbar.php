@@ -50,11 +50,12 @@ else {
         <a class="nav-link" href="index.php?page=enteritem">Enter item</a>
         <!-- only show if logged in -->
         <?php if (isset($_SESSION['userID'])) { ?>
+
         <a class="nav-link" href = "index.php?page=logout">logout <?php echo $username;?>?</a>
         <a class="activater nav-link" href="" >SHOW MESSAGE</a>
 
       <?php }else { ?>
-        <p><a class="nav-link" href = "index.php?page=login">login </a></p>
+        <p><a href = "index.php?page=login">login </a></p>
     <?php  } ?>
       <!-- </li> -->
     </ul>

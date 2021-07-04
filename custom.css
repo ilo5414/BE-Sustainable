@@ -45,7 +45,10 @@ body {
   height: 100%;
 }
 
+.row {
+  margin-bottom: 10%;
 
+}
 /* NAV BAR STYLES------------------- */
 .navbar {
   padding-right: 100px;
@@ -63,8 +66,12 @@ body {
   border: none;
   margin-right: 10px;
 
-}
 
+}
+/* styles the text in the product type drop down menu to white */
+.dropdown-item {
+  color: white;
+}
 
 .jumbotron {
   background-color: transparent;
