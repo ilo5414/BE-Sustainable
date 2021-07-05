@@ -1,5 +1,6 @@
+
 <script type="text/javascript">
-function starinsert(certID) {
+function starinsert(certID, certcolno, call, userID) {
 
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
@@ -7,12 +8,25 @@ function starinsert(certID) {
         document.getElementById("favstar").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","favstar.php?certcolno='<?php echo $certcolno ?>'&call='<?php echo $call ?>'&certID="+certID,true);
+    xmlhttp.open("GET","certcard.php?removal=1&userID="+userID+"&certcolno="+certcolno+"&call="+call+"&certID="+certID,true);
     xmlhttp.send();
     }
 
-</script>
 
+function starinsertprod(productID, prodcolno, displaycondition, userID) {
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("favproduct").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET","display.php?removal=2&userID="+userID+"&prodcolno="+prodcolno+"&displaycondition="+displaycondition+"&productID="+productID,true);
+    xmlhttp.send();
+    }
+    <?php echo "sent" ?>
+
+</script>
 
 
 
@@ -23,7 +37,7 @@ function starinsert(certID) {
 
 
 
-  }
+
 
   <?php
 
@@ -31,8 +45,8 @@ function starinsert(certID) {
     header("location: index.php?page=login");
   }
   else {
-  ?>
 
+?>
 
 <div class="jumbotron"  >
 
@@ -60,7 +74,7 @@ include ("display.php"); ?>
 
   </div>
 
-  <div class="column col-6" id="favstar" >
+  <div class="column col-6"  >
     <h1>Favourite certificates</h1>
 
      <?php
