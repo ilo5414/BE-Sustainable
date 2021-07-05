@@ -92,12 +92,18 @@ if (mysqli_num_rows($product_qry)>0) {
               echo "<p>No certificates found</p>";
             } else {
           $cert_aa = mysqli_fetch_assoc($cert_qry);
-
+          ?>
+          <div style="margin:0px;" class="row">
+            <?php
           do {
-          $cert = $cert_aa['certname'];?>
-          <p class="card-title"><?php echo "$cert";?></p>
-         <?php } while($cert_aa = mysqli_fetch_assoc($cert_qry));
+          $cert = $cert_aa['logo'];?>
 
+
+          <img style="margin-left: auto; margin-right: auto; max-width: 40%;" src="logos/<?php echo $cert;?>">
+
+          <!-- <p class="card-title"><?php echo "$cert";?></p> -->
+         <?php } while($cert_aa = mysqli_fetch_assoc($cert_qry));
+          ?></div><?php
           }
              ?>
 
@@ -122,6 +128,11 @@ if (mysqli_num_rows($product_qry)>0) {
 
 
 
+          }else {
+            ?>
+            <a href="index.php?page=login">
+            <input class="star" type="week"><br/><br/>
+            </a><?php
           }
 
 
