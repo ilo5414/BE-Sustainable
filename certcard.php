@@ -82,7 +82,7 @@ if (mysqli_num_rows($cert_qry)>0){
 
 
              ?>
-             <input class="star" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, <?php echo $certcolno; ?>, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
+             <input class="star" style="margin-left:auto; margin-right:auto;" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, <?php echo $certcolno; ?>, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
              <?php
 
           }else {

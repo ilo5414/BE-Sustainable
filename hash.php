@@ -12,18 +12,27 @@ $email = $_POST['email'];
 // This hashes the password
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
-// This is the sql that inserted the values into the database
-$sql = "INSERT INTO user (username, password, email)
-VALUES ('$username', '$hash', '$email')";
+$verify_sql = "SELECT * FROM user WHERE username = '$username'";
+$verify_qry = mysqli_query($dbconnect, $verify_sql);
+$verify_aa = mysqli_fetch_assoc($verify_qry);
+// if name not already in database
+if(mysqli_num_rows($verify_qry)==0) {
+} else {
+  header("location: index.php?page=create&error=error  ");
+}
+  // This is the sql that inserted the values into the database
+  $sql = "INSERT INTO user (username, password, email)
+  VALUES ('$username', '$hash', '$email')";
 
-//if insert succesful, go to homepage
-  if ($dbconnect->query($sql) == TRUE) {
-    header('Location: index.php?page=login');
+  //if insert succesful, go to homepage
+    if ($dbconnect->query($sql) == TRUE) {
+      header('Location: index.php?page=login');
 
-// showing an error if the informaiton wasn't inputted successfullyß
-  } else {
-    echo "Error: Your account has not been created" ."<br>" . $dbconnect->error;
-  }
+  // showing an error if the informaiton wasn't inputted successfullyß
+    } else {
+      echo "Error: Your account has not been created" ."<br>" . $dbconnect->error;
+    }
+
 
 
 

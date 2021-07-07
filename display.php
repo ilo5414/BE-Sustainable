@@ -122,7 +122,7 @@ if (mysqli_num_rows($product_qry)>0) {
 
 
              ?>
-             <input class="star" type="checkbox" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsertprod(this.value, <?php echo $prodcolno; ?>, '<?php echo $displaycondition; ?>', <?php echo $userID; ?>)"><br/><br/>
+             <input class="star" type="checkbox" style="margin-left:auto; margin-right:auto;" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsertprod(this.value, <?php echo $prodcolno; ?>, '<?php echo $displaycondition; ?>', <?php echo $userID; ?>)"><br/><br/>
 
              <?php
 
@@ -152,6 +152,7 @@ if (mysqli_num_rows($product_qry)>0) {
 } while ($product_aa = mysqli_fetch_assoc($product_qry));
 }else {
   echo "No favourite Items";
+  echo $displaycondition;
 }
 
   ?>  </div>

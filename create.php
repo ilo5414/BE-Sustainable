@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid" id="">
 
   <?php include("navbar.php"); ?>
@@ -12,8 +14,14 @@
   <form class="logform" action="index.php?page=hash" method="post">
     <div class="form-group">
       <label>Username</label>
-        <input type="text" name="username" class="form-control" value="">
+        <input type="text" name="username" class="form-control" value="" >
     </div>
+    <?php if (isset($_GET['error'])) {
+      ?><div class="alert alert-warning" role="alert">
+        This username is already taken
+      </div><?php
+    } else {
+    }?>
 
     <div class="form-group" action="index.php?=hash" menthod="post">
       <label>Password</label>

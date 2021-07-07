@@ -15,7 +15,31 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
     }
     <?php echo "sent" ?>
 
+
+
+
+    function showResult(str) {
+      if (str.length==0) {
+        document.getElementById("livesearch").innerHTML="";
+        document.getElementById("livesearch").style.border="0px";
+        return;
+      }
+      var xmlhttp=new XMLHttpRequest();
+      xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+          document.getElementById("livesearch").innerHTML=this.responseText;
+          document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+        }
+      }
+      var displaycondition = "WHERE productname LIKE '%"+str+"%'"
+      xmlhttp.open("GET","display.php?displaycondition="+displaycondition+"&prodcolno=2",true);
+      xmlhttp.send();
+    }
+
+
 </script>
+
+
 
 <div class="container-fluid" id="homepage_himg">
 
@@ -32,7 +56,8 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
   <!-- searh items bar -->
   <form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults">
     <div class="form-group">
-    <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search">
+    <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)">
+
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </div>
   </form>
@@ -56,7 +81,7 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
     </div>
   </div>
   </div>
-
+<div style="max-height: 100px;" id="livesearch"></div>
 
   <!-- display food items -->
   <div class="display">
