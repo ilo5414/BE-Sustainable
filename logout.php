@@ -6,11 +6,6 @@
   ?>
   <div class="alert alert-primary" role="alert">
   You have logged out
-
-
-
-
 </div>
-
-
-  
+<?php
+header('Location: ' . $_SERVER['HTTP_REFERER']); ?>
