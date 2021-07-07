@@ -1,4 +1,9 @@
+<script>
+function logout() {
 
+  alert("You have logged out");
+}
+</script>
 
 <?php
 
@@ -13,7 +18,7 @@ else {
 
 <!-- navbar -->
 
-<nav class="navbar navbar-light">
+<nav class="navbar navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand" href="index.php?page=home"><img src="images/white_logo.png" style="height:200px" alt=""></a>
 
@@ -43,11 +48,11 @@ else {
         <!-- only show if logged in -->
         <?php if (isset($_SESSION['userID'])) { ?>
 
-        <a class="nav-link" href = "index.php?page=logout">logout <?php echo $username;?>?</a>
-    
+        <a class="nav-link" onclick="logout()" href = "index.php?page=logout">Logout <?php echo $username;?>?</a>
+
 
       <?php }else { ?>
-        <p><a href = "index.php?page=login">login </a></p>
+        <a  class="nav-link" href = "index.php?page=login">Login </a>
     <?php  } ?>
       <!-- </li> -->
     </ul>
