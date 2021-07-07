@@ -69,7 +69,7 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
 if (mysqli_num_rows($product_qry)>0) {
  do {
    $product_name = $product_aa['productname'];
-  
+
    $product_barcode = $product_aa['productbarcode'];
    $productID = $product_aa['productID'];
 
@@ -152,7 +152,7 @@ if (mysqli_num_rows($product_qry)>0) {
 } while ($product_aa = mysqli_fetch_assoc($product_qry));
 }else {
   echo "No favourite Items";
-  echo $displaycondition;
+  
 }
 
   ?>  </div>
