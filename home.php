@@ -32,7 +32,7 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
         }
       }
       var displaycondition = "WHERE productname LIKE '%"+str+"%'"
-      xmlhttp.open("GET","display.php?displaycondition="+displaycondition+"&prodcolno=2",true);
+      xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
       xmlhttp.send();
     }
 
@@ -49,7 +49,7 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
 <div class="jumbotron"  >
 
 
-<div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-center" style="margin-bottom:0px;">
 
 
   <!-- page displays food tiems -->
@@ -80,8 +80,9 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
     ?>
     </div>
   </div>
+
   </div>
-<div style="max-height: 100px;" id="livesearch"></div>
+  <div class="justify-content-center" style="width:40%;" id="livesearch"></div>
 
   <!-- display food items -->
   <div class="display">
