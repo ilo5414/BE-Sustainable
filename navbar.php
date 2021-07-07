@@ -48,11 +48,13 @@ else {
         <!-- only show if logged in -->
         <?php if (isset($_SESSION['userID'])) { ?>
 
+
         <a class="nav-link" onclick="logout()" href = "index.php?page=logout">Logout <?php echo $username;?>?</a>
 
 
       <?php }else { ?>
         <a  class="nav-link" href = "index.php?page=login">Login </a>
+
     <?php  } ?>
       <!-- </li> -->
     </ul>
