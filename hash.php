@@ -18,7 +18,11 @@ $verify_aa = mysqli_fetch_assoc($verify_qry);
 // if name not already in database
 if(mysqli_num_rows($verify_qry)==0) {
 } else {
-  header("location: index.php?page=create&error=error  ");
+  ?>
+  <div class="alert alert-warning" role="alert">
+    This username is already taken
+  </div>
+  <?php
 }
   // This is the sql that inserted the values into the database
   $sql = "INSERT INTO user (username, password, email)
