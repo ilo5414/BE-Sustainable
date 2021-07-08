@@ -1,7 +1,7 @@
 
 <?php
 include 'dbconnect.php';
-
+$n=0;
 if (isset($_GET['displaycondition'])) {
   $displaycondition = $_GET['displaycondition'];
 }
@@ -25,6 +25,7 @@ if (isset($_GET['productID'])) {
  // do while loop taking the information from the array and turning it into variables
 if (mysqli_num_rows($product_qry)>0) {
  do {
+   $n=$n+1;
    $product_name = $product_aa['productname'];
    $product_image = $product_aa['image'];
    $product_barcode = $product_aa['productbarcode'];
@@ -32,7 +33,7 @@ if (mysqli_num_rows($product_qry)>0) {
 
  // div surrounding the basic booking information as a link
    ?><div class="row"  style="background-color:white; color:black; margin:0px;">
-   <img style="max-height: 100px;" src="product_images/<?php echo $product_name;?>.png">
+   <img style="max-width: 20%;" src="product_images/<?php echo $product_name;?>.png">
 
 <div class="">
 
@@ -48,7 +49,7 @@ if (mysqli_num_rows($product_qry)>0) {
 
 <?php
  // the while statement for the loop
-} while ($product_aa = mysqli_fetch_assoc($product_qry));
+} while ($product_aa = mysqli_fetch_assoc($product_qry) and $n<3);
 }else {
   echo "No results";
   echo $displaycondition;

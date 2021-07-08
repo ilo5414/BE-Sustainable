@@ -31,7 +31,7 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
           document.getElementById("livesearch").style.border="1px solid #A5ACB2";
         }
       }
-      var displaycondition = "WHERE productname LIKE '%"+str+"%'"
+      var displaycondition = "WHERE productname LIKE '%"+str+"%' OR productbarcode LIKE '%"+str+"%'"
       xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
       xmlhttp.send();
     }
@@ -82,7 +82,7 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
   </div>
 
   </div>
-  <div class="justify-content-center" style="width:40%;" id="livesearch"></div>
+  <div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:48%;" id="livesearch"></div>
 
   <!-- display food items -->
   <div class="display">
