@@ -151,8 +151,11 @@ if (mysqli_num_rows($product_qry)>0) {
  // the while statement for the loop
 } while ($product_aa = mysqli_fetch_assoc($product_qry));
 }else {
-  echo "No favourite Items";
-  echo $displaycondition;
+?><br> <br><?php
+echo "No Items";
+
+
+
 }
 
   ?>  </div>
