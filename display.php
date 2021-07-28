@@ -153,16 +153,14 @@ if (mysqli_num_rows($product_qry)>0) {
  // the while statement for the loop
 } while ($product_aa = mysqli_fetch_assoc($product_qry));
 }else {
-<<<<<<< Updated upstream
+
 
 ?><br> <br><?php
 echo "No Items";
 
 
 
-=======
-  echo "No favourite Items";
->>>>>>> Stashed changes
+
 
 }
 
