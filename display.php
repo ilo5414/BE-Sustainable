@@ -69,7 +69,7 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
 if (mysqli_num_rows($product_qry)>0) {
  do {
    $product_name = $product_aa['productname'];
-  
+
    $product_barcode = $product_aa['productbarcode'];
    $productID = $product_aa['productID'];
 
@@ -151,8 +151,10 @@ if (mysqli_num_rows($product_qry)>0) {
  // the while statement for the loop
 } while ($product_aa = mysqli_fetch_assoc($product_qry));
 }else {
+
 ?><br> <br><?php
 echo "No Items";
+
 
 
 
