@@ -58,7 +58,8 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
 
 <?php
    // the sql stament that will be run in the data base to obtain the information wanted
-   $product_sql = "SELECT * FROM products $displaycondition";
+   $product_sql = "SELECT * FROM products JOIN company ON products.companyID=company.companyID $displaycondition";
+
  // this takes the slq written above to the data base and runs it to obtain the information wanted
    $product_qry = mysqli_query($dbconnect, $product_sql);
  // this turns the inforamtion retrieved into an assosiative array
@@ -69,7 +70,7 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
 if (mysqli_num_rows($product_qry)>0) {
  do {
    $product_name = $product_aa['productname'];
-
+   $company_name = $product_aa['companyname'];
    $product_barcode = $product_aa['productbarcode'];
    $productID = $product_aa['productID'];
 
@@ -80,6 +81,7 @@ if (mysqli_num_rows($product_qry)>0) {
          <img src="product_images/<?php echo $product_name;?>.png">
        </div>
 
+     <h1><?php echo $company_name ?></h1>
      <h1><?php echo $product_name ?></h1>
      <p><?php echo $product_barcode ?></p>
 
@@ -151,12 +153,16 @@ if (mysqli_num_rows($product_qry)>0) {
  // the while statement for the loop
 } while ($product_aa = mysqli_fetch_assoc($product_qry));
 }else {
+<<<<<<< Updated upstream
 
 ?><br> <br><?php
 echo "No Items";
 
 
 
+=======
+  echo "No favourite Items";
+>>>>>>> Stashed changes
 
 }
 
