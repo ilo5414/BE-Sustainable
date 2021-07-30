@@ -43,7 +43,10 @@ body {
   height: 100%;
 }
 
+.row {
+  margin-bottom: 10%;
 
+}
 /* NAV BAR STYLES------------------- */
 .navbar {
   padding-right: 100px;
@@ -56,11 +59,17 @@ body {
 }
 
 .dropdown-menu {
-  background-color: transparent;
+  background-color: #22211F;
+  opacity: 85%;
   border: none;
   margin-right: 10px;
-}
 
+
+}
+/* styles the text in the product type drop down menu to white */
+.dropdown-item {
+  color: white;
+}
 
 .jumbotron {
   background-color: transparent;
@@ -132,6 +141,7 @@ body {
     font-size:30px;
     cursor:pointer;
     width: 50px;
+    
 
 }
 .star:before {
