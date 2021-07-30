@@ -27,7 +27,6 @@ if (mysqli_num_rows($product_qry)>0) {
  do {
    $n=$n+1;
    $product_name = $product_aa['productname'];
-   $product_image = $product_aa['image'];
    $product_barcode = $product_aa['productbarcode'];
    $productID = $product_aa['productID'];
 
