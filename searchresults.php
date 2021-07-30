@@ -45,7 +45,7 @@ include("navbar.php");
 
   <h1> search results for "<?php echo "$search"; ?> " </h1> <?php
 // selects search query from database
-  $result_sql = "SELECT * FROM products WHERE products.productname LIKE '%$search%' OR products.productbarcode LIKE '%$search%';";
+  $result_sql = "SELECT * FROM products JOIN company ON products.companyID=company.companyID WHERE products.productname LIKE '%$search%' OR products.productbarcode LIKE '%$search%' OR company.companyname LIKE '%$search%';";
   $result_qry = mysqli_query($dbconnect, $result_sql);
 
   if(mysqli_num_rows($result_qry)==0) {
