@@ -12,7 +12,7 @@ function showResult(str) {
       document.getElementById("livesearch").style.border="1px solid #A5ACB2";
     }
   }
-  var displaycondition = "WHERE productname LIKE '%"+str+"%' OR productbarcode LIKE '%"+str+"%'"
+  var displaycondition = "WHERE products.productname LIKE '%"+str+"%' OR products.productbarcode LIKE '%"+str+"%' OR company.companyname LIKE '%"+str+"%'";
   xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
   xmlhttp.send();
 }
@@ -62,7 +62,7 @@ include("navbar.php");
   </div>
   <div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:48%;" id="livesearch"></div>
 
-  <h1> search results for "<?php echo "$search"; ?> " </h1> <?php
+  <h1> search results for "<?php echo "$search"; ?>"</h1> <?php
 
 
 // selects search query from database
@@ -86,7 +86,7 @@ include("navbar.php");
   }
 $prodcolno = 3;
 $sendingpage = "searchresults&type_name=$type_name";
-$displaycondition="WHERE products.productname LIKE '%$search%' OR products.productbarcode LIKE '%$search%';";
+$displaycondition="WHERE products.productname LIKE '%$search%' OR products.productbarcode LIKE '%$search%' OR company.companyname LIKE '%$search%';";
      include("display.php");
 ?>
 
