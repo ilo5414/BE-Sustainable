@@ -99,7 +99,7 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
   }else{
     $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
   }
-$prodcolno = 3;
+// $prodcolno = 3;
 $sendingpage = "home&type_name=$type_name";
      include("display.php");
 ?>
