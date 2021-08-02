@@ -21,28 +21,23 @@
 
 
 </script>
-
 <?php
+
+
+
 include("navbar.php");
 ?>
-<div class="row">
-<!-- <iframe id="printf" name="printf" src="https://zxing-ngx-scanner-mbkcv7.stackblitz.io" title="barcode scanner" allow="geolocation; microphone; camera" width="100%" height="500" frameborder="0"></iframe> -->
-</div>
+<?php if (isset($_GET['barcode'])){
+	$scannedbarcode = $_GET['barcode'];
+	  header("location: index.php?page=searchresults&search=$scannedbarcode");
+}
+?>
 
 
-<!-- <iframe id="frame" src="https://zxing-ngx-scanner-mbkcv7.stackblitz.io" style="border: none; height: 350px; width: 100%"></iframe> -->
 
-<script type="text/javascript">
-window.addEventListener('iframe_message', function(e) {
-var url = e.detail.url
-window.open(url, '_blank')
-}, false);
-</script>
-
-<hello data="{{event.data}}"></hello>
 
 <!-- page displays food tiems -->
-<!-- <div class="row d-flex justify-content-center" style="margin-bottom:0px;"> -->
+<div class="row d-flex justify-content-center" style="margin-bottom:0px;">
 <form class="form-inline my-2 my-lg-0 justify-content-center"  method="POST" action="index.php?page=searchresults">
 	<div class="form-group">
 	<input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)">
@@ -50,13 +45,10 @@ window.open(url, '_blank')
 	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </div>
 </form>
+</div>
   <div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:48%;" id="livesearch"></div>
 
 <?php
 $prodcolno=3;
 $displaycondition = "";
 include("display.php"); ?>
-
-<h1>I am the main page</h1>
-		<iframe id="iframe" src="https://zxing-ngx-scanner-mbkcv7.stackblitz.io/" height="600" width="800">
-		</iframe>
