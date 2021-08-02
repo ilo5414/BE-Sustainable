@@ -54,7 +54,7 @@ if (mysqli_num_rows($cert_qry)>0){
    $certID = $cert_aa['certID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-<?php echo $certcolno; ?>'><?php
+   ?><div class='col-lg-<?php echo $lgnum;?> col-md-<?php echo $mdnum;?>'><?php
      ?><div class="card text-center">
        <div class="section">
 
@@ -62,7 +62,7 @@ if (mysqli_num_rows($cert_qry)>0){
 
        </div>
 
-     <h1><?php echo $cert_name ?></h1>
+     <h4><?php echo $cert_name ?></h4>
      <p><?php echo $about_info ?></p>
 
 
