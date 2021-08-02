@@ -1,7 +1,5 @@
 <!-- page calls cert info and puts into card  -->
 
-
-
 <?php
 
 include("dbconnect.php");
@@ -75,7 +73,8 @@ if (mysqli_num_rows($product_qry)>0) {
    $productID = $product_aa['productID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class='col-<?php echo $prodcolno; ?>'><?php
+
+   ?><div class= 'col-lg-3 col-md-4 col-sm-6' ><?php
      ?><div class="card text-center">
        <div class="section">
          <img src="product_images/<?php echo $product_name;?>.png">
@@ -161,13 +160,8 @@ echo "No Items";
 
 
 
-
 }
 
   ?>  </div>
  </div>
  <!-- booking display div ends -->
- <?php
-
-
-?>
