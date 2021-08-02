@@ -67,10 +67,28 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
   <div class="column col-6">
     <h1>Favourite products</h1>
 <?php
-$prodcolno = 6;
+    $lgnum = 6;
+    $mdnum = 12;
 // $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
    $displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
-   include ("display.php"); ?>
+   include ("display.php");
+
+
+   ?>
+
+
+
+   <style>
+    .card {
+      font-size: 10px;
+    }
+
+    .card h1 {
+      font-size: 20px;
+    }
+
+   </style>
+
 
   </div>
 

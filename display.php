@@ -74,14 +74,14 @@ if (mysqli_num_rows($product_qry)>0) {
 
  // div surrounding the basic booking information as a link
 
-   ?><div class= 'col-lg-3 col-md-4 col-sm-6' ><?php
+   ?><div class='col-lg-<?php echo $lgnum;?> col-md-<?php echo $mdnum;?>'> <?php
      ?><div class="card text-center">
        <div class="section">
-         <img src="product_images/<?php echo $product_name;?>.png">
+         <img src="product_images/<?php echo $product_name;?>.png" style="max-height: 200px; width: auto;">
        </div>
 
-     <h1><?php echo $company_name ?></h1>
-     <h1><?php echo $product_name ?></h1>
+     <h6><?php echo $company_name ?></h6>
+     <h4><?php echo $product_name ?></h4>
      <p><?php echo $product_barcode ?></p>
 
      <?php
@@ -152,6 +152,7 @@ if (mysqli_num_rows($product_qry)>0) {
  // the while statement for the loop
 } while ($product_aa = mysqli_fetch_assoc($product_qry));
 }else {
+
 
 
 ?><br> <br><?php
