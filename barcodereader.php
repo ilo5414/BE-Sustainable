@@ -22,12 +22,13 @@
 
 </script>
 <?php
-$scannedbarcode = $_GET['barcode'];
+
 
 
 include("navbar.php");
 ?>
-<?php if (isset($scannedbarcode = $_GET['barcode'];)):
+<?php if (isset($_GET['barcode'])){
+	$scannedbarcode = $_GET['barcode'];
 	  header("location: index.php?page=searchresults&search=$scannedbarcode");
 }
 ?>
