@@ -90,6 +90,7 @@ function starinsert(certID, certcolno, call, userID) {
 
         <?php
         $call="WHERE 1";
-        $certcolno = 3;
+        $lgnum = 3;
+        $mdnum = 6;
 
         include ("certcard.php"); ?>
