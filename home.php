@@ -9,10 +9,12 @@ function starinsertprod(productID, prodcolno, displaycondition, userID) {
         document.getElementById("favproduct").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","favproduct.php?userID="+userID+"&prodcolno="+prodcolno+"&displaycondition="+displaycondition+"&productID="+productID,true);
+    xmlhttp.open("GET","display.php?removal=2&userID="+userID+"&prodcolno="+prodcolno+"&displaycondition="+displaycondition+"&productID="+productID,true);
     xmlhttp.send();
     }
     <?php echo "sent" ?>
+
+
 
 
 

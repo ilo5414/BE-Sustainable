@@ -16,6 +16,21 @@ function showResult(str) {
   xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
   xmlhttp.send();
 }
+
+
+function starinsertprod(productID, prodcolno, displaycondition, userID) {
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("favproduct").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET","display.php?removal=2&userID="+userID+"&prodcolno="+prodcolno+"&displaycondition="+displaycondition+"&productID="+productID,true);
+    xmlhttp.send();
+    }
+    <?php echo "sent" ?>
+
 </script>
 
 <?php

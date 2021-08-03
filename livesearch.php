@@ -9,8 +9,6 @@ if (isset($_GET['displaycondition'])) {
 if (isset($_GET['productID'])) {
   $productID = $_GET['productID'];
 }
-
-
 ?>
 
 
@@ -54,6 +52,7 @@ if (mysqli_num_rows($product_qry)>0) {
 } while ($product_aa = mysqli_fetch_assoc($product_qry) and $n<3);
 }else {
   echo "No results";
+  echo $displaycondition;
 }
 
   ?>

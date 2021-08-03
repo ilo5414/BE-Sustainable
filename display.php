@@ -1,21 +1,5 @@
 <!-- page calls cert info and puts into card  -->
-<script type="text/javascript">
 
-
-function starinsertprod(productID, displaycondition, userID) {
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("favproduct").innerHTML = this.responseText;
-      }
-    };
-    xmlhttp.open("GET","favproduct.php?userID="+userID+"&displaycondition="+displaycondition+"&productID="+productID,true);
-    xmlhttp.send();
-    }
-    <?php echo "sent" ?>
-
-</script>
 
 <?php
 
@@ -67,6 +51,7 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
 
 
 ?>
+
 
 <div id="favproduct">
 <div class="row sb_cards">
@@ -140,11 +125,9 @@ if (mysqli_num_rows($product_qry)>0) {
 
 
              ?>
-             <input class="star" type="checkbox" style="margin-left:auto; margin-right:auto;" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, '<?php echo $displaycondition; ?>', <?php echo $userID; ?>)"><br/><br/>
+               <input class="star" type="checkbox" style="margin-left:auto; margin-right:auto;" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsertprod(this.value, <?php echo $prodcolno; ?>, '<?php echo $displaycondition; ?>', <?php echo $userID; ?>)"><br/><br/>
 
-             <?php
-
-
+<?php
 
           }else {
             ?>
