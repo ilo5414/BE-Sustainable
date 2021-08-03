@@ -49,9 +49,12 @@ body {
 }
 /* NAV BAR STYLES------------------- */
 .navbar {
-  padding-right: 100px;
-  min-height: 200px;
+  padding-right: 7%;
   margin-bottom: 0;
+  height:30%;
+}
+.navbar-brand{
+  width: 50%;
 }
 
 .nav-link {
@@ -155,3 +158,10 @@ body {
 
 
 /* MEDIA QUERIES */
+@media only screen and (max-width: 570px) {
+  .prod-dropdown{
+    display: none;
+  }
+
+
+}

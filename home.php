@@ -1,18 +1,6 @@
 <script type="text/javascript">
 
-// 
-// function starinsertprod(productID, prodcolno, displaycondition, userID) {
-//
-//       var xmlhttp = new XMLHttpRequest();
-//       xmlhttp.onreadystatechange = function() {
-//       if (this.readyState == 4 && this.status == 200) {
-//         document.getElementById("favproduct").innerHTML = this.responseText;
-//       }
-//     };
-//     xmlhttp.open("GET","display.php?removal=2&userID="+userID+"&prodcolno="+prodcolno+"&displaycondition="+displaycondition+"&productID="+productID,true);
-//     xmlhttp.send();
-//     }
-//     <?php echo "sent" ?>
+
 
 
 
@@ -65,7 +53,7 @@
   </div>
   </form>
   <!-- dropdown -->
-  <div class="dropdown">
+  <div class="dropdown prod-dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       produce type
     </button>

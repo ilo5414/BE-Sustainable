@@ -90,14 +90,15 @@ if (mysqli_num_rows($product_qry)>0) {
 
  // div surrounding the basic booking information as a link
 
-   ?><div class= 'col-lg-3 col-md-4 col-sm-6' ><?php
+   ?><div class= 'col-lg-3 col-md-4 col-sm-6 col-12' ><?php
      ?><div class="card text-center">
        <div class="section">
          <img src="product_images/<?php echo $product_name;?>.png">
        </div>
 
-     <h1><?php echo $company_name ?></h1>
+
      <h1><?php echo $product_name ?></h1>
+     <h3><?php echo $company_name ?></h3>
      <p><?php echo $product_barcode ?></p>
 
      <?php
