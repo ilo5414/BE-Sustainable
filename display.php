@@ -95,12 +95,12 @@ if (mysqli_num_rows($product_qry)>0) {
 
      ?><div class="card text-center">
        <div class="section">
-         <img src="product_images/<?php echo $product_name;?>.png" style="max-height: 200px; width: auto;">
+         <img src="product_images/<?php echo $product_name;?>.png" style="max-height: 200px; width: 100%;">
        </div>
 
 
-     <h6><?php echo $company_name ?></h6>
-     <h4><?php echo $product_name ?></h4>
+     <h2><?php echo $company_name ?></h6>
+     <h3><?php echo $product_name ?></h4>
 
      <p><?php echo $product_barcode ?></p>
 

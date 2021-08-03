@@ -62,7 +62,7 @@ if (mysqli_num_rows($cert_qry)>0){
 
        </div>
 
-     <h4><?php echo $cert_name ?></h4>
+     <h3><?php echo $cert_name ?></h4>
      <p><?php echo $about_info ?></p>
 
 
