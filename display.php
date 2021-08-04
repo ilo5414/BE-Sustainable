@@ -99,9 +99,9 @@ if (mysqli_num_rows($product_qry)>0) {
        </div>
 
 
-     <h2><?php echo $company_name ?></h6>
-     <h3><?php echo $product_name ?></h4>
 
+     <h2><?php echo $product_name ?></h2>
+     <h3><?php echo $company_name ?></h3>
      <p><?php echo $product_barcode ?></p>
 
      <?php
