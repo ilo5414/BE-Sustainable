@@ -92,11 +92,13 @@
   }
 // $prodcolno = ;
 $sendingpage = "home&type_name=$type_name";
-      $lgnum = 3;
-      $mdnum = 6;
+
+      $xlnum = 3;
+      $lgnum = 4;
+      $smnum = 6;
      include("display.php");
 
-  
+
 ?>
 
 
