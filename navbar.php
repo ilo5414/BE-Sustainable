@@ -20,7 +20,7 @@ else {
 
 <nav class="navbar navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="index.php?page=home"><img src="images/white_logo.png" style="height:200px" alt=""></a>
+  <a class="navbar-brand" href="index.php?page=home" style="max-height:100%;"><img src="images/white_logo.png" style="max-height: 170px; max-width:70%;" alt=""></a>
 
 
   <!-- Toggler/collapsibe Button -->

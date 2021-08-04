@@ -1,37 +1,54 @@
+
 <script type="text/javascript">
-function showResult(str) {
-  if (str.length==0) {
-    document.getElementById("livesearch").innerHTML="";
-    document.getElementById("livesearch").style.border="0px";
-    return;
-  }
-  var xmlhttp=new XMLHttpRequest();
-  xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
-      document.getElementById("livesearch").innerHTML=this.responseText;
-      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+
+
+function starinsertprod(productID, prodcolno, displaycondition, userID) {
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("favproduct").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET","display.php?removal=2&userID="+userID+"&prodcolno="+prodcolno+"&displaycondition="+displaycondition+"&productID="+productID,true);
+    xmlhttp.send();
     }
-  }
-  var displaycondition = "WHERE products.productname LIKE '%"+str+"%' OR products.productbarcode LIKE '%"+str+"%' OR company.companyname LIKE '%"+str+"%'";
-  xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
-  xmlhttp.send();
-}
+    <?php echo "sent" ?>
 
 
+
+
+    function showResult(str) {
+      if (str.length==0) {
+        document.getElementById("livesearch").innerHTML="";
+        document.getElementById("livesearch").style.border="0px";
+        return;
+      }
+      var xmlhttp=new XMLHttpRequest();
+      xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+          document.getElementById("livesearch").innerHTML=this.responseText;
+          document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+        }
+      }
+      var displaycondition = "WHERE productname LIKE '%"+str+"%' OR productbarcode LIKE '%"+str+"%'"
+      xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
+      xmlhttp.send();
+    }
 
 
 </script>
 
-<?php
-include("navbar.php");
-?>
-
-<?php
 
 
+<div class="container-fluid" id="homepage_himg">
 
-  $search = $_POST['search'];
-  ?>
+  <?php include("navbar.php"); ?>
+
+
+<div class="jumbotron"  >
+
+
 <div class="row d-flex justify-content-center" style="margin-bottom:0px;">
 
 
@@ -63,16 +80,10 @@ include("navbar.php");
     ?>
     </div>
   </div>
+
   </div>
   <div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:48%;" id="livesearch"></div>
 
-  <h1> search results for "<?php echo "$search"; ?>"</h1> <?php
-
-
-// selects search query from database
-  $result_sql = "SELECT * FROM products WHERE products.productname LIKE '%$search%' OR products.productbarcode LIKE '%$search%';";
-  $result_qry = mysqli_query($dbconnect, $result_sql);
-?>
   <!-- display food items -->
   <div class="display">
     <?php
@@ -88,9 +99,8 @@ include("navbar.php");
   }else{
     $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
   }
-$prodcolno = 3;
-$sendingpage = "searchresults&type_name=$type_name";
-$displaycondition="WHERE products.productname LIKE '%$search%' OR products.productbarcode LIKE '%$search%' OR company.companyname LIKE '%$search%';";
+// $prodcolno = 3;
+$sendingpage = "home&type_name=$type_name";
      include("display.php");
 ?>
 
