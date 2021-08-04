@@ -15,12 +15,39 @@ include("navbar.php");
     <!-- barcode -->
   </div>
   <div class="form-group">
-    <label for="exampleFormControlInput1">item name</label>
+
     <label for="exampleFormControlInput1">item barcode</label>
     <input class="form-control" required type="number" name="item_code" placeholder="item barcode">
   </div>
-  <div class="form-group">
-    <br>
+
+  <!-- company name -->
+
+  <p>company name</p>
+  <?php
+  // select all certs
+  $companyinput_sql="SELECT * FROM company";
+  $companyinput_qry=mysqli_query($dbconnect, $companyinput_sql);
+  $companyinput_aa = mysqli_fetch_assoc($companyinput_qry);
+  $n = 0;
+
+  do {
+    $company = $companyinput_aa['companyname'];
+    $n = $n+1;
+  ?>
+</div>
+  <div class="form-check form-check-inline">
+  <input type=radio value="<?php echo "$n"?>" name="company_option" required>
+  <label class="form-check-label" for=<?php echo "radio$n";?>><?php echo $company;?></label>
+</div>
+<br>
+<?php } while($companyinput_aa = mysqli_fetch_assoc($companyinput_qry));
+?>
+</select>
+</div>
+
+<br>
+
+
   <!-- certifications -->
   <p>certifications</p>
   <?php
@@ -34,7 +61,7 @@ include("navbar.php");
     $cert = $certinput_aa['certname'];
     $n = $n+1;
   ?>
-</div>
+
   <div class="form-check form-check-inline">
   <input class="form-check-input" type="checkbox" value="<?php echo "option$n"?>" name="<?php echo "option$n";?>">
   <label class="form-check-label" for=<?php echo "checkbox$n";?>><?php echo $cert;?></label>
@@ -63,8 +90,8 @@ do {
 <div class="form-group">
   <span></span><label class="form-check-label" for="<?php echo "$type"?>"></label>
 
-    <input type="radio" value="<?php echo "$type"?>" name="item_type" id="radio">
-    <p><?php echo $typename;?></p>
+    <p>   <input type="radio" value="<?php echo "$type"?>" name="item_type" id="radio" required>    <?php echo $typename;?> </p>
+
 </div>
 <?php } while($typeinput_aa = mysqli_fetch_assoc($typeinput_qry));
 ?>
@@ -76,7 +103,7 @@ do {
   <div class="form-group">
 
     <label for="exampleFormControlFile1">upload img</label>
-    <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload">
+    <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload" required>
   </div>
   <button type="submit" class="btn btn-primary mb-2" name="submit_button">Submit</button>
 
