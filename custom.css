@@ -49,12 +49,9 @@ body {
 }
 /* NAV BAR STYLES------------------- */
 .navbar {
-  padding-right: 7%;
+  padding-right: 100px;
+  min-height: 200px;
   margin-bottom: 0;
-  height:30%;
-}
-.navbar-brand{
-  width: 50%;
 }
 
 .nav-link {
@@ -158,21 +155,9 @@ body {
 
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 570px) {
-  .prod-dropdown{
-    display: none;
+@media screen and (max-width:) {
+  .display_cert_logo {
+
   }
 
-h1{
-  font-size: 20px;
-}
-h2{
-  font-weight: bold;
-  font-size: 15px;
-}
-h3{
-  font-weight: bold;
-  font-size: 10px;
-
-}
 }

@@ -91,11 +91,13 @@ if (mysqli_num_rows($product_qry)>0) {
  // div surrounding the basic booking information as a link
 
 
-   ?><div class='col-lg-<?php echo $lgnum;?> col-md-<?php echo $mdnum;?>'> <?php
+   ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-sm-<?php echo $smnum;?> '> <?php
 
      ?><div class="card text-center">
        <div class="section">
-         <img src="product_images/<?php echo $product_name;?>.png" style="height: 20%; ">
+
+         <img src="product_images/<?php echo $product_name;?>.png" style="max-height: 175px; width: auto;">
+
        </div>
 
 
@@ -120,7 +122,7 @@ if (mysqli_num_rows($product_qry)>0) {
           $cert = $cert_aa['logo'];?>
 
 
-          <img style="margin-left: auto; margin-right: auto; max-width: 40%;" src="logos/<?php echo $cert;?>">
+          <img style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;" src="logos/<?php echo $cert;?>">
 
           <!-- <p class="card-title"><?php echo "$cert";?></p> -->
          <?php } while($cert_aa = mysqli_fetch_assoc($cert_qry));
