@@ -20,11 +20,11 @@ else {
 
 <nav class="navbar navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="index.php?page=home" style="max-height:100%;"><img src="images/white_logo.png" style="max-height: 170px; max-width:70%;" alt=""></a>
+  <a class="navbar-brand" href="index.php?page=home" style="max-height:100%;"><img src="images/white_logo.png" style="max-height: 200px; max-width:70%;" alt=""></a>
 
 
   <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" >
     <span class="navbar-toggler-icon"></span>
   </button>
 
