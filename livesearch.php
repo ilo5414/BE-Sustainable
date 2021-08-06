@@ -52,7 +52,7 @@ if (mysqli_num_rows($product_qry)>0) {
 } while ($product_aa = mysqli_fetch_assoc($product_qry) and $n<3);
 }else {
   echo "No results";
-  echo $displaycondition;
+
 }
 
   ?>
