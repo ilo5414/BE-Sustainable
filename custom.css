@@ -114,7 +114,7 @@ body {
   overflow: hidden;
 }
 
-.card h1 {
+h1 {
   font-size: 30px;
 }
 
@@ -155,9 +155,11 @@ body {
 
 
 /* MEDIA QUERIES */
-@media screen and (max-width:) {
+@media screen and (max-width:650px) {
   .display_cert_logo {
 
   }
-
+  h1 {
+    font-size: 15px;
+  }
 }
