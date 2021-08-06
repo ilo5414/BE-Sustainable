@@ -54,8 +54,10 @@ function starinsert(certID, certcolno, call, userID) {
   <div class="column col-6">
     <h1>Favourite products</h1>
 <?php
-    $lgnum = 6;
+    $xlnum = 6;
+    $lgnum = 12;
     $mdnum = 12;
+    $smnum = 12;
 // $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
    $displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
 

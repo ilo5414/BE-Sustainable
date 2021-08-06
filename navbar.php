@@ -42,8 +42,6 @@ else {
 
         <a class="nav-link" href="index.php?page=aboutus">About us</a>
 
-        <a class="nav-link" href="index.php?page=findus">Find us</a>
-
         <a class="nav-link" href="index.php?page=enteritem">Enter item</a>
         <!-- only show if logged in -->
         <?php if (isset($_SESSION['userID'])) { ?>

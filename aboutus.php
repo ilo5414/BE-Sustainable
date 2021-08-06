@@ -43,7 +43,7 @@
         <div class="col-6">
           <div class="logo_div">
             <h1>Environment</h1>
-            <img src="images/white_logo.png" style="height: 400px" alt="">
+            <img src="images/white_logo.png" style="width:100%;" alt="">
           </div>
           <!-- logo div ends -->
           </div>
