@@ -36,7 +36,9 @@ function starinsert(certID, certcolno, call, userID) {
 
        <div class="section">
          <p class="lead">
-           <a class="btn btn-lg" href="#" role="button">Learn More</a>
+            <a class="btn btn-lg" href="#t1" role="button"> Learn More <br><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+     <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+   </svg></a>
          </p>
        </div>
 
@@ -50,7 +52,7 @@ function starinsert(certID, certcolno, call, userID) {
    <div class="segment">
      <div class="row section">
 
-         <div class="col-4">
+         <div class="col-4" id="t1">
            <h1>Product certificates</h1>
            <h1>What are they?</h1>
          </div>
