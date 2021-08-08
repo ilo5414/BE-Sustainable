@@ -38,7 +38,8 @@
 
 
 <div class="jumbotron"  >
-
+<p>download our app!</p>
+<img src="images/My_App.png" alt="scancode" width="10%">
 
 <div class="row d-flex justify-content-center" style="margin-bottom:0px;">
 
@@ -52,6 +53,7 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </div>
   </form>
+  <p>or </p>
   <!-- dropdown -->
   <div class="dropdown prod-dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
