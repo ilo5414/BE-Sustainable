@@ -49,6 +49,14 @@ function starinsert(certID, certcolno, call, userID) {
 
 </div>
 <!-- end of row 1 -->
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">favourite products</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">favourite certificates </a>
+  </li>
+</ul>
 
 <div class="row">
   <div class="column col-6">
