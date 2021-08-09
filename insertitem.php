@@ -1,8 +1,15 @@
 <?php
 // inserts new item into database
 $name = $_POST['item_name'];
-$code = $_POST['item_code'];
+if (isset($_POST['item_code'])){
+  $code = $_POST['item_code'];
+} elseif (isset($_GET['item_code'])) {
+  $code = $_POST['item_code'];
+}else {
+  header('Location: index.php?page=enteritem&error=No_or_invalid_barcode_entered');
+}
 $type = $_POST['item_type'];
+$company_name = $_POST['company_option'];
 
 
 
@@ -14,7 +21,7 @@ if(mysqli_num_rows($result_qry)!=0) {
   // if barcode/name has a copy
   // go to enter item and show error
     echo "<h1>duplicates of item code</h1>";
-    header('Location: index.php?page=enteritem&error=NameOrCodeDuplicate');
+    header('Location: index.php?page=enteritem&error=Name_Or_Code_Duplicate');
   } else {
 // if no duplicates
 // upload image to file
@@ -108,6 +115,7 @@ if(mysqli_num_rows($result_qry)!=0) {
      }
      else{
          echo "no cert detected.";
+         header('Location: index.php?page=enteritem&error=Please_select_a_cert');
      }
    } while($certinput_aa = mysqli_fetch_assoc($certinput_qry));;
 
@@ -116,12 +124,12 @@ if(mysqli_num_rows($result_qry)!=0) {
 
 // add product
 // add to table if no duplicates
-$sql = "INSERT INTO products (productname, productbarcode, image, typeID)
-VALUES ('$name', '$code', '$name.jpg', '$type')";
+$sql = "INSERT INTO products (productname, productbarcode, typeID, companyID)
+VALUES ('$name', '$code', '$type', '$company_name')";
 
-  if ($dbconnect->query($sql) == TRUE && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file . $newfilename)) {
+  if ($dbconnect->query($sql) == TRUE AND move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file . $newfilename )) {
 //if insert succesful, go to homepage
-    header('Location: index.php?page=home');
+    header("Location: index.php?page=home&n=$company_name");
 
   } else {
     echo "Error: " . $sql . "<br>" . $dbconnect->error;

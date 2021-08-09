@@ -49,7 +49,7 @@ body {
 }
 /* NAV BAR STYLES------------------- */
 .navbar {
-  padding-right: 100px;
+  padding-right: 60px;
   min-height: 200px;
   margin-bottom: 0;
 }
@@ -114,7 +114,7 @@ body {
   overflow: hidden;
 }
 
-.card h1 {
+h1 {
   font-size: 30px;
 }
 
@@ -155,9 +155,11 @@ body {
 
 
 /* MEDIA QUERIES */
-@media screen and (max-width:) {
+@media screen and (max-width:650px) {
   .display_cert_logo {
 
   }
-
+  h1 {
+    font-size: 15px;
+  }
 }

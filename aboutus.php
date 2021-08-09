@@ -1,4 +1,20 @@
+<?php if (isset($xlnum)) {
+}else{
+  $xlnum = 4;
+}
+if (isset($lgnum)) {
+}else{
+  $lgnum = 4;
+}
 
+if (isset($mdnum)) {
+}else{
+  $mdnum = 12;
+}
+if (isset($smnum)) {
+}else{
+  $smnum = 6;
+} ?>
 <div class="container-fluid">
   <div  class="section" id="aboutus_himg">
 
@@ -15,7 +31,9 @@
 
       <div class="section">
         <p class="lead">
-          <a class="btn btn-lg" href="#" role="button">arrow</a>
+          <a class="btn btn-lg" href="#t1" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+</svg></a>
         </p>
       </div>
 
@@ -26,7 +44,7 @@
 <!-- aboutus_img ends -->
 
 
-  <div class="mission_info">
+  <div class="mission_info" id="t1">
     <div class="section">
       <h1 class='display-6 mission'>OUR MISSION</h1>
       <p>We are students dedicated to making buying everyday products more sustainable easier</p>
@@ -43,7 +61,7 @@
         <div class="col-6">
           <div class="logo_div">
             <h1>Environment</h1>
-            <img src="images/white_logo.png" style="height: 400px" alt="">
+            <img src="images/white_logo.png" style="width:100%;" alt="">
           </div>
           <!-- logo div ends -->
           </div>
@@ -59,7 +77,7 @@
 
 
       <div class="row sb_cards">
-        <div class="col-4" >
+        <div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-sm-<?php echo $smnum;?> '>
           <div class="card">
             <h1>Governance</h1>
             <p>One of the three componets of sustainbility here we want to make
@@ -69,7 +87,7 @@
         </div>
         <!-- end of col-4 -->
 
-        <div class="col-4">
+        <div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-sm-<?php echo $smnum;?> '>
           <div class="card">
             <h1>Environmental</h1>
             <p>Our environmental footprint is huge and we want to encourage people to buy
@@ -78,7 +96,7 @@
         </div>
         <!--end of col-4 -->
 
-        <div class="col-4">
+        <div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-sm-<?php echo $smnum;?> '>
           <div class="card">
             <h1>Social</h1>
             <p>Why buy a product that only benefits yourself when you can purchase a product that
