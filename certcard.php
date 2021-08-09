@@ -55,10 +55,10 @@ if (mysqli_num_rows($cert_qry)>0){
 
  // div surrounding the basic booking information as a link
    ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-md-<?php echo $mdnum;?> col-sm<?php echo $smnum;?>'><?php
-     ?><div class="card text-center">
+     ?><div class="card text-center" id=<?php echo $certID?>>
        <div class="section">
 
-         <img src="logos/<?php echo $logo_image; ?>" >
+         <img src="logos/<?php echo $logo_image ?>" >
 
        </div>
 
