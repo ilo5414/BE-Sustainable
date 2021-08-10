@@ -15,9 +15,9 @@
    <div class="txt_align_center section">
        <h1 class="display-4">Product Certificates!</h1>
        <div class="section">
-         <h1 class='display-6'>What they are</h1>
-         <h1 class='display-6'>What do they mean</h1>
-         <h1 class='display-6'>Why do we need them</h1>
+         <h2 class='display-6'>What they are</h2>
+         <h2 class='display-6'>What do they mean</h2>
+         <h2 class='display-6'>Why do we need them</h2>
        </div>
 
 
@@ -79,7 +79,9 @@
 
         <?php
         $call="WHERE 1";
-        $lgnum = 3;
-        $mdnum = 6;
+
+        $xlnum = 3;
+        $lgnum = 4;
+        $smnum = 6;
 
         include ("certcard.php"); ?>

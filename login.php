@@ -23,7 +23,7 @@ that will be taken to the verify page to see if the input is correct -->
 
     <div class="form-group">
       <label>Password</label>
-        <input type="text" name="password" class="form-control" value="">
+        <input type="password" name="password" class="form-control" value="">
     </div>
 
 
