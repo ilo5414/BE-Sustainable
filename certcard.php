@@ -1,10 +1,22 @@
+<script type="text/javascript">
+function starinsert(certID, call, userID) {
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("favstar").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET","certcard.php?removal=1&userID="+userID+"&call="+call+"&certID="+certID,true);
+    xmlhttp.send();
+    }
+</script>
+
 <?php
 
 include("dbconnect.php");
 
-if (isset($_GET['certcolno'])) {
-  $certcolno = $_GET['certcolno'];
-}
+
 if (isset($_GET['call'])) {
   $call = $_GET['call'];
 }
@@ -23,13 +35,30 @@ if (isset($_GET['removal']) && $_GET['removal']==1) {
       $sql = "DELETE FROM `favcert` WHERE `favcert`.`userID` = $userID AND `favcert`.`certID` = $certID";
       $qry = mysqli_query($dbconnect, $sql);
     } else {
+      echo "<h3> if working <h3>";
       $sql = "INSERT INTO favcert (userID, certID)
       VALUES ($userID, $certID)";
       $qry = mysqli_query($dbconnect, $sql);
     }
 
 }
+if (isset($xlnum)) {
+}else{
+  $xlnum = 3;
+}
+if (isset($lgnum)) {
+}else{
+  $lgnum = 4;
+}
 
+if (isset($mdnum)) {
+}else{
+  $mdnum = 12;
+}
+if (isset($smnum)) {
+}else{
+  $smnum = 6;
+}
 
  ?>
 
@@ -80,7 +109,7 @@ if (mysqli_num_rows($cert_qry)>0){
 
 
              ?>
-             <input class="star" style="margin-left:auto; margin-right:auto;" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, <?php echo $certcolno; ?>, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
+             <input class="star" style="margin-left:auto; margin-right:auto;" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
              <?php
 
           }else {
