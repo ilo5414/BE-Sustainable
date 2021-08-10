@@ -1,30 +1,27 @@
+<!-- user page -->
+<script>
+function openPage(pageName,elmnt) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
 
-<script type="text/javascript">
-function starinsert(certID, certcolno, call, userID) {
+}
 
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("favstar").innerHTML = this.responseText;
-      }
-    };
-    xmlhttp.open("GET","certcard.php?removal=1&userID="+userID+"&certcolno="+certcolno+"&call="+call+"&certID="+certID,true);
-    xmlhttp.send();
-    }
-
-
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 </script>
-
-
 
 <div class="container-fluid" id="homepage_himg">
 
 
   <?php include("navbar.php"); ?>
-
-
-
-
 
   <?php
 
@@ -38,7 +35,7 @@ function starinsert(certID, certcolno, call, userID) {
 <div class="jumbotron"  >
 
 
-<div class="row">
+<div class="row" style="margin: 0px;">
 
   <div class="col-12">
 
@@ -48,58 +45,34 @@ function starinsert(certID, certcolno, call, userID) {
   </div>
 
 </div>
-<!-- end of row 1 -->
 
-<div class="row">
-  <div class="column col-6">
-    <h1>Favourite products</h1>
-<?php
-    $xlnum = 6;
-    $lgnum = 12;
-    $mdnum = 12;
-    $smnum = 12;
-// $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
-   $displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
-
-   include ("display.php");
-
-
-   ?>
+<button class="tablink" onclick="openPage('prod', this)">Favourite Products</button>
+<button class="tablink" onclick="openPage('cert', this)" id="defaultOpen">Favourite Certifications</button>
 
 
 
-   <style>
-    .card {
-      font-size: 10px;
-    }
+<div id="prod" class="tabcontent">
+  <?php
 
-    .card h1 {
-      font-size: 20px;
-    }
+  $displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
+  include("display.php"); ?>
 
-   </style>
+</div>
+
+<div id="cert" class="tabcontent">
+    <?php
+  $call = "JOIN favcert ON favcert.certID = cert.certID WHERE userID=$userID";
+  include("certcard.php"); ?>
+</div>
+
+
 
 
 
   </div>
-
-  <div class="column col-6"  >
-    <h1>Favourite certificates</h1>
-
-     <?php
-
-$certcolno = 6;
-     $call = "JOIN favcert ON favcert.certID = cert.certID WHERE userID=$userID";
-    include ("certcard.php"); ?>
-
-  </div>
 </div>
 
-</div>
-</div>
-</div>
 <!-- end of container-fluid -->
-
 
 <?php
 
