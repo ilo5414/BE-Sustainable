@@ -25,6 +25,11 @@ body {
 
 
 
+h3 {
+  font-size: 100%;
+}
+
+
 #certificates_himg {
   background-image: url('images/certificates_header.jpg');
   background-size: cover;
@@ -114,9 +119,7 @@ body {
   overflow: hidden;
 }
 
-h1 {
-  font-size: 30px;
-}
+
 
 .segment {
   padding: 5%;
@@ -175,10 +178,12 @@ h1 {
   h1 {
     font-size: 15px;
   }
+
   h2{
     font-size:10px;
   }
   h3{
     font-size:7px;
+
   }
 }
