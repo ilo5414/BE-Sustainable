@@ -34,6 +34,7 @@ h3 {
   background-image: url('images/certificates_header.jpg');
   background-size: cover;
   max-height: 100%;
+  width: 100%;
 }
 
 #homepage_himg {
@@ -54,13 +55,23 @@ h3 {
 }
 /* NAV BAR STYLES------------------- */
 .navbar {
-  padding-right: 60px;
-  min-height: 200px;
+  padding-right: 10%;
+  height: 30%;
   margin-bottom: 0;
 }
 
 .nav-link {
   color: white;
+}
+
+.btn-outline-success{
+  width:20%;
+  height: 40px;
+  padding:0px;
+  color: white;
+  background-color:green;
+  display: inline-block;
+  margin-top: 0px;
 }
 
 .dropdown-menu {
@@ -156,6 +167,7 @@ h3 {
    content: "\2605";
 }
 
+/* admin page */
 /* Style tab links */
 .tablink {
   background-color: #555;
@@ -170,8 +182,17 @@ h3 {
   height: 80px;
 }
 
+/* admin page ends */
+
+.underbanner{
+  width: 100%;
+  background-color: #327d1b;
+  opacity: 70%;
+  padding: 10px;
+}
+
 /* MEDIA QUERIES */
-@media screen and (max-width:650px) {
+@media screen and (max-width:700px) {
   .display_cert_logo {
 
   }
@@ -188,5 +209,11 @@ h3 {
   .tablink{
     width: 100%;
     font-size:15px;
+  }
+  .small-hide{
+    display: none;
+  }
+  .navbar{
+    height: 175px;
   }
 }
