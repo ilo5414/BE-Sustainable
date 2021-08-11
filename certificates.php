@@ -6,9 +6,7 @@
 
 
    <?php include("navbar.php");
-   if (isset($_SESSION['userID'])) {
-    ?> <p>welcome user <?php echo $_SESSION['userID']; ?></p><?php
-   }?>
+   ?>
 
 
 
@@ -39,13 +37,13 @@
    <div class="segment">
      <div class="row section">
 
-         <div class="col-4" id="t1">
+         <div class="col-lg-4" id="t1">
            <h1>Product certificates</h1>
            <h1>What are they?</h1>
          </div>
          <!-- col-3 ends -->
 
-         <div class="col-6">
+         <div class="col-lg-6">
            <p>Product certification or product qualification is the process
              of certifying a certain product. They do this By testing it’s performance and
              quality to assure it meets qualification criteria of the specific certification ß</p>
@@ -61,7 +59,7 @@
      <div class="row section">
 
 
-         <div class="col-6">
+         <div class="col-lg-6">
            <p>Different certificates mean different things aka different certificates have
              different criteria that products have to meet in order to be certified.
              Read up below on the certificates that our products have to learn more about them
