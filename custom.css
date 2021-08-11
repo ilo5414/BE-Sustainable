@@ -184,6 +184,9 @@ h3 {
   }
   h3{
     font-size:7px;
-
+  }
+  .tablink{
+    width: 100%;
+    font-size:15px;
   }
 }

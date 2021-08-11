@@ -46,8 +46,8 @@ document.getElementById("defaultOpen").click();
 
 </div>
 
-<button class="tablink" onclick="openPage('prod', this)">Favourite Products</button>
-<button class="tablink" onclick="openPage('cert', this)" id="defaultOpen">Favourite Certifications</button>
+<button class="tablink" onclick="openPage('prod', this)" id="defaultOpen">Favourite Products</button>
+<button class="tablink" onclick="openPage('cert', this)">Favourite Certifications</button>
 
 
 
