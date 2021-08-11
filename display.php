@@ -117,7 +117,7 @@ if (mysqli_num_rows($product_qry)>0) {
      ?><div class="card text-center">
        <div class="section">
 
-         <img src="product_images/<?php echo $product_name;?>.png" style="overflow: hidden;">
+         <img src="product_images/<?php echo $product_name;?>.png" style="overflow: hidden; max-height: 180px; width: auto;">
 
        </div>
 
@@ -143,7 +143,7 @@ if (mysqli_num_rows($product_qry)>0) {
           $cert = $cert_aa['logo'];?>
 
 
-          <img style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;" src="logos/<?php echo $cert;?>">
+          <img src="logos/<?php echo $cert;?>" style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;">
 
           <!-- <p class="card-title"><?php echo "$cert";?></p> -->
          <?php } while($cert_aa = mysqli_fetch_assoc($cert_qry));

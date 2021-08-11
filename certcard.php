@@ -58,7 +58,7 @@ if (mysqli_num_rows($cert_qry)>0){
      ?><div class="card text-center">
        <div class="section">
 
-         <img src="logos/<?php echo $logo_image; ?>" >
+         <img src="logos/<?php echo $logo_image; ?>" style="max-height: 200px; width: auto;" >
 
        </div>
 

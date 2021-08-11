@@ -19,7 +19,11 @@ function showResult(str) {
 }
 
 
+
 </script>
+
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
 <div class="container-fluid" id="">
 
@@ -41,8 +45,26 @@ function showResult(str) {
 
     <div class="form-group" action="index.php?=hash" menthod="post">
       <label>Password</label>
-        <input type="text" name="password" class="form-control" value="">
+        <input type="password" name="password" id="password" class="form-control" minlength="8" required>
+        <i class="bi-eye-slash" id="togglePassword"></i>
+
+        <script type="text/javascript">
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the eye / eye slash icon
+            this.classList.toggle('bi-eye');
+        });
+
+
+        </script>
     </div>
+
+
 
     <div class="form-group" action="index.php?=hash" menthod="post">
       <label>Email</label>
