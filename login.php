@@ -23,12 +23,14 @@ that will be taken to the verify page to see if the input is correct -->
 
     <div class="form-group">
       <label>Password</label>
-        <input type="password" name="password" class="form-control" value="">
+      <input type="password" name="password" id="password" class="form-control" minlength="8" required>
     </div>
 
 
     <button type="submit" class="btn btn-primary" name="button">Submit</button>
+
   </form>
+
 
 <?php if (isset($_GET['error'])) {
   ?><div class="alert alert-warning" role="alert">
