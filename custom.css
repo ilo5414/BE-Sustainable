@@ -23,12 +23,19 @@ body {
 
 }
 
+h2 {
+  font-size: 25px;
+}
 
 
 h3 {
   font-size: 100%;
 }
 
+form i {
+  margin-left: 10px;
+  cursor: pointer;
+}
 
 #certificates_himg {
   background-image: url('images/certificates_header.jpg');
