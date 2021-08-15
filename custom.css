@@ -37,6 +37,14 @@ form i {
   cursor: pointer;
 }
 
+.card a {
+  color: black;
+}
+
+.card a:hover {
+  text-decoration: none;
+}
+
 #certificates_himg {
   background-image: url('images/certificates_header.jpg');
   background-size: cover;

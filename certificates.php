@@ -73,6 +73,9 @@
 
         </div>
         <!-- booking display div ends -->
+
+        </div>
+        <!-- container fluid ends -->
         <div id="product">
 
         <?php

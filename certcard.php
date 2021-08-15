@@ -53,11 +53,11 @@ if (isset($lgnum)) {
 
 if (isset($mdnum)) {
 }else{
-  $mdnum = 12;
+  $mdnum = 6;
 }
 if (isset($smnum)) {
 }else{
-  $smnum = 6;
+  $smnum = 12;
 }
 
  ?>
@@ -85,9 +85,10 @@ if (mysqli_num_rows($cert_qry)>0){
  // div surrounding the basic booking information as a link
 
    ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-md-<?php echo $mdnum;?> col-sm<?php echo $smnum;?>'><?php
-     ?><div class="card text-center" id=<?php echo $certID?>>
+       ?><a href="index.php?page=cert_page&certID=<?php echo $certID; ?>"><div class="card text-center" id=<?php echo $certID?>>
 
        <div class="section">
+
 
          <img src="logos/<?php echo $logo_image; ?>" style="max-height: 200px; width: auto;" >
 
@@ -129,7 +130,7 @@ if (mysqli_num_rows($cert_qry)>0){
 
 
 
-     </div>
+     </div></a>
    </div>
    <!-- // booking link div ends -->
 
@@ -142,4 +143,5 @@ if (mysqli_num_rows($cert_qry)>0){
 
   ?>  </div>
  </div>
+
  <!-- booking display div ends -->
