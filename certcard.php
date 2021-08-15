@@ -96,6 +96,7 @@ if (mysqli_num_rows($cert_qry)>0){
 
      <h4><?php echo $cert_name ?></h4>
      <p><?php echo $about_info ?></p>
+     </a>
 
 
 
@@ -119,7 +120,7 @@ if (mysqli_num_rows($cert_qry)>0){
             ?>
             <a href="index.php?page=login">
             <input class="star" type="week"><br/><br/>
-            </a><?php
+            <?php
           }
 
 
