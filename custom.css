@@ -205,6 +205,10 @@ form i {
   display: inline-block;
   margin-top: 0px;
 }
+.productpageimg{
+ overflow: hidden;
+ max-height: 100%;
+ max-width:100%;"
 }
 
 /* MEDIA QUERIES */
@@ -231,5 +235,10 @@ form i {
   }
   .navbar{
     height: 175px;
+  }
+  .productpageimg{
+
+   max-height: 200px; 
+
   }
 }
