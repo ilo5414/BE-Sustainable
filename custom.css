@@ -37,6 +37,14 @@ form i {
   cursor: pointer;
 }
 
+.card a {
+  color: black;
+}
+
+.card a:hover {
+  text-decoration: none;
+}
+
 #certificates_himg {
   background-image: url('images/certificates_header.jpg');
   background-size: cover;
@@ -126,6 +134,7 @@ form i {
   background-color: white;
   border-radius: 15px 15px 15px 0px;
   color: black;
+  border-color: white;
   margin: 20px;
   padding: 5%;
   text-align: center;
@@ -205,6 +214,10 @@ form i {
   display: inline-block;
   margin-top: 0px;
 }
+.productpageimg{
+ overflow: hidden;
+ max-height: 100%;
+ max-width:100%;"
 }
 
 /* MEDIA QUERIES */
@@ -232,4 +245,28 @@ form i {
   .navbar{
     height: 175px;
   }
+  .productpageimg{
+
+   max-height: 200px; 
+
+  }
+}
+
+/* individual certificates page */
+.crt_card {
+  background-color: white;
+  border-radius: 0px 0px 0px 0px;
+  color: black;
+  margin: 0px;
+  padding: 3%;
+  text-align: center;
+}
+.crt_card1 {
+  background-color: white;
+  color: black;
+  margin: 0px;
+  padding-top: 25%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
