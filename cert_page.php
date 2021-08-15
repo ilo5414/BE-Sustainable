@@ -1,10 +1,13 @@
 <!-- This is the individual certificates page where each individual certificate -->
 <!-- is displayed -->
+<?php
+$certID = $_GET['certID'];
+ ?>
 
 
 
-<div class="container-fluid">
-   <div class="section" id="certificates_himg">
+<div class="container-fluid" style="background-color: white;">
+   <div class="" id="certificates_himg">
 
 
 
@@ -15,7 +18,7 @@
 
 
 
-   <div class="txt_align_center section">
+   <div class="txt_align_center ">
        <h1 class="display-4">Product Certificates!</h1>
 
 
@@ -25,70 +28,33 @@
 
  </div>
  <!-- section and image id ends -->
+ <div class="row">
+
+   <div class="crt_card1 col-4">
+     <a href="index.php?page=certificates">
+     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+    </svg>
+     </a>
 
 
+
+   </div>
+   <div class="crt_card col-8">
+
+
+
+   <?php
+    $xlnum = 12;
+    $lgnum = 12;
+    $smnum = 12;
+
+     $call = "WHERE certID=$certID";
+     include("certcard.php"); ?>
+
+    </div>
+
+ </div>
         </div>
         <!-- container fluid ends -->
 <?php
-  $certID = $_GET['certID'];
-
-
-   // the sql stament that will be run in the data base to obtain the information wanted
-   $cert_sql = "SELECT * FROM cert WHERE certID=$certID";
- // this takes the slq written above to the data base and runs it to obtain the information wanted
-   $cert_qry = mysqli_query($dbconnect, $cert_sql);
- // this turns the inforamtion retrieved into an assosiative array
-   $cert_aa = mysqli_fetch_assoc($cert_qry);
-
-
- // do while loop taking the information from the array and turning it into variables
-
-   $cert_name = $cert_aa['certname'];
-   $logo_image = $cert_aa['logo'];
-   $about_info = $cert_aa['about'];
-   $certID = $cert_aa['certID'];
-
- // div surrounding the basic booking information as a link
-
-   ?><div class='col-exampleFormControlFile1-6'>
-     <div class="card text-center" id=<?php echo $certID?>>
-
-       <div class="section">
-
-
-         <img src="logos/<?php echo $logo_image; ?>" style="max-height: 200px; width: auto;" >
-
-       </div>
-
-     <h4><?php echo $cert_name ?></h4>
-     <p><?php echo $about_info ?></p>
-
-
-
-
-
-
-         <!-- only show star if logged in -->
-         <?php
-         if (isset($_SESSION['userID'])) {
-
-           // makes array of fav certs
-           $fav_sql = "SELECT * FROM favcert WHERE userID=$userID AND certID=$certID";
-           $fav_qry = mysqli_query($dbconnect, $fav_sql);
-
-
-             ?>
-             <input class="star" style="margin-left:auto; margin-right:auto;" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
-             <?php
-
-          }else {
-            ?>
-            <a href="index.php?page=login">
-            <input class="star" type="week"><br/><br/>
-            </a>
-          <?php } ?>
-
-
-
-     </div>
-     </div>
