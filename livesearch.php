@@ -32,7 +32,10 @@ if (mysqli_num_rows($product_qry)>0) {
    $productID = $product_aa['productID'];
 
  // div surrounding the basic booking information as a link
-   ?><div class="row"  style="background-color:white; color:black; margin:0px;">
+
+   ?><a style="width:100%;" href="index.php?page=productpage&productID=<?php echo $productID;?>">
+   <div class="row"  style="background-color:white; color:black; margin:0px; width:100%;">
+
    <img style="max-width: 20%;" src="product_images/<?php echo $product_name;?>.png">
 
 <div class="">
@@ -42,7 +45,9 @@ if (mysqli_num_rows($product_qry)>0) {
     <p><?php echo $company_name ?></p>
 <p><?php echo $product_barcode ?></p>
 </div>
+
 </div>
+</a>
 
 
    <!-- // booking link div ends -->

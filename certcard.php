@@ -87,7 +87,7 @@ if (mysqli_num_rows($cert_qry)>0){
  // div surrounding the basic booking information as a link
 
    ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-md-<?php echo $mdnum;?> col-sm<?php echo $smnum;?>'><?php
-   if ($certID==$selected_cert) {
+   if (isset($_GET["cert"]) and $certID==$selected_cert) {
      ?><div style="border-style: solid; border-color: green;">
        <?php
    }
@@ -139,7 +139,7 @@ if (mysqli_num_rows($cert_qry)>0){
 
      </div></a>
    </div>
-   <?php if ($certID==$selected_cert) {
+   <?php if (isset($_GET["cert"]) and $certID==$selected_cert) {
      ?></div>
        <?php
    }
