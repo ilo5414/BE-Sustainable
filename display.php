@@ -141,7 +141,8 @@ if (mysqli_num_rows($product_qry)>0) {
             <?php
           do {
           $cert = $cert_aa['logo'];
-          $certID = $cert_aa['certID'];?>
+          $certID = $cert_aa['certID'];
+      ?>
 
           <a href="index.php?page=certificates&cert=<?php echo $certID;?>#<?php echo $certID;?>">
           <img style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;" src="logos/<?php echo $cert;?>">

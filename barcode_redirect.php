@@ -1,3 +1,7 @@
+<!-- this page catches the barcode sent by the app -->
+<!-- if the barcode is in the database the user will be sent to its productpage -->
+<!-- if it is not in the database the will b directed to the add product page -->
+
 <?php
 $barcode= $_GET['barcode']
 

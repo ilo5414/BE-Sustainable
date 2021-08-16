@@ -1,6 +1,9 @@
 <!-- user page -->
+<!-- this page displys all of users favourited items -->
+
+<!-- this script allows the user to tab between fav products and fav certifications -->
 <script>
-function openPage(pageName,elmnt) {
+function openPage(pageName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -14,20 +17,22 @@ function openPage(pageName,elmnt) {
 
 }
 
-// Get the element with id="defaultOpen" and click on it
+// favcert is opened by default.
 document.getElementById("defaultOpen").click();
 </script>
 
 <div class="container-fluid" id="homepage_himg">
 
+<!-- navbar -->
+  <?php include("navbar.php");
+  // navbar ends
 
-  <?php include("navbar.php"); ?>
 
-  <?php
-
+// if user is not logged in, redirect to login page
   if(!isset($_SESSION['admin'])) {
     header("location: index.php?page=login");
   }
+  // else display page
   else {
 
 ?>
@@ -38,33 +43,35 @@ document.getElementById("defaultOpen").click();
 <div class="row" style="margin: 0px;">
 
   <div class="col-12">
-
+<!-- welcome user and logout button -->
   <h1>Welcome <?php echo $username; ?></h1>
   <p><a href = "index.php?page=logout">logout</a></p>
 
   </div>
 
 </div>
+<!-- tabs -->
+<button class="tablink" onclick="openPage('prod')" id="defaultOpen">Favourite Products</button>
+<button class="tablink" onclick="openPage('cert')">Favourite Certifications</button>
 
-<button class="tablink" onclick="openPage('prod', this)" id="defaultOpen">Favourite Products</button>
-<button class="tablink" onclick="openPage('cert', this)">Favourite Certifications</button>
 
-
-
+<!-- div for favproduct tab -->
 <div id="prod" class="tabcontent">
   <?php
 
   $displaycondition = "JOIN favprod ON favprod.productID = products.productID WHERE userID=$userID";
   include("display.php"); ?>
 
-</div>
+</div><!-- div for favproduct tab ends-->
 
+
+<!-- div for favcert tab -->
 <div id="cert" class="tabcontent">
     <?php
   $call = "JOIN favcert ON favcert.certID = cert.certID WHERE userID=$userID";
   include("certcard.php"); ?>
 </div>
-
+<!-- div for favcert tab  ends-->
 
 
 
