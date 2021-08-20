@@ -1,3 +1,7 @@
+<!-- this page has a search function -->
+
+
+<!-- this script allows the livesearch to function -->
 <script type="text/javascript">
 
 		function showResult(str) {

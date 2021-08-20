@@ -1,24 +1,30 @@
+<!-- this page displays certifications as cards -->
+<!-- this script allows the certs to be favourited/ unfavourited without reloading th page -->
 <script type="text/javascript">
 function starinsert(certID, call, userID) {
-
+// when star is clicked
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
+        // fill favstar div
         document.getElementById("favstar").innerHTML = this.responseText;
       }
     };
+    // with certcard response
     xmlhttp.open("GET","certcard.php?removal=1&userID="+userID+"&call="+call+"&certID="+certID,true);
     xmlhttp.send();
     }
 </script>
 
 <?php
-
+// ajax does not include index or navbar so dbconnnect must be done again
 include("dbconnect.php");
+
+// if cert has been clicked on, will show green border
 if (isset($_GET["cert"])) {
   $selected_cert=$_GET["cert"];
 }
-
+// if only certian certs wanted
 if (isset($_GET['call'])) {
   $call = $_GET['call'];
 }
@@ -26,6 +32,7 @@ if (isset($_GET['userID'])) {
   $userID = $_GET['userID'];
 }
 
+// if favourtite status has been changed
 if (isset($_GET['removal']) && $_GET['removal']==1) {
   session_start();
   // $userID = $_SESSION['userID'];
@@ -87,7 +94,7 @@ if (mysqli_num_rows($cert_qry)>0){
  // div surrounding the basic booking information as a link
 
    ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-md-<?php echo $mdnum;?> col-sm<?php echo $smnum;?>'><?php
-   if ($certID==$selected_cert) {
+   if (isset($_GET["cert"]) and $certID==$selected_cert) {
      ?><div style="border-style: solid; border-color: green;">
        <?php
    }
@@ -139,7 +146,7 @@ if (mysqli_num_rows($cert_qry)>0){
 
      </div></a>
    </div>
-   <?php if ($certID==$selected_cert) {
+   <?php if (isset($_GET["cert"]) and $certID==$selected_cert) {
      ?></div>
        <?php
    }

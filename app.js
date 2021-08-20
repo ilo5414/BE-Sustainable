@@ -1,4 +1,4 @@
-
+// not sure what this does????
 const togglePassword = document.querySelector('#togglePassword');
 const password = document.querySelector('#password');
 
