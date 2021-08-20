@@ -1,9 +1,13 @@
 <!-- form to enter new item -->
-
 <?php
-include("navbar.php");
-?>
 
+include("navbar.php");
+if (isset($_GET['barcode'])) {
+  $x=$_GET['barcode'];
+  $barcode=(int)$x;
+}
+
+?>
 <h1 class="display-4">enter new item</h1>
 <br>
 
@@ -17,7 +21,7 @@ include("navbar.php");
   <div class="form-group">
 
     <label for="exampleFormControlInput1">item barcode</label>
-    <input class="form-control" required type="number" name="item_code" placeholder="item barcode">
+    <input class="form-control" required type="number" name="item_code" value='<?php echo $barcode ?>' placeholder="item barcode">
   </div>
 
   <!-- company name -->

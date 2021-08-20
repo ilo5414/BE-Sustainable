@@ -112,9 +112,9 @@ if (mysqli_num_rows($product_qry)>0) {
  // div surrounding the basic booking information as a link
 
 
-   ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-sm-<?php echo $smnum;?> '> <?php
-
-     ?><div class="card text-center">
+   ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-sm-<?php echo $smnum;?> '>
+     <a href="index.php?page=productpage&productID=<?php echo $productID;?>">
+     <div class="card text-center">
        <div class="section">
 
          <img src="product_images/<?php echo $product_name;?>.png" style="overflow: hidden; max-height: 180px; width: auto;">
@@ -143,7 +143,7 @@ if (mysqli_num_rows($product_qry)>0) {
           $cert = $cert_aa['logo'];
           $certID = $cert_aa['certID'];?>
 
-          <a href="index.php?page=certificates#<?php echo $certID;?>">
+          <a href="index.php?page=certificates&cert=<?php echo $certID;?>#<?php echo $certID;?>">
           <img style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;" src="logos/<?php echo $cert;?>">
           </a>
           <!-- <p class="card-title"><?php echo "$cert";?></p> -->
@@ -187,6 +187,7 @@ if (mysqli_num_rows($product_qry)>0) {
 
 
      </div>
+     </a>
    </div>
    <!-- // booking link div ends -->
 

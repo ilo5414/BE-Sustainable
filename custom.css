@@ -207,6 +207,19 @@ form i {
   padding: 10px;
 }
 
+.green_button{
+  padding:0px;
+  color: white;
+  background-color:green;
+  display: inline-block;
+  margin-top: 0px;
+}
+.productpageimg{
+ overflow: hidden;
+ max-height: 100%;
+ max-width:100%;"
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width:700px) {
   .display_cert_logo {
@@ -231,6 +244,11 @@ form i {
   }
   .navbar{
     height: 175px;
+  }
+  .productpageimg{
+
+   max-height: 200px; 
+
   }
 }
 

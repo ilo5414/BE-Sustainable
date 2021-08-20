@@ -15,7 +15,9 @@ function starinsert(certID, call, userID) {
 <?php
 
 include("dbconnect.php");
-
+if (isset($_GET["cert"])) {
+  $selected_cert=$_GET["cert"];
+}
 
 if (isset($_GET['call'])) {
   $call = $_GET['call'];
@@ -85,6 +87,10 @@ if (mysqli_num_rows($cert_qry)>0){
  // div surrounding the basic booking information as a link
 
    ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-md-<?php echo $mdnum;?> col-sm<?php echo $smnum;?>'><?php
+   if ($certID==$selected_cert) {
+     ?><div style="border-style: solid; border-color: green;">
+       <?php
+   }
        ?><a href="index.php?page=cert_page&certID=<?php echo $certID; ?>"><div class="card text-center" id=<?php echo $certID?>>
 
        <div class="section">
@@ -133,6 +139,11 @@ if (mysqli_num_rows($cert_qry)>0){
 
      </div></a>
    </div>
+   <?php if ($certID==$selected_cert) {
+     ?></div>
+       <?php
+   }
+?>
    <!-- // booking link div ends -->
 
 <?php
@@ -142,7 +153,10 @@ if (mysqli_num_rows($cert_qry)>0){
   echo "no fav certs";
 }
 
-  ?>  </div>
+  ?>
+   </div>
+
+
  </div>
 
  <!-- booking display div ends -->
