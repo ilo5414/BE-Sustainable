@@ -1,5 +1,7 @@
 <!-- This is the individual certificates page where each individual certificate -->
 <!-- is displayed -->
+
+<!-- gets certID -->
 <?php
 $certID = $_GET['certID'];
  ?>

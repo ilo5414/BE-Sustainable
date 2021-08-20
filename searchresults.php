@@ -32,22 +32,29 @@ include("navbar.php");
 
   $search = $_POST['search'];
   ?>
-<div class="row d-flex justify-content-center" style="margin-bottom:0px;">
+<div class="row d-flex justify-content-center" style="margin-bottom:0px; margin-left:0px;">
 
 
   <!-- page displays food tiems -->
-  <!-- searh items bar -->
-  <form class="form-inline my-2 my-lg-0"  method="POST" action="index.php?page=searchresults">
-    <div class="form-group">
-    <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)">
 
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  <!-- searh items bar -->
+  <form class="form-inline col-8"  method="POST" action="index.php?page=searchresults">
+    <div class="form-group row" style="width:100%;">
+      <!-- searchbar -->
+    <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width:70%; display:inline-block;">
+<!-- searchbutton -->
+    <button class="btn btn-outline-success" type="submit" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg></button>
   </div>
   </form>
+<!-- searchbar ends -->
+
+
   <!-- dropdown -->
-  <div class="dropdown">
+  <div class="dropdown prod-dropdown col-4" style="text-align:right;">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      produce type
+      <p class="small-hide">produce type</p>
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" value=>
       <a class="dropdown-item" href='index.php?page=home&type_name=all'> All </a>
@@ -63,8 +70,13 @@ include("navbar.php");
     ?>
     </div>
   </div>
+<!-- dropdown ends -->
+
   </div>
-  <div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:48%;" id="livesearch"></div>
+
+  <!-- livesearch box -->
+  <div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:100%;" id="livesearch"></div>
+  <!-- livesearch box  ends-->
 
   <h1> search results for "<?php echo "$search"; ?>"</h1> <?php
 
@@ -89,7 +101,7 @@ include("navbar.php");
     $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
   }
 $prodcolno = 3;
-$sendingpage = "searchresults&type_name=$type_name";
+// $sendingpage = "searchresults&type_name=$type_name";
 $displaycondition="WHERE products.productname LIKE '%$search%' OR products.productbarcode LIKE '%$search%' OR company.companyname LIKE '%$search%';";
      include("display.php");
 ?>

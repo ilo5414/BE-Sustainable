@@ -1,26 +1,22 @@
-<?php if (isset($xlnum)) {
-}else{
-  $xlnum = 4;
-}
-if (isset($lgnum)) {
-}else{
-  $lgnum = 4;
-}
 
-if (isset($mdnum)) {
-}else{
+<!-- this is the about us page -->
+<!-- it tells the user about our mission -->
+
+<?php
+// sets width of columns
+  $xlnum = 4;
+  $lgnum = 4;
+
   $mdnum = 12;
-}
-if (isset($smnum)) {
-}else{
-  $smnum = 6;
-} ?>
+
+  $smnum = 6;?>
+
 <div class="container-fluid">
   <div  class="section" id="aboutus_himg">
 
-
+<!-- navbar -->
   <?php include("navbar.php"); ?>
-
+<!-- navbar ends -->
 
   <div class=" txt_align_center section">
       <h1 class="display-4">About Us!</h1>
@@ -29,13 +25,16 @@ if (isset($smnum)) {
         <h1 class='display-6'>WHO WE ARE</h1>
       </div>
 
+<!-- scroll down button -->
       <div class="section">
         <p class="lead">
+
           <a class="btn btn-lg" href="#t1" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
 </svg></a>
         </p>
       </div>
+      <!-- scroll down button ends-->
 
   </div>
   <!-- aboutus header ends -->

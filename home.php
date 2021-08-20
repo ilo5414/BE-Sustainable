@@ -1,14 +1,14 @@
+<!-- this homepage shows the QR code, a search bar, and a filter to vieiw products by their pantry type. -->
+<!-- this script allows the livesearch to work -->
 <script type="text/javascript">
-
-
-
-
     function showResult(str) {
+      // if searchbar is empty, dont show livesearch box
       if (str.length==0) {
         document.getElementById("livesearch").innerHTML="";
         document.getElementById("livesearch").style.border="0px";
         return;
       }
+      // if searchbar is being typed in call livesearch.php
       var xmlhttp=new XMLHttpRequest();
       xmlhttp.onreadystatechange=function() {
         if (this.readyState==4 && this.status==200) {
@@ -20,15 +20,16 @@
       xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
       xmlhttp.send();
     }
-
-
 </script>
 
 
 
 <div class="container-fluid" id="homepage_himg">
-
+<!-- navbar -->
   <?php include("navbar.php"); ?>
+  <!-- navbar ends -->
+
+  <!-- scancode -->
   <div class="underbanner small-hide row">
     <div style="width:50%;">
       <img src="images/My_App.png" alt="scancode" width="20%" style="margin-left:50%; margin-right:50%;">
@@ -36,6 +37,7 @@
     <p style="width:50%">Scan to download our app!</p>
 
   </div>
+  <!-- scancode ends -->
 
 
 <div class="jumbotron"  >
@@ -43,17 +45,20 @@
 <div class="row d-flex justify-content-center" style="margin-bottom:0px;">
 
 
-  <!-- page displays food tiems -->
+
   <!-- searh items bar -->
   <form class="form-inline col-8"  method="POST" action="index.php?page=searchresults">
     <div class="form-group row" style="width:100%;">
+      <!-- searchbar -->
     <input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width:70%; display:inline-block;">
-
+<!-- searchbutton -->
     <button class="btn btn-outline-success" type="submit" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 </svg></button>
   </div>
   </form>
+<!-- searchbar ends -->
+
 
   <!-- dropdown -->
   <div class="dropdown prod-dropdown col-4" style="text-align:right;">
@@ -74,31 +79,37 @@
     ?>
     </div>
   </div>
+<!-- dropdown ends -->
 
   </div>
-  <div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:48%;" id="livesearch"></div>
+
+  <!-- livesearch box -->
+  <div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:100%;" id="livesearch"></div>
+  <!-- livesearch box  ends-->
+
 
   <!-- display food items -->
   <div class="display">
     <?php
-  // type name is in html request
+  // sets displaycondition depending on what dropdown is selected
     if (isset($_GET['type_name'])) {
       $type_name = $_GET['type_name'];
     } else {
       $type_name = 'all';
     }
-  echo "displaying $type_name";
+  echo "<div style='background-color:green;'>Displaying $type_name</div>";
   if ($type_name=="all"){
     $displaycondition = "";
   }else{
     $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
   }
-// $prodcolno = ;
-$sendingpage = "home&type_name=$type_name";
 
+
+// sets no of columbs
       $xlnum = 3;
       $lgnum = 4;
       $smnum = 6;
+      // includes display
      include("display.php");
 
 
