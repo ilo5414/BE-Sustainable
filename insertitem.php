@@ -116,7 +116,7 @@ if(mysqli_num_rows($result_qry)!=0) {
          }
      }
 
-     }
+     
    } while($certinput_aa = mysqli_fetch_assoc($certinput_qry));;
 
 

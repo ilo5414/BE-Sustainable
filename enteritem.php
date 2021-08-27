@@ -1,30 +1,5 @@
 <!-- form to enter new item -->
 
-<script type="text/javascript">
-  function companyautofill(str, barcode) {
-    if (barcode === undefined) {
-    barcode = "";
-  }
-  var x = document.getElementById("companyname").value;
-  document.getElementById("livebox").innerHTML = x;
-
-    if (str.length==0) {
-      document.getElementById("livebox").innerHTML="";
-      document.getElementById("livebox").style.border="0px";
-      return;
-    }
-    var xmlhttp=new XMLHttpRequest();
-    xmlhttp.onreadystatechange=function() {
-      if (this.readyState==4 && this.status==200) {
-        document.getElementById("livebox").innerHTML=this.responseText;
-        document.getElementById("livebox").style.border="1px solid #A5ACB2";
-      }
-    }
-    var displaycondition = "WHERE company.companyname LIKE '%"+str+"%'";
-    xmlhttp.open("GET","companyautofill.php?displaycondition="+displaycondition+"&barcode="+barcode+"&prodcolno=2",true);
-    xmlhttp.send();
-  }
-</script>
 
 
 
@@ -36,11 +11,7 @@ if (isset($_GET['barcode'])) {
   $x=$_GET['barcode'];
   $barcode=(int)$x;
 }
-if (isset($_GET['company_name'])) {
-  $x=$_GET['company_no'];
-  $company_no=(int)$x;
-  $company_name=$_GET['company_name'];
-}
+
 
 ?>
 <h1 class="display-4">enter new item</h1>
@@ -62,39 +33,54 @@ if (isset($_GET['company_name'])) {
   <!-- company name -->
 
   <p>company name</p>
+  <script type="text/javascript">
+  function companyfilter() {
 
-  <div class="form-group">
-    <?php if (isset($company_name)){ ?>
-      <input type=radio value="<?php echo $company_no ?>" name="company_option" checked required>
-      <label class="form-check-label" ><?php echo $company_no ?>  <?php echo $company_name;?></label>
-    <?}else {?>
-    <input class="form-control" required type="text" id="companyname" placeholder="company name" onkeyup="companyautofill(this.value, <?php if (isset($barcode)) { echo $barcode;} ?>)">
-<?php }?>
-  </div>
-<div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:100%;" id="livebox"></div>
-  <!-- <?php
-  // select all certs
-  // $companyinput_sql="SELECT * FROM company";
-  // $companyinput_qry=mysqli_query($dbconnect, $companyinput_sql);
-  // $companyinput_aa = mysqli_fetch_assoc($companyinput_qry);
-  // $n = 0;
-  //
-  // do {
-  //   $company = $companyinput_aa['companyname'];
-  //   $n = $n+1;
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("companysearch");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("companyUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  }
+
+  </script>
+
+<?php $companyinput_sql="SELECT * FROM company";
+$companyinput_qry=mysqli_query($dbconnect, $companyinput_sql);
+$companyinput_aa = mysqli_fetch_assoc($companyinput_qry); ?>
+  <div class="form-group" id=companyselect>
+
+    <input class="form-control" required type="search" id="companysearch" placeholder="company name" onkeyup="companyfilter()">
+
+
+<ul id="companyUL">
+  <?php
+  do {
+    $company = $companyinput_aa['companyname'];
+    $company_ID = $companyinput_aa['companyID'];
+
   ?>
-</div>
-  <div class="form-check form-check-inline">
-  <input type=radio value="<?php //echo "$n"?>" name="company_option" required>
-  <label class="form-check-label" for=<?php //echo "radio$n";?>><?php //echo $company;?></label>
-</div>
+<li>
+  <input type=radio value="<?php echo $company_ID ?> " name="company_option" required>
+  <a class="form-check-label"><?php echo $company;?></a>
+</li>
 
 <br>
 <?php
-// } while($companyinput_aa = mysqli_fetch_assoc($companyinput_qry));
+ } while($companyinput_aa = mysqli_fetch_assoc($companyinput_qry));
 ?>
-</select>
-</div> -->
+</ul>
+</div>
+</div>
 
 
 <br>
