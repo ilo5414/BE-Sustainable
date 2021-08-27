@@ -1,25 +1,23 @@
+
+
 <script type="text/javascript">
-function showResult(str) {
-  if (str.length==0) {
-    document.getElementById("livesearch").innerHTML="";
-    document.getElementById("livesearch").style.border="0px";
-    return;
-  }
-  var xmlhttp=new XMLHttpRequest();
-  xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
-      document.getElementById("livesearch").innerHTML=this.responseText;
-      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+  function showResult(str) {
+    if (str.length==0) {
+      document.getElementById("livesearch").innerHTML="";
+      document.getElementById("livesearch").style.border="0px";
+      return;
     }
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (this.readyState==4 && this.status==200) {
+        document.getElementById("livesearch").innerHTML=this.responseText;
+        document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+      }
+    }
+    var displaycondition = "WHERE products.productname LIKE '%"+str+"%' OR products.productbarcode LIKE '%"+str+"%' OR company.companyname LIKE '%"+str+"%'";
+    xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
+    xmlhttp.send();
   }
-  var displaycondition = "WHERE products.productname LIKE '%"+str+"%' OR products.productbarcode LIKE '%"+str+"%' OR company.companyname LIKE '%"+str+"%'";
-  xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
-  xmlhttp.send();
-}
-
-
-
-
 </script>
 
 <?php

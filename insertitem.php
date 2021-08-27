@@ -13,10 +13,12 @@ $company_name = $_POST['company_option'];
 
 
 
+
+
 // check that the barcode or name is not already in database
 $result_sql = "SELECT * FROM products WHERE productbarcode LIKE '$code' OR productname LIKE '$name'";
 $result_qry = mysqli_query($dbconnect, $result_sql);
-$result_qry = mysqli_query($dbconnect, $result_sql);
+
 if(mysqli_num_rows($result_qry)!=0) {
   // if barcode/name has a copy
   // go to enter item and show error
@@ -113,10 +115,8 @@ if(mysqli_num_rows($result_qry)!=0) {
            echo "Error: " . $sql . "<br>" . $dbconnect->error;
          }
      }
-     else{
-         echo "no cert detected.";
-         header('Location: index.php?page=enteritem&error=Please_select_a_cert');
-     }
+
+     
    } while($certinput_aa = mysqli_fetch_assoc($certinput_qry));;
 
 

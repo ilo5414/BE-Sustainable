@@ -1,11 +1,17 @@
 <!-- form to enter new item -->
+
+
+
+
 <?php
 
 include("navbar.php");
+
 if (isset($_GET['barcode'])) {
   $x=$_GET['barcode'];
   $barcode=(int)$x;
 }
+
 
 ?>
 <h1 class="display-4">enter new item</h1>
@@ -27,27 +33,55 @@ if (isset($_GET['barcode'])) {
   <!-- company name -->
 
   <p>company name</p>
-  <?php
-  // select all certs
-  $companyinput_sql="SELECT * FROM company";
-  $companyinput_qry=mysqli_query($dbconnect, $companyinput_sql);
-  $companyinput_aa = mysqli_fetch_assoc($companyinput_qry);
-  $n = 0;
+  <script type="text/javascript">
+  function companyfilter() {
 
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("companysearch");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("companyUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  }
+
+  </script>
+
+<?php $companyinput_sql="SELECT * FROM company";
+$companyinput_qry=mysqli_query($dbconnect, $companyinput_sql);
+$companyinput_aa = mysqli_fetch_assoc($companyinput_qry); ?>
+  <div class="form-group" id=companyselect>
+
+    <input class="form-control" required type="search" id="companysearch" placeholder="company name" onkeyup="companyfilter()">
+
+
+<ul id="companyUL">
+  <?php
   do {
     $company = $companyinput_aa['companyname'];
-    $n = $n+1;
+    $company_ID = $companyinput_aa['companyID'];
+
   ?>
-</div>
-  <div class="form-check form-check-inline">
-  <input type=radio value="<?php echo "$n"?>" name="company_option" required>
-  <label class="form-check-label" for=<?php echo "radio$n";?>><?php echo $company;?></label>
-</div>
+<li>
+  <input type=radio value="<?php echo $company_ID ?> " name="company_option" required>
+  <a class="form-check-label"><?php echo $company;?></a>
+</li>
+
 <br>
-<?php } while($companyinput_aa = mysqli_fetch_assoc($companyinput_qry));
+<?php
+ } while($companyinput_aa = mysqli_fetch_assoc($companyinput_qry));
 ?>
-</select>
+</ul>
 </div>
+</div>
+
 
 <br>
 
