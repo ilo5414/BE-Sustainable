@@ -15,11 +15,12 @@ $product_aa = mysqli_fetch_assoc($product_qry);
 
 
 
-// if barcode
+// if barcode is in database go to productpage
 if (mysqli_num_rows($product_qry)>0) {
 
   $productID=$product_aa['productID'];
   header("index.php?page=productpage&productID=$productID")
+// if barcode is not in database go to enteritem and automaticially enter barcode
 }else{
   header("index.php?page=enteritem&barcode=$barcode")
 }

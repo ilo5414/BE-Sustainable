@@ -12,11 +12,8 @@ $certID = $_GET['certID'];
    <div class="" id="certificates_himg">
 
 
-
-   <?php include("navbar.php");
-   if (isset($_SESSION['userID'])) {
-    ?> <p>welcome user <?php echo $_SESSION['userID']; ?></p><?php
-   }?>
+<!-- displays navbar  -->
+   <?php include("navbar.php");?>
 
 
 
@@ -44,8 +41,8 @@ $certID = $_GET['certID'];
    </div>
    <div class="crt_card col-8">
 
-
-
+<!-- includes all certs -->
+<!-- sets width of certcards -->
    <?php
     $xlnum = 12;
     $lgnum = 12;

@@ -1,4 +1,4 @@
-
+<!-- this page explains about what our certificates are and mean -->
 
 <div class="container-fluid">
    <div class="section" id="certificates_himg">
@@ -6,7 +6,7 @@
 
 
    <?php include("navbar.php");
-   
+
    ?>
 
 

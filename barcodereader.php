@@ -1,4 +1,4 @@
-<!-- this page has a search function -->
+<!-- this page has a search function and displays all products-->
 
 
 <!-- this script allows the livesearch to function -->
