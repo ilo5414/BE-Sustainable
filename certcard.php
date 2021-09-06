@@ -91,7 +91,7 @@ if (mysqli_num_rows($cert_qry)>0){
    $about_info = $cert_aa['about'];
    $certID = $cert_aa['certID'];
 
- // div surrounding the basic booking information as a link
+// if cert was clicked to get to page, green border will show up around the certcard
 
    ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-md-<?php echo $mdnum;?> col-sm<?php echo $smnum;?>'><?php
    if (isset($_GET["cert"]) and $certID==$selected_cert) {
