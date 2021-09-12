@@ -30,6 +30,14 @@ if (isset($_GET['barcode'])) {
     <input class="form-control" required type="number" name="item_code" value='<?php echo $barcode ?>' placeholder="item barcode">
   </div>
 
+
+<!-- item blurb -->
+<div class="form-group">
+  <label for="exampleFormControlInput1">item information</label>
+  <textarea class="form-control" name="item_blurb" placeholder="please enter any pertinent information about the product" rows="10" cols="30">
+</textarea>
+</div>
+
   <!-- company name -->
 
   <p>company name</p>

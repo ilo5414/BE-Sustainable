@@ -21,7 +21,7 @@ $type = $_POST['item_type'];
 $company_name = $_POST['company_option'];
 
 
-
+$blurb = $_POST['item_blurb'];
 
 
 // check that the barcode or name is not already in database
@@ -134,7 +134,7 @@ if(mysqli_num_rows($result_qry)!=0) {
 // add product
 // add to table if no duplicates
 $sql = "INSERT INTO products (productname, productbarcode, typeID, companyID, blurb)
-VALUES ('$name', '$code', '$type', '$company_name', '$newfilename')";
+VALUES ('$name', '$code', '$type', '$company_name', '$blurb')";
 
   if ($dbconnect->query($sql) == TRUE AND file_exists("$target_dir/$newfilename")) {
     // AND move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file . $newfilename )
