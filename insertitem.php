@@ -1,6 +1,15 @@
 <?php
 // inserts new item into database
-$name = $_POST['item_name'];
+if ($_POST['item_name']=="</div>"){
+  $name = $_POST['item_name'];
+  header("Location: index.php?page=enteritem&error=Name_cannot_be_'$name'");
+
+}else {
+  $name = $_POST['item_name'];
+
+
+
+
 if (isset($_POST['item_code'])){
   $code = $_POST['item_code'];
 } elseif (isset($_GET['item_code'])) {
@@ -29,7 +38,7 @@ if(mysqli_num_rows($result_qry)!=0) {
 // upload image to file
 
    $target_dir = "product_images/";
-   $newfilename= "$name.jpg";
+   $newfilename= "$name.png";
    $target_file = $target_dir . basename($_FILES["fileToUpload"]["tmp_name"]);
    $target_file = $target_dir . basename($_FILES["fileToUpload"]["tmp_name"]);
    $uploadOk = 1;
@@ -116,7 +125,7 @@ if(mysqli_num_rows($result_qry)!=0) {
          }
      }
 
-     
+
    } while($certinput_aa = mysqli_fetch_assoc($certinput_qry));;
 
 
@@ -124,10 +133,11 @@ if(mysqli_num_rows($result_qry)!=0) {
 
 // add product
 // add to table if no duplicates
-$sql = "INSERT INTO products (productname, productbarcode, typeID, companyID)
-VALUES ('$name', '$code', '$type', '$company_name')";
+$sql = "INSERT INTO products (productname, productbarcode, typeID, companyID, blurb)
+VALUES ('$name', '$code', '$type', '$company_name', '$newfilename')";
 
-  if ($dbconnect->query($sql) == TRUE AND move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file . $newfilename )) {
+  if ($dbconnect->query($sql) == TRUE AND file_exists("$target_dir/$newfilename")) {
+    // AND move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file . $newfilename )
 //if insert succesful, go to homepage
     header("Location: index.php?page=home&n=$company_name");
 
@@ -136,5 +146,11 @@ VALUES ('$name', '$code', '$type', '$company_name')";
   }
 
 }
+if (file_exists("$target_dir/$newfilename")) {
+  echo "$target_dir/$newfilename exists";
+}else{
+  echo "$target_dir??/<>$newfilename does not exist";
+}
 echo "test";
 echo "$type";
+}

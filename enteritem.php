@@ -45,7 +45,7 @@ if (isset($_GET['barcode'])) {
           a = li[i].getElementsByTagName("a")[0];
           txtValue = a.textContent || a.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              li[i].style.display = "";
+              li[i].style.display = "display: block;";
           } else {
               li[i].style.display = "none";
           }
@@ -59,7 +59,7 @@ $companyinput_qry=mysqli_query($dbconnect, $companyinput_sql);
 $companyinput_aa = mysqli_fetch_assoc($companyinput_qry); ?>
   <div class="form-group" id=companyselect>
 
-    <input class="form-control" required type="search" id="companysearch" placeholder="company name" onkeyup="companyfilter()">
+    <input class="form-control" type="search" id="companysearch" placeholder="company name" onkeyup="companyfilter()">
 
 
 <ul id="companyUL">
