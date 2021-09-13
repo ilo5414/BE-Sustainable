@@ -146,11 +146,3 @@ VALUES ('$name', '$code', '$type', '$company_name', '$blurb')";
   }
 
 }
-if (file_exists("$target_dir/$newfilename")) {
-  echo "$target_dir/$newfilename exists";
-}else{
-  echo "$target_dir??/<>$newfilename does not exist";
-}
-echo "test";
-echo "$type";
-}
