@@ -1,4 +1,4 @@
-<!-- page calls cert info and puts into card  -->
+<!-- page calls cert info and puts into cards to display  -->
 <script type="text/javascript">
 
 // if user clicks fav button, an ajax query will call this page again, so item is inserted to favprod and star shows as solid
@@ -41,7 +41,7 @@ if (isset($smnum)) {
 
 
 
-
+// set all variables if given
 if (isset($_GET['prodcolno'])) {
   $prodcolno = $_GET['prodcolno'];
 }

@@ -51,6 +51,7 @@ if (isset($_GET['removal']) && $_GET['removal']==1) {
     }
 
 }
+// sets width of columns
 if (isset($xlnum)) {
 }else{
   $xlnum = 3;
@@ -98,15 +99,16 @@ if (mysqli_num_rows($cert_qry)>0){
      ?><div style="border-style: solid; border-color: green;">
        <?php
    }
+   // make div link to cert_page
        ?><a href="index.php?page=cert_page&certID=<?php echo $certID; ?>"><div class="card text-center" id=<?php echo $certID?>>
 
        <div class="section">
 
-
+<!-- display cert logo img -->
          <img src="logos/<?php echo $logo_image; ?>" style="max-height: 200px; width: auto;" >
 
        </div>
-
+<!-- display cert name, about info -->
      <h4><?php echo $cert_name ?></h4>
      <p><?php echo $about_info ?></p>
      </a>
@@ -126,11 +128,14 @@ if (mysqli_num_rows($cert_qry)>0){
 
 
              ?>
+             <!-- if cert in favcert, show star as solid -->
+             <!-- if star is clicked, call star insert fuction -->
              <input class="star" style="margin-left:auto; margin-right:auto;" type="checkbox" value="<?php echo $certID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsert(this.value, '<?php echo $call; ?>', <?php echo $userID; ?>)"><br/><br/>
              <?php
 
           }else {
             ?>
+            <!-- if user not logged in, make star empty and a link to login page -->
             <a href="index.php?page=login">
             <input class="star" type="week"><br/><br/>
             <?php
