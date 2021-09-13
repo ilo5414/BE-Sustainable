@@ -14,7 +14,7 @@ $certID = $_GET['certID'];
 
 <!-- displays navbar  -->
    <?php include("navbar.php");?>
-
+<!-- navbar ends -->
 
 
    <div class="txt_align_center ">

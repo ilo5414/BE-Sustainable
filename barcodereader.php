@@ -3,13 +3,14 @@
 
 <!-- this script allows the livesearch to function -->
 <script type="text/javascript">
-
+// if noting is in searchbar, hide livesearchbox
 		function showResult(str) {
 			if (str.length==0) {
 				document.getElementById("livesearch").innerHTML="";
 				document.getElementById("livesearch").style.border="0px";
 				return;
 			}
+			// when new character inputted to searchbar, search database again
 			var xmlhttp=new XMLHttpRequest();
 			xmlhttp.onreadystatechange=function() {
 				if (this.readyState==4 && this.status==200) {
@@ -29,10 +30,11 @@
 <?php
 
 
-
+// navbar
 include("navbar.php");
-?>
-<?php if (isset($_GET['barcode'])){
+// navbar ends
+// gets barcode, if retrieved, sends user to search page where barcode is entered
+if (isset($_GET['barcode'])){
 	$scannedbarcode = $_GET['barcode'];
 	  header("location: index.php?page=searchresults&search=$scannedbarcode");
 }
@@ -41,7 +43,7 @@ include("navbar.php");
 
 
 
-<!-- page displays food tiems -->
+<!--searchbar -->
 <form class="form-inline col-12" method="POST" action="index.php?page=searchresults">
 	<div class="form-group row" style="justify-content:center; width:100%; padding:10px;">
 	<input class="form-control mr-sm-2" type="search" name='search' placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width:70%; ">
@@ -55,6 +57,7 @@ include("navbar.php");
   <div class="justify-content-center" style="margin-left:auto; margin-right: auto; width:48%;" id="livesearch"></div>
 
 <?php
-$prodcolno=3;
+// display all products
+// $prodcolno=3;
 $displaycondition = "";
 include("display.php"); ?>
