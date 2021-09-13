@@ -1,7 +1,7 @@
 <!-- page calls cert info and puts into card  -->
 <script type="text/javascript">
 
-
+// if user clicks fav button, an ajax query will call this page again, so item is inserted to favprod and star shows as solid
 function starinsertprod(productID, displaycondition, userID) {
 
       var xmlhttp = new XMLHttpRequest();
@@ -18,7 +18,7 @@ function starinsertprod(productID, displaycondition, userID) {
 <?php
 
 include("dbconnect.php");
-
+// if not already set, set column size
 if (isset($xlnum)) {
 }else{
   $xlnum = 3;
@@ -64,17 +64,17 @@ if (isset($_GET['removal']) && $_GET['removal']==2) {
 
 
 
-
+// if star has been clicked, insert product into favprod
    $checkfav_sql = "SELECT * FROM favprod WHERE userID=$userID AND productID=$productID";
 
    $checkfav_qry = mysqli_query($dbconnect, $checkfav_sql);
-
+// if selected product is already in favprod, delete item
    if (mysqli_num_rows($checkfav_qry)>0) {
 
        $sql = "DELETE FROM `favprod` WHERE `favprod`.`userID` = $userID AND `favprod`.`productID` = $productID";
 
        $qry = mysqli_query($dbconnect, $sql);
-
+// if selected product is not already in favprod, insert item
      } else {
 
        $sql = "INSERT INTO favprod (userID, productID) VALUES ($userID, $productID)";
@@ -111,30 +111,33 @@ if (mysqli_num_rows($product_qry)>0) {
 
  // div surrounding the basic booking information as a link
 
-
+// this section displays the card
    ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-sm-<?php echo $smnum;?> '>
+     <!-- link to product page -->
      <a href="index.php?page=productpage&productID=<?php echo $productID;?>">
      <div class="card text-center">
        <div class="section">
-
+         <!-- product img -->
          <img src="product_images/<?php echo $product_name;?>.png" style="overflow: hidden; max-height: 180px; width: auto;">
 
        </div>
 
 
-
+<!-- prodct name, company, barcode -->
      <h2><?php echo $product_name ?></h2>
      <h3><?php echo $company_name ?></h3>
      <p><?php echo $product_barcode ?></p>
 
+<!-- product certifications -->
      <?php
-
+        // select cerifications pertaining to a particular product
           $cert_sql = "SELECT * FROM productcert JOIN products ON products.productID=productcert.productID JOIN cert ON cert.certID=productcert.certID WHERE products.productID LIKE '$productID';";
           $cert_qry = mysqli_query($dbconnect, $cert_sql);
           if(mysqli_num_rows($cert_qry)==0) {
             // no results error message
               echo "<p>No certificates found</p>";
             } else {
+              // if certifiactions found display logos in a row
           $cert_aa = mysqli_fetch_assoc($cert_qry);
           ?>
           <div style="margin:0px;" class="row">
@@ -143,7 +146,8 @@ if (mysqli_num_rows($product_qry)>0) {
           $cert = $cert_aa['logo'];
           $certID = $cert_aa['certID'];
       ?>
-
+        <!-- link to certification page -->
+        <!-- diplay logo as img -->
           <a href="index.php?page=certificates&cert=<?php echo $certID;?>#<?php echo $certID;?>">
           <img style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;" src="logos/<?php echo $cert;?>">
           </a>
@@ -168,6 +172,7 @@ if (mysqli_num_rows($product_qry)>0) {
 
 
              ?>
+                                                                                                                    <!-- if product in favprod, display checked star, if not display empty -->
                <input class="star" type="checkbox" style="margin-left:auto; margin-right:auto;" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsertprod(this.value, '<?php echo $displaycondition; ?>', <?php echo $userID; ?>)"><br/><br/>
 
 <?php
