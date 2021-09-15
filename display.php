@@ -109,7 +109,7 @@ if (mysqli_num_rows($product_qry)>0) {
    $product_barcode = $product_aa['productbarcode'];
    $productID = $product_aa['productID'];
 
- // div surrounding the basic booking information as a link
+
 
 // this section displays the card
    ?><div class='col-xl-<?php echo $xlnum;?> col-lg-<?php echo $lgnum;?> col-sm-<?php echo $smnum;?> '>
@@ -166,19 +166,20 @@ if (mysqli_num_rows($product_qry)>0) {
          <?php
          if (isset($_SESSION['userID'])) {
 
-           // makes array of fav certs
+           // selects all fav certs
            $fav_sql = "SELECT * FROM favprod WHERE userID=$userID AND productID=$productID";
            $fav_qry = mysqli_query($dbconnect, $fav_sql);
 
 
              ?>
-                                                                                                                    <!-- if product in favprod, display checked star, if not display empty -->
+                          <!-- show star as check box, if in favcerts, star will show as checked, if star clicked, will call starinsert function  -->                                                                                       <!-- if product in favprod, display checked star, if not display empty -->
                <input class="star" type="checkbox" style="margin-left:auto; margin-right:auto;" value="<?php echo $productID; ?>" title="bookmark page" <?php if (mysqli_num_rows($fav_qry)>0) {echo "checked";}?> onclick="starinsertprod(this.value, '<?php echo $displaycondition; ?>', <?php echo $userID; ?>)"><br/><br/>
 
 <?php
 
           }else {
             ?>
+            <!-- if not logged in, star is link to login page -->
             <a href="index.php?page=login">
             <input class="star" type="week"><br/><br/>
             </a><?php
@@ -195,7 +196,7 @@ if (mysqli_num_rows($product_qry)>0) {
      </div>
      </a>
    </div>
-   <!-- // booking link div ends -->
+   <!-- // link div ends -->
 
 <?php
  // the while statement for the loop
@@ -214,4 +215,4 @@ echo "No Items";
 
   ?>  </div>
  </div>
- <!-- booking display div ends -->
+ <!-- display div ends -->
