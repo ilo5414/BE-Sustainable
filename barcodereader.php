@@ -58,6 +58,5 @@ if (isset($_GET['barcode'])){
 
 <?php
 // display all products
-// $prodcolno=3;
 $displaycondition = "";
 include("display.php"); ?>

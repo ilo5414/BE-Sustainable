@@ -59,20 +59,20 @@ if(mysqli_num_rows($result_qry)!=0) {
 
    // Check if file already exists
    if (file_exists($target_file)) {
-     echo "Sorry, file already exists.";
+     header('Location: index.php?page=enteritem&error=Sorry,_file_already_exists.');
      $uploadOk = 0;
    }
 
    // Check file size
    if ($_FILES["fileToUpload"]["size"] > 500000) {
-     echo "Sorry, your file is too large.";
+     header('Location: index.php?page=enteritem&error=Sorry, your file is too large.');
      $uploadOk = 0;
    }
 
    // Allow certain file formats
    if($imageFileType == "jpg" && $imageFileType == "png" && $imageFileType == "jpeg"
    && $imageFileType == "gif" ) {
-     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+     header('Location: index.php?page=enteritem&error=Sorry,_only_JPG,_JPEG,_PNG_&_GIF_files_are_allowed.');
      $uploadOk = 0;
    }
 
@@ -146,3 +146,4 @@ VALUES ('$name', '$code', '$type', '$company_name', '$blurb')";
   }
 
 }
+}}}
