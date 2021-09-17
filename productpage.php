@@ -88,7 +88,7 @@ $blurb = $product_aa['blurb'];
       <div class="col-lg-6 col-md-6">
 
 
-      <img src="product_images/<?php echo $product_name;?>.png" class="productpageimg" >
+      <img src="product_images/<?php echo $product_name;?>.png" class="productpageimg" alt="<?php echo $product_name;?> product image">
       </div>
 
 
@@ -155,7 +155,7 @@ $blurb = $product_aa['blurb'];
        $certID = $cert_aa['certID'];?>
 
        <a href="index.php?page=certificates&cert=<?php echo $certID;?>#<?php echo $certID;?>">
-       <img style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;" src="logos/<?php echo $cert;?>">
+       <img style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;" src="logos/<?php echo $cert;?>" alt="<?php echo $cert;?> image logo">
        </a>
        <!-- <p class="card-title"><?php echo "$cert";?></p> -->
       <?php } while($cert_aa = mysqli_fetch_assoc($cert_qry));

@@ -32,7 +32,7 @@
   <!-- scancode -->
   <div class="underbanner small-hide row">
     <div style="width:50%;">
-      <img src="images/My_App.png" alt="scancode" width="20%" style="margin-left:50%; margin-right:50%;">
+      <img src="images/My_App.png" alt="scancode" width="20%" style="margin-left:50%; margin-right:50%;" alt="QR code to besustainable app on play store ">
     </div>
     <p style="width:50%">Scan to download our app!</p>
 

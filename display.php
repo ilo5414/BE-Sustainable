@@ -118,7 +118,7 @@ if (mysqli_num_rows($product_qry)>0) {
      <div class="card text-center">
        <div class="section">
          <!-- product img -->
-         <img src="product_images/<?php echo $product_name;?>.png" style="overflow: hidden; max-height: 180px; width: auto;">
+         <img src="product_images/<?php echo $product_name;?>.png" style="overflow: hidden; max-height: 180px; width: auto;" alt="<?php echo $product_name;?> product image">
 
        </div>
 
@@ -149,7 +149,7 @@ if (mysqli_num_rows($product_qry)>0) {
         <!-- link to certification page -->
         <!-- diplay logo as img -->
           <a href="index.php?page=certificates&cert=<?php echo $certID;?>#<?php echo $certID;?>">
-          <img style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;" src="logos/<?php echo $cert;?>">
+          <img style="margin-left: auto; margin-right: auto; max-height: 75px; width: auto;" src="logos/<?php echo $cert;?>" alt="<?php echo $cert;?> logo image">
           </a>
           <!-- <p class="card-title"><?php echo "$cert";?></p> -->
          <?php } while($cert_aa = mysqli_fetch_assoc($cert_qry));
