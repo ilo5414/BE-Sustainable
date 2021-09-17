@@ -1,12 +1,14 @@
 
-
+<!-- this runs the livesearch -->
 <script type="text/javascript">
   function showResult(str) {
+    // if nothing in searchbar, hide livediv
     if (str.length==0) {
       document.getElementById("livesearch").innerHTML="";
       document.getElementById("livesearch").style.border="0px";
       return;
     }
+    // match what is in searchbar to name, barcode or comanyname
     var xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (this.readyState==4 && this.status==200) {
@@ -27,13 +29,13 @@ include("navbar.php");
 <?php
 
 
-
+// get search request
   $search = $_POST['search'];
   ?>
 <div class="row d-flex justify-content-center" style="margin-bottom:0px; margin-left:0px;">
 
 
-  <!-- page displays food tiems -->
+
 
   <!-- searh items bar -->
   <form class="form-inline col-8"  method="POST" action="index.php?page=searchresults">
@@ -54,6 +56,7 @@ include("navbar.php");
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <p class="small-hide">produce type</p>
     </button>
+    <!-- menu of types -->
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" value=>
       <a class="dropdown-item" href='index.php?page=home&type_name=all'> All </a>
       <?php

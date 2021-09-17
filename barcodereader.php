@@ -18,7 +18,7 @@
 					document.getElementById("livesearch").style.border="1px solid #A5ACB2";
 				}
 			}
-			var displaycondition = "WHERE productname LIKE '%"+str+"%' OR productbarcode LIKE '%"+str+"%'"
+			var displaycondition = "WHERE products.productname LIKE '%"+str+"%' OR products.productbarcode LIKE '%"+str+"%' OR company.companyname LIKE '%"+str+"%'";
 			xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
 			xmlhttp.send();
 		}
