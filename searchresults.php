@@ -1,3 +1,4 @@
+<!-- this is the search results page which displays what is being searched up and displayed as links -->
 
 <!-- this runs the livesearch -->
 <script type="text/javascript">
