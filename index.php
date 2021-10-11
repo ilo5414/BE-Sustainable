@@ -22,9 +22,8 @@
     <?php
     // connects site to database
       include("dbconnect.php");
-    // stac logo, tutor groups and searchbar
-      // include("navbar.php");
 
+// includes current webpage
     if (isset($_GET['page'])) {
       $page = $_GET['page'];
     } else {

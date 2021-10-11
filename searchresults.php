@@ -96,14 +96,15 @@ include("navbar.php");
     } else {
       $type_name = 'all';
     }
+    // filter products by type name
   echo "displaying $type_name";
   if ($type_name=="all"){
     $displaycondition = "";
   }else{
     $displaycondition = "JOIN type ON type.typeID = products.typeID WHERE typename = '$type_name'";
   }
-$prodcolno = 3;
-// $sendingpage = "searchresults&type_name=$type_name";
+
+// include display for all products like search
 $displaycondition="WHERE products.productname LIKE '%$search%' OR products.productbarcode LIKE '%$search%' OR company.companyname LIKE '%$search%';";
      include("display.php");
 ?>

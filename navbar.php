@@ -23,8 +23,10 @@ else {
 <!-- navbar -->
 
 <nav class="navbar navbar-dark">
+
 <!--   this holds the navbar logo in the top left hand corner and makes it a link to the home page -->
   <a class="navbar-brand" href="index.php?page=home"  overflow: hidden;"><img src="images/white_logo.png" style="height: 100%; " alt="Besustainable logo"></a>
+
 
 
   <!-- Toggler/collapsibe Button -->
