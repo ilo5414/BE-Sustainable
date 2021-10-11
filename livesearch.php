@@ -1,4 +1,5 @@
-
+<!-- this is the live search page which, contains the fuctionality for the live search function within the search bar -->
+<!-- this predicts then displays possible products that is similar to what the user is typing as they search for a product  -->
 <?php
 include 'dbconnect.php';
 $n=0;
