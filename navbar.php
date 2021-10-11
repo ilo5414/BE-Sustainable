@@ -1,4 +1,7 @@
+<!-- this page is the navbar -->
+
 <script>
+// if user logs out, alert shows
 function logout() {
 
   alert("You have logged out");
@@ -20,7 +23,7 @@ else {
 
 <nav class="navbar navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="index.php?page=home"  overflow: hidden;"><img src="images/white_logo.png" style="height: 100%; " alt=""></a>
+  <a class="navbar-brand" href="index.php?page=home"  overflow: hidden;"><img src="images/white_logo.png" style="height: 100%; " alt="Besustainable logo"></a>
 
 
   <!-- Toggler/collapsibe Button -->

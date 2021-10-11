@@ -2,11 +2,13 @@
 <!-- tells if username is taken live -->
 <script type="text/javascript">
 function showResult(str) {
+  // if nothing in username bar, hide livediv
   if (str.length==0) {
     document.getElementById("livesearch").innerHTML="";
     document.getElementById("livesearch").style.border="0px";
     return;
   }
+  
   var xmlhttp=new XMLHttpRequest();
   xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {

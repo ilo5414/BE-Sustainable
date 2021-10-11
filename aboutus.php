@@ -60,7 +60,7 @@
         <div class="col-6">
           <div class="logo_div">
             <h1>Environment</h1>
-            <img src="images/white_logo.png" style="width:100%;" alt="">
+            <img src="images/white_logo.png" style="width:100%;" alt="Be Sustainable Logo">
           </div>
           <!-- logo div ends -->
           </div>

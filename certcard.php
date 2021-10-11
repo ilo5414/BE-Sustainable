@@ -105,7 +105,7 @@ if (mysqli_num_rows($cert_qry)>0){
        <div class="section">
 
 <!-- display cert logo img -->
-         <img src="logos/<?php echo $logo_image; ?>" style="max-height: 200px; width: auto;" >
+         <img src="logos/<?php echo $logo_image; ?>" style="max-height: 200px; width: auto;" alt="<?php echo $logo_image; ?> logo image">
 
        </div>
 <!-- display cert name, about info -->

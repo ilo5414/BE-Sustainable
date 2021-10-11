@@ -16,7 +16,7 @@
           document.getElementById("livesearch").style.border="1px solid #A5ACB2";
         }
       }
-      var displaycondition = "WHERE productname LIKE '%"+str+"%' OR productbarcode LIKE '%"+str+"%'"
+      var displaycondition = "WHERE products.productname LIKE '%"+str+"%' OR products.productbarcode LIKE '%"+str+"%' OR company.companyname LIKE '%"+str+"%'";
       xmlhttp.open("GET","livesearch.php?displaycondition="+displaycondition+"&prodcolno=2",true);
       xmlhttp.send();
     }
@@ -32,7 +32,7 @@
   <!-- scancode -->
   <div class="underbanner small-hide row">
     <div style="width:50%;">
-      <img src="images/My_App.png" alt="scancode" width="20%" style="margin-left:50%; margin-right:50%;">
+      <img src="images/My_App.png" alt="scancode" width="20%" style="margin-left:50%; margin-right:50%;" alt="QR code to besustainable app on play store ">
     </div>
     <p style="width:50%">Scan to download our app!</p>
 
