@@ -1,26 +1,28 @@
 <?php
 // inserts new item into database
+
+// error catching if name is </div>
 if ($_POST['item_name']=="</div>"){
   $name = $_POST['item_name'];
   header("Location: index.php?page=enteritem&error=Name_cannot_be_'$name'");
-
+// catch name from post
 }else {
   $name = $_POST['item_name'];
 
 
 
-
+// catch item barcode
 if (isset($_POST['item_code'])){
   $code = $_POST['item_code'];
 } elseif (isset($_GET['item_code'])) {
   $code = $_POST['item_code'];
+  // if no barcode entered, send to enteritem page with error message
 }else {
   header('Location: index.php?page=enteritem&error=No_or_invalid_barcode_entered');
 }
+// catch type, company, and blurb from post
 $type = $_POST['item_type'];
 $company_name = $_POST['company_option'];
-
-
 $blurb = $_POST['item_blurb'];
 
 

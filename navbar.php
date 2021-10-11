@@ -1,4 +1,7 @@
+<!-- this page is the navbar -->
+
 <script>
+// if user logs out, alert shows
 function logout() {
 
   alert("You have logged out");

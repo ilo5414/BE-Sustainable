@@ -14,13 +14,14 @@ that will be taken to the verify page to see if the input is correct -->
 
 <h1>LOGIN</h1>
 
-
+<!-- login form -->
+<!-- username field  -->
   <form class="logform" action="index.php?page=verify" method="post">
     <div class="form-group">
       <label>Username</label>
         <input type="text" name="username" class="form-control" value="">
     </div>
-
+<!-- password field  -->
     <div class="form-group">
       <label>Password</label>
       <input type="password" name="password" id="password" class="form-control" minlength="8" required>
@@ -31,7 +32,7 @@ that will be taken to the verify page to see if the input is correct -->
 
   </form>
 
-
+<!-- error catching for wrong username/password -->
 <?php if (isset($_GET['error'])) {
   ?><div class="alert alert-warning" role="alert">
     You have entered the wrong username or password.
@@ -39,7 +40,7 @@ that will be taken to the verify page to see if the input is correct -->
 } else {
 }?>
 
-
+<!-- link to create new account -->
   <a href="index.php?page=create">Need to create an account?</a>
 <!-- </div> -->
 
