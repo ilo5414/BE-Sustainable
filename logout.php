@@ -1,5 +1,5 @@
 <!-- This is the logout page -->
-
+<!-- this ends the users session and logs them out -->
   <?php
 // this ends the session
   // unset($_SESSION['admin']);
