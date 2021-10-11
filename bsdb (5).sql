@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 09, 2021 at 12:20 AM
+-- Generation Time: Oct 11, 2021 at 04:27 AM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -94,9 +94,10 @@ INSERT INTO `favcert` (`favcertID`, `userID`, `certID`) VALUES
 (45, 2, 1),
 (46, 2, 2),
 (47, 2, 3),
-(48, 3, 7),
-(49, 3, 3),
-(50, 3, 2);
+(51, 4, 4),
+(60, 3, 3),
+(61, 3, 4),
+(62, 3, 7);
 
 -- --------------------------------------------------------
 
@@ -118,10 +119,9 @@ INSERT INTO `favprod` (`favprodID`, `userID`, `productID`) VALUES
 (7, 6, 2),
 (8, 2, 1),
 (9, 2, 2),
-(16, 3, 6),
-(21, 3, 3),
-(22, 3, 5),
-(23, 3, 4);
+(29, 3, 1),
+(32, 3, 4),
+(35, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -145,37 +145,7 @@ INSERT INTO `productcert` (`ID`, `productID`, `certID`) VALUES
 (5, 3, 10),
 (6, 4, 10),
 (7, 4, 1),
-(8, 5, 10),
-(9, 6, 10),
-(10, 0, 2),
-(11, 0, 5),
-(12, 0, 7),
-(13, 0, 9),
-(14, 0, 5),
-(15, 0, 7),
-(16, 0, 9),
-(17, 0, 5),
-(18, 0, 7),
-(19, 0, 9),
-(20, 0, 5),
-(21, 0, 7),
-(22, 0, 9),
-(23, 0, 5),
-(24, 0, 7),
-(25, 0, 9),
-(26, 0, 5),
-(27, 0, 7),
-(28, 0, 9),
-(29, 0, 4),
-(30, 0, 7),
-(31, 0, 5),
-(32, 0, 8),
-(33, 0, 7),
-(34, 0, 3),
-(35, 0, 6),
-(36, 0, 8),
-(37, 0, 5),
-(38, 0, 7);
+(9, 6, 10);
 
 -- --------------------------------------------------------
 
@@ -188,20 +158,21 @@ CREATE TABLE `products` (
   `productbarcode` bigint(50) NOT NULL,
   `productname` varchar(50) NOT NULL,
   `companyID` int(50) NOT NULL,
-  `typeID` int(11) NOT NULL
+  `typeID` int(11) NOT NULL,
+  `blurb` varchar(1200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`productID`, `productbarcode`, `productname`, `companyID`, `typeID`) VALUES
-(1, 9421900241088, '5 Star Plunger Grind', 4, 1),
-(2, 75710900201, 'Organic Mixed Size 10pack', 3, 1),
-(3, 9415748021339, 'Organic Peanut Butter Smooth', 1, 1),
-(4, 9421904673021, 'Plunger Grind Kickstarter', 2, 1),
-(5, 9415748021261, 'Organic chopped tomatoes', 1, 4),
-(6, 9415748005070, 'Organic Chickpeas Garbanzo Beans', 1, 4);
+INSERT INTO `products` (`productID`, `productbarcode`, `productname`, `companyID`, `typeID`, `blurb`) VALUES
+(1, 9421900241088, '5 Star Plunger Grind', 4, 1, 'Meshes can have shape keys defined for them. These give different positions to the vertices (though their number and topology—edge/face connections—cannot change). The amount of influence each shape key contributes to the shape can be continuously adjusted from nothing to 100%, and like other proper'),
+(2, 75710900201, 'Organic Mixed Size 10pack', 3, 1, 'Meshes can have shape keys defined for them. These give different positions to the vertices (though their number and topology—edge/face connections—cannot change). The amount of influence each shape key contributes to the shape can be continuously adjusted from nothing to 100%, and like other property values can be made to vary over time.'),
+(3, 9415748021339, 'Organic Peanut Butter Smooth', 1, 1, ''),
+(4, 9421904673021, 'Plunger Grind Kickstarter', 2, 1, ''),
+(5, 9415748021261, 'Organic chopped tomatoes', 1, 4, ''),
+(6, 9415748005070, 'Organic Chickpeas Garbanzo Beans', 1, 4, '');
 
 -- --------------------------------------------------------
 
@@ -320,25 +291,25 @@ ALTER TABLE `company`
 -- AUTO_INCREMENT for table `favcert`
 --
 ALTER TABLE `favcert`
-  MODIFY `favcertID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `favcertID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `favprod`
 --
 ALTER TABLE `favprod`
-  MODIFY `favprodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `favprodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `productcert`
 --
 ALTER TABLE `productcert`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `productID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `type`
