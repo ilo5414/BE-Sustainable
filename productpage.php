@@ -1,3 +1,5 @@
+<!-- this is the individual products page which displays the information for a particular product -->
+
 <?php
 // connect to database for when using ajax
 if (isset($_GET['removal'])) {
