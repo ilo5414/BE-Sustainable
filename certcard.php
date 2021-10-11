@@ -1,4 +1,5 @@
 <!-- this page displays certifications as cards -->
+<!-- this page is called by other pages -->
 <!-- this script allows the certs to be favourited/ unfavourited without reloading th page -->
 <script type="text/javascript">
 function starinsert(certID, call, userID) {

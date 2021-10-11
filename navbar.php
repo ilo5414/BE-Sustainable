@@ -23,7 +23,7 @@ else {
 
 <nav class="navbar navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="index.php?page=home"  overflow: hidden;"><img src="images/white_logo.png" style="height: 100%; " alt="Besustainable logo"></a>
+  <a class="navbar-brand" href="index.php?page=home"  overflow: hidden;><img src="images/white_logo.png" style="height: 100%; " alt="Besustainable logo"></a>
 
 
   <!-- Toggler/collapsibe Button -->

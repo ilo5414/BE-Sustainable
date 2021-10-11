@@ -23,7 +23,7 @@
     // connects site to database
       include("dbconnect.php");
 
-
+// includes current webpage
     if (isset($_GET['page'])) {
       $page = $_GET['page'];
     } else {

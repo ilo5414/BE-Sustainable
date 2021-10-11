@@ -1,5 +1,5 @@
 <!-- user page -->
-<!-- this page displys all of users favourited items -->
+<!-- this page displys all of users favourited items, and certifications -->
 
 <!-- this script allows the user to tab between fav products and fav certifications -->
 <script>
