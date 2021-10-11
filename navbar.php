@@ -2,6 +2,7 @@
 
 <script>
 // if user logs out, alert shows
+// impliments the logout function
 function logout() {
 
   alert("You have logged out");
@@ -9,7 +10,7 @@ function logout() {
 </script>
 
 <?php
-
+// This sees if there is a user logged in
 if(isset($_SESSION['username'])) {
 
   $username = $_SESSION['username'];
@@ -22,7 +23,7 @@ else {
 <!-- navbar -->
 
 <nav class="navbar navbar-dark">
-  <!-- Brand -->
+<!--   this holds the navbar logo in the top left hand corner and makes it a link to the home page -->
   <a class="navbar-brand" href="index.php?page=home"  overflow: hidden;"><img src="images/white_logo.png" style="height: 100%; " alt="Besustainable logo"></a>
 
 
@@ -32,9 +33,12 @@ else {
   </button>
 
   <!-- Navbar links -->
+<!-- this shows all the nav bar links in a drop down menu which is situated on the right hand side of the page -->
+                             
   <div class="dropdown-menu dropdown-menu-right" id="collapsibleNavbar">
     <ul class="dropdown ">
-      <!-- only show if logged in -->
+                   
+      <!-- only show admin link if logged in -->
       <?php if (isset($_SESSION['userID'])) { ?>
         <a class="nav-link" href="index.php?page=admin">Account</a>
       <?php } ?>
@@ -46,19 +50,22 @@ else {
         <a class="nav-link" href="index.php?page=aboutus">About us</a>
 
         <a class="nav-link" href="index.php?page=enteritem">Enter item</a>
-        <!-- only show if logged in -->
+        <!-- logout button visible only if logged in -->
         <?php if (isset($_SESSION['userID'])) { ?>
-
-
+                                                           
+<!-- logout link -->
         <a class="nav-link" onclick="logout()" href = "index.php?page=logout">Logout <?php echo $username;?>?</a>
 
-
+<!--  if not logged in then, the login link is visible -->
       <?php }else { ?>
         <a  class="nav-link" href = "index.php?page=login">Login </a>
 
     <?php  } ?>
       <!-- </li> -->
     </ul>
+<!--  end of drop down nav                                  -->
   </div>
+<!--   end of navbar div -->
 
 </nav>
+<!--   end of navbar tag-->
