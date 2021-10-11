@@ -1,4 +1,5 @@
 <!-- this page is the navbar -->
+<!-- which holds all the fuctionality of the navbar -->
 
 <script>
 // if user logs out, alert shows
