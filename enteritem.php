@@ -1,4 +1,5 @@
 <!-- form to enter new item -->
+<!-- sends info to insertitem.php -->
 
 
 

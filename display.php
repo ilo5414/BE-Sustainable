@@ -1,4 +1,5 @@
-<!-- page calls cert info and puts into cards to display  -->
+<!-- page calls product info and puts into cards to display  -->
+<!-- this page is called by other pages -->
 <script type="text/javascript">
 
 // if user clicks fav button, an ajax query will call this page again, so item is inserted to favprod and star shows as solid

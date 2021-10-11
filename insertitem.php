@@ -1,3 +1,6 @@
+<!-- this page catches the info from enteritem(where the form used to enter new products is) -->
+<!-- and inserts this information into the database, creating a new item -->
+
 <?php
 // inserts new item into database
 
