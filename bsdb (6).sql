@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 11, 2021 at 04:27 AM
+-- Generation Time: Oct 17, 2021 at 10:46 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cert` (
-  `certID` int(2) NOT NULL,
+  `certID` int(7) NOT NULL,
   `certname` varchar(30) NOT NULL,
   `logo` varchar(20) NOT NULL,
   `about` varchar(300) NOT NULL
@@ -58,7 +58,7 @@ INSERT INTO `cert` (`certID`, `certname`, `logo`, `about`) VALUES
 --
 
 CREATE TABLE `company` (
-  `companyID` int(50) NOT NULL,
+  `companyID` int(4) NOT NULL,
   `companyname` varchar(50) NOT NULL,
   `pagelink` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -80,7 +80,7 @@ INSERT INTO `company` (`companyID`, `companyname`, `pagelink`) VALUES
 --
 
 CREATE TABLE `favcert` (
-  `favcertID` int(11) NOT NULL,
+  `favcertID` int(7) NOT NULL,
   `userID` int(11) NOT NULL,
   `certID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -106,8 +106,8 @@ INSERT INTO `favcert` (`favcertID`, `userID`, `certID`) VALUES
 --
 
 CREATE TABLE `favprod` (
-  `favprodID` int(11) NOT NULL,
-  `userID` int(11) NOT NULL,
+  `favprodID` int(7) NOT NULL,
+  `userID` int(7) NOT NULL,
   `productID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -130,9 +130,9 @@ INSERT INTO `favprod` (`favprodID`, `userID`, `productID`) VALUES
 --
 
 CREATE TABLE `productcert` (
-  `ID` int(11) NOT NULL,
-  `productID` int(10) NOT NULL,
-  `certID` int(10) NOT NULL
+  `ID` int(3) NOT NULL,
+  `productID` int(7) NOT NULL,
+  `certID` int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -157,8 +157,8 @@ CREATE TABLE `products` (
   `productID` int(5) NOT NULL,
   `productbarcode` bigint(50) NOT NULL,
   `productname` varchar(50) NOT NULL,
-  `companyID` int(50) NOT NULL,
-  `typeID` int(11) NOT NULL,
+  `companyID` int(4) NOT NULL,
+  `typeID` int(2) NOT NULL,
   `blurb` varchar(1200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -181,7 +181,7 @@ INSERT INTO `products` (`productID`, `productbarcode`, `productname`, `companyID
 --
 
 CREATE TABLE `type` (
-  `typeID` int(3) NOT NULL,
+  `typeID` int(2) NOT NULL,
   `typename` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -202,7 +202,7 @@ INSERT INTO `type` (`typeID`, `typename`) VALUES
 --
 
 CREATE TABLE `user` (
-  `userID` int(100) NOT NULL,
+  `userID` int(7) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL
@@ -279,49 +279,49 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cert`
 --
 ALTER TABLE `cert`
-  MODIFY `certID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `certID` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `companyID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `companyID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `favcert`
 --
 ALTER TABLE `favcert`
-  MODIFY `favcertID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `favcertID` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `favprod`
 --
 ALTER TABLE `favprod`
-  MODIFY `favprodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `favprodID` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `productcert`
 --
 ALTER TABLE `productcert`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `productID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `type`
 --
 ALTER TABLE `type`
-  MODIFY `typeID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `typeID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `userID` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
