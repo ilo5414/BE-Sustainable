@@ -1,7 +1,7 @@
 
 <!-- index page -->
-this page includes stylesheets and connects to the database,
-it has all the metadata and all other pages are displayed as includes on this page
+<!-- this page includes stylesheets and connects to the database, -->
+<!-- it has all the metadata and all other pages are displayed as includes on this page -->
 <html lang="en"
 >
 <?php session_start(); ?>

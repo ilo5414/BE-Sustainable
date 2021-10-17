@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2021 at 10:46 PM
+-- Generation Time: Oct 17, 2021 at 11:15 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -130,7 +130,7 @@ INSERT INTO `favprod` (`favprodID`, `userID`, `productID`) VALUES
 --
 
 CREATE TABLE `productcert` (
-  `ID` int(3) NOT NULL,
+  `ID` int(7) NOT NULL,
   `productID` int(7) NOT NULL,
   `certID` int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -154,7 +154,7 @@ INSERT INTO `productcert` (`ID`, `productID`, `certID`) VALUES
 --
 
 CREATE TABLE `products` (
-  `productID` int(5) NOT NULL,
+  `productID` int(7) NOT NULL,
   `productbarcode` bigint(50) NOT NULL,
   `productname` varchar(50) NOT NULL,
   `companyID` int(4) NOT NULL,
@@ -303,13 +303,13 @@ ALTER TABLE `favprod`
 -- AUTO_INCREMENT for table `productcert`
 --
 ALTER TABLE `productcert`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `productID` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `type`
