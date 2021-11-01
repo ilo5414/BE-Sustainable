@@ -98,6 +98,11 @@ $companyinput_aa = mysqli_fetch_assoc($companyinput_qry); ?>
 <?php
  } while($companyinput_aa = mysqli_fetch_assoc($companyinput_qry));
 ?>
+<li>
+  <!-- display company as list item and radio button -->
+  <input type=radio value="new" name="company_option" required>
+  <a class="form-check-label"><input type="text" name="newcompname" value="" placeholder="enter new company"><input type="text" name="newcomplink" value="" placeholder="enter link to new company webpage"></a>
+</li>
 </ul>
 </div>
 </div>
