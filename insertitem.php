@@ -136,6 +136,28 @@ if(mysqli_num_rows($result_qry)!=0) {
 
    // end add cert
 
+// add new company
+if ($company_name=="new"){
+  $compname = $_POST['newcompname'];
+  $complink = $_POST['newcomplink'];
+  $sql = "INSERT INTO company (companyname, pagelink)
+  VALUES ('$compname','$complink')";
+    if ($dbconnect->query($sql) == TRUE) {
+
+
+      $comp_sql="SELECT MAX(companyID) FROM company";
+      $comp_qry=mysqli_query($dbconnect, $comp_sql);
+      $comp_aa = mysqli_fetch_assoc($comp_qry);
+      $company_name= $comp_aa["MAX(companyID)"] + 1;
+      echo $company_name;
+
+    } else {
+      echo "Error: " . $sql . "<br>" . $dbconnect->error;
+    }
+
+  }
+
+
 // add product
 // add to table if no duplicates
 $sql = "INSERT INTO products (productname, productbarcode, typeID, companyID, blurb)
@@ -151,4 +173,4 @@ VALUES ('$name', '$code', '$type', '$company_name', '$blurb')";
   }
 
 }
-}}}
+}
