@@ -148,7 +148,7 @@ if ($company_name=="new"){
       $comp_sql="SELECT MAX(companyID) FROM company";
       $comp_qry=mysqli_query($dbconnect, $comp_sql);
       $comp_aa = mysqli_fetch_assoc($comp_qry);
-      $company_name= $comp_aa["MAX(companyID)"] + 1;
+      $company_name= $comp_aa["MAX(companyID)"];
       echo $company_name;
 
     } else {
