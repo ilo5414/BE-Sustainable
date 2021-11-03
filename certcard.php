@@ -90,7 +90,7 @@ if (mysqli_num_rows($cert_qry)>0){
  do {
    $cert_name = $cert_aa['certname'];
    $logo_image = $cert_aa['logo'];
-   $about_info = $cert_aa['about'];
+
    $certID = $cert_aa['certID'];
 
 // if cert was clicked to get to page, green border will show up around the certcard
@@ -111,7 +111,6 @@ if (mysqli_num_rows($cert_qry)>0){
        </div>
 <!-- display cert name, about info -->
      <h4><?php echo $cert_name ?></h4>
-     <p><?php echo $about_info ?></p>
      </a>
 
 

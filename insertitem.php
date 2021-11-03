@@ -63,10 +63,10 @@ if(mysqli_num_rows($result_qry)!=0) {
    }
 
    // Check if file already exists
-   if (file_exists($target_file)) {
-     header('Location: index.php?page=enteritem&error=Sorry,_file_already_exists.');
-     $uploadOk = 0;
-   }
+   // if (file_exists($target_file)) {
+   //   header('Location: index.php?page=enteritem&error=Sorry,_file_already_exists.');
+   //   $uploadOk = 0;
+   // }
 
    // Check file size
    if ($_FILES["fileToUpload"]["size"] > 500000) {
@@ -163,7 +163,7 @@ if ($company_name=="new"){
 $sql = "INSERT INTO products (productname, productbarcode, typeID, companyID, blurb)
 VALUES ('$name', '$code', '$type', '$company_name', '$blurb')";
 
-  if ($dbconnect->query($sql) == TRUE AND file_exists("$target_dir/$newfilename")) {
+  if ($dbconnect->query($sql) == TRUE ) {
     // AND move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file . $newfilename )
 //if insert succesful, go to homepage
     header("Location: index.php?page=home&n=$company_name");
