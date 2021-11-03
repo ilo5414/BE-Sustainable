@@ -119,7 +119,7 @@ if (mysqli_num_rows($product_qry)>0) {
      <div class="card text-center">
        <div class="section">
          <!-- product img -->
-         <img src="product_images/<?php echo $product_name;?>.png" style="overflow: hidden; max-height: 180px; width: auto;" alt="<?php echo $product_name;?> product image">
+         <img src="product_images/<?php echo $product_name;?>.png" style="overflow: hidden; max-width: 150px; max-height: 180px; width: auto;" alt="<?php echo $product_name;?> product image">
 
        </div>
 

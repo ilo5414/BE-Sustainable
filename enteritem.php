@@ -53,16 +53,18 @@ if (isset($_GET['barcode'])) {
       var input, filter, ul, li, a, i, txtValue;
       // input=char entered in companysearchbar
       input = document.getElementById("companysearch");
+
       // makes input uppercase
       filter = input.value.toUpperCase();
       ul = document.getElementById("companyUL");
       li = ul.getElementsByTagName("li");
       for (i = 0; i < li.length; i++) {
           a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
+          txtValue = a.innerText;
           // if compny name matches input, display as block
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              li[i].style.display = "display: block;";
+              li[i].style.display = "block";
+
           // if it does not match display as none (hide)
           } else {
               li[i].style.display = "none";
@@ -98,11 +100,11 @@ $companyinput_aa = mysqli_fetch_assoc($companyinput_qry); ?>
 <?php
  } while($companyinput_aa = mysqli_fetch_assoc($companyinput_qry));
 ?>
-<li>
+<div>
   <!-- display company as list item and radio button -->
   <input type=radio value="new" name="company_option" required>
-  <a class="form-check-label"><input type="text" name="newcompname" value="" placeholder="enter new company"><input type="text" name="newcomplink" value="" placeholder="enter link to new company webpage"></a>
-</li>
+  <a class="form-check-label"><input type="text" name="newcompname" value="" placeholder="enter new company"><input style="width:350px;" type="text" name="newcomplink" value="" placeholder="enter link to new company webpage"></a>
+</div>
 </ul>
 </div>
 </div>
@@ -173,7 +175,7 @@ do {
   <div class="form-group">
 
     <label for="exampleFormControlFile1">upload img</label>
-    <input type="file" accept="image/*" capture="camera" class="form-control-file" name="fileToUpload" id="fileToUpload" required>
+    <input type="file" accept="image/*" capture="camera" class="form-control-file" name="fileToUpload" id="fileToUpload">
   </div>
   <button type="submit" class="btn btn-primary mb-2" name="submit_button">Submit</button>
 
